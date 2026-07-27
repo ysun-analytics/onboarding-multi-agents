@@ -1,0 +1,1656 @@
+{
+  "hire_id": "h_003",
+  "steps": [
+    {
+      "state": "received",
+      "ok": true,
+      "hire": {
+        "name": "Diana Okafor",
+        "role_title": "Senior Data Scientist",
+        "team": "Ml Platform",
+        "location": "New York, US",
+        "employment": "Contractor",
+        "manager": "Alex Morgan",
+        "start_date": "Jul 5, 2026"
+      },
+      "orchestrator": {
+        "name": "Onboarding Assistant",
+        "agent_class": "coord",
+        "status": "Coordinating Diana's onboarding \u00b7 1 approval waiting for you.",
+        "waiting": true
+      },
+      "stages": [
+        {
+          "id": "plan",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Consolidated plan",
+          "status": "awaiting_approval",
+          "summary": "One plan covering all four agents \u2014 approve in a single click, not four.",
+          "reasoning": [
+            "Senior Data Scientist \u2192 Requires special access and elevated security group assignments.",
+            "US-based contractor \u2192 Needs specific compliance documentation per US contractor requirements.",
+            "Start date in 21 days \u2192 Time-sensitive readiness checks and reminders needed.",
+            "Engineering focus \u2192 IT setup emphasizes high-performance hardware and system access."
+          ],
+          "details": {
+            "sections": [
+              {
+                "agent": "it_provisioning",
+                "agent_class": "it",
+                "label": "IT Provisioning",
+                "text": "Provision MacBook Pro 16-inch (M-series). Create accounts for 5 role-standard systems. Assign security groups and flag special access needs.",
+                "gate": "\u2691 You'll approve the special-access request"
+              },
+              {
+                "agent": "compliance_docs",
+                "agent_class": "comp",
+                "label": "Compliance & Docs",
+                "text": "Determine necessary documents for a US-based contractor. Monitor completion and issue reminders as the start date approaches.",
+                "gate": null
+              },
+              {
+                "agent": "manager_prep",
+                "agent_class": "mgr",
+                "label": "Manager Prep",
+                "text": "Draft a personalized 30-60-90 day plan. Schedule an introductory meeting with the manager. Suggest an onboarding buddy and prep checklist for the manager.",
+                "gate": "\u2691 You'll review & send it to the manager"
+              },
+              {
+                "agent": "coordinator",
+                "agent_class": "coord",
+                "label": "Assistant",
+                "text": "Render the consolidated onboarding plan for approval. Draft a personalized welcome message. Conduct readiness check 3 days before start date.",
+                "gate": "\u2691 Needs your review before sending"
+              }
+            ]
+          },
+          "gate": {
+            "gate_type": "plan_approval",
+            "agent": "coordinator",
+            "summary": "Approve the onboarding plan for Diana Okafor.",
+            "proposed_decision": "Proceed with the consolidated plan as shown.",
+            "rationale": "engineering/contractor in US: IT + Compliance run in parallel, Manager Prep follows IT.",
+            "alternatives": [],
+            "shape": "decision",
+            "actions": [
+              "approve",
+              "edit",
+              "request_changes"
+            ],
+            "payload": {
+              "plan": {
+                "hire_id": "h_003",
+                "profile": {
+                  "hire_id": "h_003",
+                  "full_name": "Diana Okafor",
+                  "role_title": "Senior Data Scientist",
+                  "role_family": "engineering",
+                  "team": "ml_platform",
+                  "manager_id": "u_alex_morgan",
+                  "location": {
+                    "country": "US",
+                    "city": "New York"
+                  },
+                  "employment_type": "contractor",
+                  "start_date": "2026-07-05",
+                  "seniority": "senior"
+                },
+                "work": [
+                  {
+                    "agent": "coordinator",
+                    "will_run": true,
+                    "run_wave": 0,
+                    "anticipated_actions": [
+                      "Render this consolidated plan for approval",
+                      "Draft a personalized welcome message",
+                      "Run a readiness check 3 days before start date"
+                    ],
+                    "anticipated_gates": [
+                      "plan_approval",
+                      "welcome_message_review",
+                      "readiness_at_risk"
+                    ]
+                  },
+                  {
+                    "agent": "it_provisioning",
+                    "will_run": true,
+                    "run_wave": 1,
+                    "anticipated_actions": [
+                      "Provision hardware: MacBook Pro 16-inch (M-series)",
+                      "Create accounts for 5 role-standard system(s)",
+                      "Assign role security groups",
+                      "Flag elevated/sensitive access for manager approval"
+                    ],
+                    "anticipated_gates": [
+                      "special_access"
+                    ]
+                  },
+                  {
+                    "agent": "compliance_docs",
+                    "will_run": true,
+                    "run_wave": 1,
+                    "anticipated_actions": [
+                      "Determine required documents for US / contractor",
+                      "Track completion and send reminders as start date approaches"
+                    ],
+                    "anticipated_gates": []
+                  },
+                  {
+                    "agent": "manager_prep",
+                    "will_run": true,
+                    "run_wave": 2,
+                    "anticipated_actions": [
+                      "Draft a role-tailored 30-60-90 day plan",
+                      "Schedule a manager intro meeting",
+                      "Recommend an onboarding buddy",
+                      "Send the manager a prep checklist"
+                    ],
+                    "anticipated_gates": [
+                      "30_60_90_signoff"
+                    ]
+                  }
+                ],
+                "note": "engineering/contractor in US: IT + Compliance run in parallel, Manager Prep follows IT."
+              },
+              "plan_summary": {
+                "reasoning": {
+                  "summary": "Diana Okafor, a Senior Data Scientist hired as a contractor in the US for the ML Platform team, requires a tailored onboarding with IT and compliance actions running in parallel due to her seniority and role-critical access needs.",
+                  "steps": [
+                    "Senior Data Scientist \u2192 Requires special access and elevated security group assignments.",
+                    "US-based contractor \u2192 Needs specific compliance documentation per US contractor requirements.",
+                    "Start date in 21 days \u2192 Time-sensitive readiness checks and reminders needed.",
+                    "Engineering focus \u2192 IT setup emphasizes high-performance hardware and system access."
+                  ]
+                },
+                "it_provisioning": {
+                  "actions": [
+                    "Provision MacBook Pro 16-inch (M-series).",
+                    "Create accounts for 5 role-standard systems.",
+                    "Assign security groups and flag special access needs."
+                  ],
+                  "gates": [
+                    "special_access"
+                  ]
+                },
+                "manager_prep": {
+                  "actions": [
+                    "Draft a personalized 30-60-90 day plan.",
+                    "Schedule an introductory meeting with the manager.",
+                    "Suggest an onboarding buddy and prep checklist for the manager."
+                  ],
+                  "gates": [
+                    "30_60_90_signoff"
+                  ]
+                },
+                "compliance_docs": {
+                  "actions": [
+                    "Determine necessary documents for a US-based contractor.",
+                    "Monitor completion and issue reminders as the start date approaches."
+                  ],
+                  "gates": []
+                },
+                "coordinator": {
+                  "actions": [
+                    "Render the consolidated onboarding plan for approval.",
+                    "Draft a personalized welcome message.",
+                    "Conduct readiness check 3 days before start date."
+                  ],
+                  "gates": [
+                    "plan_approval",
+                    "welcome_message_review",
+                    "readiness_at_risk"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "it",
+          "agent": "it_provisioning",
+          "agent_class": "it",
+          "title": "IT Provisioning",
+          "status": "pending",
+          "summary": "Waiting on plan approval\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "compliance",
+          "agent": "compliance_docs",
+          "agent_class": "comp",
+          "title": "Compliance & Docs",
+          "status": "pending",
+          "summary": "Waiting on plan approval\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "manager_prep",
+          "agent": "manager_prep",
+          "agent_class": "mgr",
+          "title": "Manager Prep",
+          "status": "pending",
+          "summary": "Waiting on IT's provisioning summary\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "welcome",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Welcome message",
+          "status": "pending",
+          "summary": "Drafted once the specialists report back\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "readiness",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Readiness check",
+          "status": "pending",
+          "summary": "Runs 3 days before start. Surfaces anything still outstanding \u2014 the 'no laptop on day one' safety net.",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        }
+      ],
+      "pending_gate": {
+        "gate_type": "plan_approval",
+        "agent": "coordinator",
+        "summary": "Approve the onboarding plan for Diana Okafor.",
+        "proposed_decision": "Proceed with the consolidated plan as shown.",
+        "rationale": "engineering/contractor in US: IT + Compliance run in parallel, Manager Prep follows IT.",
+        "alternatives": [],
+        "shape": "decision",
+        "actions": [
+          "approve",
+          "edit",
+          "request_changes"
+        ],
+        "payload": {
+          "plan": {
+            "hire_id": "h_003",
+            "profile": {
+              "hire_id": "h_003",
+              "full_name": "Diana Okafor",
+              "role_title": "Senior Data Scientist",
+              "role_family": "engineering",
+              "team": "ml_platform",
+              "manager_id": "u_alex_morgan",
+              "location": {
+                "country": "US",
+                "city": "New York"
+              },
+              "employment_type": "contractor",
+              "start_date": "2026-07-05",
+              "seniority": "senior"
+            },
+            "work": [
+              {
+                "agent": "coordinator",
+                "will_run": true,
+                "run_wave": 0,
+                "anticipated_actions": [
+                  "Render this consolidated plan for approval",
+                  "Draft a personalized welcome message",
+                  "Run a readiness check 3 days before start date"
+                ],
+                "anticipated_gates": [
+                  "plan_approval",
+                  "welcome_message_review",
+                  "readiness_at_risk"
+                ]
+              },
+              {
+                "agent": "it_provisioning",
+                "will_run": true,
+                "run_wave": 1,
+                "anticipated_actions": [
+                  "Provision hardware: MacBook Pro 16-inch (M-series)",
+                  "Create accounts for 5 role-standard system(s)",
+                  "Assign role security groups",
+                  "Flag elevated/sensitive access for manager approval"
+                ],
+                "anticipated_gates": [
+                  "special_access"
+                ]
+              },
+              {
+                "agent": "compliance_docs",
+                "will_run": true,
+                "run_wave": 1,
+                "anticipated_actions": [
+                  "Determine required documents for US / contractor",
+                  "Track completion and send reminders as start date approaches"
+                ],
+                "anticipated_gates": []
+              },
+              {
+                "agent": "manager_prep",
+                "will_run": true,
+                "run_wave": 2,
+                "anticipated_actions": [
+                  "Draft a role-tailored 30-60-90 day plan",
+                  "Schedule a manager intro meeting",
+                  "Recommend an onboarding buddy",
+                  "Send the manager a prep checklist"
+                ],
+                "anticipated_gates": [
+                  "30_60_90_signoff"
+                ]
+              }
+            ],
+            "note": "engineering/contractor in US: IT + Compliance run in parallel, Manager Prep follows IT."
+          },
+          "plan_summary": {
+            "reasoning": {
+              "summary": "Diana Okafor, a Senior Data Scientist hired as a contractor in the US for the ML Platform team, requires a tailored onboarding with IT and compliance actions running in parallel due to her seniority and role-critical access needs.",
+              "steps": [
+                "Senior Data Scientist \u2192 Requires special access and elevated security group assignments.",
+                "US-based contractor \u2192 Needs specific compliance documentation per US contractor requirements.",
+                "Start date in 21 days \u2192 Time-sensitive readiness checks and reminders needed.",
+                "Engineering focus \u2192 IT setup emphasizes high-performance hardware and system access."
+              ]
+            },
+            "it_provisioning": {
+              "actions": [
+                "Provision MacBook Pro 16-inch (M-series).",
+                "Create accounts for 5 role-standard systems.",
+                "Assign security groups and flag special access needs."
+              ],
+              "gates": [
+                "special_access"
+              ]
+            },
+            "manager_prep": {
+              "actions": [
+                "Draft a personalized 30-60-90 day plan.",
+                "Schedule an introductory meeting with the manager.",
+                "Suggest an onboarding buddy and prep checklist for the manager."
+              ],
+              "gates": [
+                "30_60_90_signoff"
+              ]
+            },
+            "compliance_docs": {
+              "actions": [
+                "Determine necessary documents for a US-based contractor.",
+                "Monitor completion and issue reminders as the start date approaches."
+              ],
+              "gates": []
+            },
+            "coordinator": {
+              "actions": [
+                "Render the consolidated onboarding plan for approval.",
+                "Draft a personalized welcome message.",
+                "Conduct readiness check 3 days before start date."
+              ],
+              "gates": [
+                "plan_approval",
+                "welcome_message_review",
+                "readiness_at_risk"
+              ]
+            }
+          }
+        }
+      },
+      "events": [
+        "Received profile h_003.",
+        "Validated Diana Okafor (Senior Data Scientist).",
+        "Built consolidated plan. engineering/contractor in US: IT + Compliance run in parallel, Manager Prep follows IT.",
+        "Rendered plan summary for approval."
+      ]
+    },
+    {
+      "state": "provisioning_and_compliance",
+      "ok": true,
+      "hire": {
+        "name": "Diana Okafor",
+        "role_title": "Senior Data Scientist",
+        "team": "Ml Platform",
+        "location": "New York, US",
+        "employment": "Contractor",
+        "manager": "Alex Morgan",
+        "start_date": "Jul 5, 2026"
+      },
+      "orchestrator": {
+        "name": "Onboarding Assistant",
+        "agent_class": "coord",
+        "status": "Coordinating Diana's onboarding \u00b7 1 approval waiting for you.",
+        "waiting": true
+      },
+      "stages": [
+        {
+          "id": "plan",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Consolidated plan",
+          "status": "complete",
+          "summary": "One plan covering all four agents \u2014 approved in a single click, not four.",
+          "reasoning": [
+            "Senior Data Scientist \u2192 Requires special access and elevated security group assignments.",
+            "US-based contractor \u2192 Needs specific compliance documentation per US contractor requirements.",
+            "Start date in 21 days \u2192 Time-sensitive readiness checks and reminders needed.",
+            "Engineering focus \u2192 IT setup emphasizes high-performance hardware and system access."
+          ],
+          "details": {
+            "sections": [
+              {
+                "agent": "it_provisioning",
+                "agent_class": "it",
+                "label": "IT Provisioning",
+                "text": "Provision MacBook Pro 16-inch (M-series). Create accounts for 5 role-standard systems. Assign security groups and flag special access needs.",
+                "gate": "\u2691 You'll approve the special-access request"
+              },
+              {
+                "agent": "compliance_docs",
+                "agent_class": "comp",
+                "label": "Compliance & Docs",
+                "text": "Determine necessary documents for a US-based contractor. Monitor completion and issue reminders as the start date approaches.",
+                "gate": null
+              },
+              {
+                "agent": "manager_prep",
+                "agent_class": "mgr",
+                "label": "Manager Prep",
+                "text": "Draft a personalized 30-60-90 day plan. Schedule an introductory meeting with the manager. Suggest an onboarding buddy and prep checklist for the manager.",
+                "gate": "\u2691 You'll review & send it to the manager"
+              },
+              {
+                "agent": "coordinator",
+                "agent_class": "coord",
+                "label": "Assistant",
+                "text": "Render the consolidated onboarding plan for approval. Draft a personalized welcome message. Conduct readiness check 3 days before start date.",
+                "gate": "\u2691 Needs your review before sending"
+              }
+            ]
+          },
+          "gate": null
+        },
+        {
+          "id": "it",
+          "agent": "it_provisioning",
+          "agent_class": "it",
+          "title": "IT Provisioning",
+          "status": "awaiting_approval",
+          "summary": "MacBook Pro 16-inch (M-series) \u00b7 GitHub Enterprise, Slack (engineering channels), Datadog \u00b7 AWS Console held for approval",
+          "reasoning": [
+            "Provision the default MacBook Pro hardware for Diana; shipping within 2 business days given the US location.",
+            "Create accounts for all relevant software and assign default access levels, omitting disallowed systems for contractors.",
+            "Add Diana to engineering security groups.",
+            "Request approval for read-only AWS Console access as it touches production systems, complying with the seniority and employment type."
+          ],
+          "details": {
+            "hardware": {
+              "item": "MacBook Pro 16-inch (M-series)",
+              "status": "in_progress",
+              "notes": null
+            },
+            "software_access": [
+              {
+                "system": "GitHub Enterprise",
+                "access_level": "developer",
+                "status": "complete"
+              },
+              {
+                "system": "Slack (engineering channels)",
+                "access_level": "member",
+                "status": "complete"
+              },
+              {
+                "system": "Datadog",
+                "access_level": "read",
+                "status": "complete"
+              }
+            ],
+            "security_groups": [
+              {
+                "group": "engineering-all",
+                "status": "complete"
+              },
+              {
+                "group": "production-readonly",
+                "status": "complete"
+              }
+            ],
+            "special_access_requests": [
+              {
+                "system": "AWS Console",
+                "access": "read",
+                "rationale": "Read-only AWS access is standard for senior data scientists, but requires approval since it touches production systems."
+              }
+            ],
+            "warnings": [
+              "PagerDuty (responder) access not provisioned due to contractor restrictions."
+            ]
+          },
+          "gate": {
+            "gate_type": "special_access",
+            "agent": "it_provisioning",
+            "summary": "Approve AWS Console access (read).",
+            "proposed_decision": "Grant read on AWS Console.",
+            "rationale": "Read-only AWS access is standard for senior data scientists, but requires approval since it touches production systems.",
+            "alternatives": [],
+            "shape": "decision",
+            "actions": [
+              "approve",
+              "edit",
+              "request_changes"
+            ],
+            "payload": {
+              "requests": [
+                {
+                  "system": "AWS Console",
+                  "requested_access": "read",
+                  "rationale": "Read-only AWS access is standard for senior data scientists, but requires approval since it touches production systems.",
+                  "status": "awaiting_approval"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "compliance",
+          "agent": "compliance_docs",
+          "agent_class": "comp",
+          "title": "Compliance & Docs",
+          "status": "complete",
+          "summary": "4 documents \u00b7 Form W-9, Contractor MSA, IP Assignment Agreement, NDA",
+          "reasoning": [
+            "Checked role family (engineering), country (US), and employment type (contractor) against known jurisdictions and policy context.",
+            "Called the get_required_documents function which returned a list of required documents specifically for a contractor in the US.",
+            "Ensured all documents have correct deadlines and are marked as 'not_started'.",
+            "Confirmed the jurisdiction was known and no escalation was required."
+          ],
+          "details": {
+            "required_documents": [
+              {
+                "name": "Form W-9",
+                "deadline": "Jul 12, 2026",
+                "status": "not_started",
+                "rationale": "Taxpayer identification for 1099 reporting."
+              },
+              {
+                "name": "Contractor MSA",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Master services agreement defines scope and terms."
+              },
+              {
+                "name": "IP Assignment Agreement",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Contractors must explicitly assign IP \u2014 no default work-for-hire status."
+              },
+              {
+                "name": "NDA",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Confidentiality protection."
+              }
+            ],
+            "escalations": []
+          },
+          "gate": null
+        },
+        {
+          "id": "manager_prep",
+          "agent": "manager_prep",
+          "agent_class": "mgr",
+          "title": "Manager Prep",
+          "status": "pending",
+          "summary": "Waiting on IT's provisioning summary\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "welcome",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Welcome message",
+          "status": "pending",
+          "summary": "Drafted once the specialists report back\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "readiness",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Readiness check",
+          "status": "pending",
+          "summary": "Runs 3 days before start. Surfaces anything still outstanding \u2014 the 'no laptop on day one' safety net.",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        }
+      ],
+      "pending_gate": {
+        "gate_type": "special_access",
+        "agent": "it_provisioning",
+        "summary": "Approve AWS Console access (read).",
+        "proposed_decision": "Grant read on AWS Console.",
+        "rationale": "Read-only AWS access is standard for senior data scientists, but requires approval since it touches production systems.",
+        "alternatives": [],
+        "shape": "decision",
+        "actions": [
+          "approve",
+          "edit",
+          "request_changes"
+        ],
+        "payload": {
+          "requests": [
+            {
+              "system": "AWS Console",
+              "requested_access": "read",
+              "rationale": "Read-only AWS access is standard for senior data scientists, but requires approval since it touches production systems.",
+              "status": "awaiting_approval"
+            }
+          ]
+        }
+      },
+      "events": [
+        "Received profile h_003.",
+        "Validated Diana Okafor (Senior Data Scientist).",
+        "Built consolidated plan. engineering/contractor in US: IT + Compliance run in parallel, Manager Prep follows IT.",
+        "Rendered plan summary for approval.",
+        "IT Provisioning complete: MacBook Pro 16-inch (M-series).",
+        "Compliance complete: 4 document(s)."
+      ]
+    },
+    {
+      "state": "manager_prep",
+      "ok": true,
+      "hire": {
+        "name": "Diana Okafor",
+        "role_title": "Senior Data Scientist",
+        "team": "Ml Platform",
+        "location": "New York, US",
+        "employment": "Contractor",
+        "manager": "Alex Morgan",
+        "start_date": "Jul 5, 2026"
+      },
+      "orchestrator": {
+        "name": "Onboarding Assistant",
+        "agent_class": "coord",
+        "status": "Coordinating Diana's onboarding \u00b7 1 approval waiting for you.",
+        "waiting": true
+      },
+      "stages": [
+        {
+          "id": "plan",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Consolidated plan",
+          "status": "complete",
+          "summary": "One plan covering all four agents \u2014 approved in a single click, not four.",
+          "reasoning": [
+            "Senior Data Scientist \u2192 Requires special access and elevated security group assignments.",
+            "US-based contractor \u2192 Needs specific compliance documentation per US contractor requirements.",
+            "Start date in 21 days \u2192 Time-sensitive readiness checks and reminders needed.",
+            "Engineering focus \u2192 IT setup emphasizes high-performance hardware and system access."
+          ],
+          "details": {
+            "sections": [
+              {
+                "agent": "it_provisioning",
+                "agent_class": "it",
+                "label": "IT Provisioning",
+                "text": "Provision MacBook Pro 16-inch (M-series). Create accounts for 5 role-standard systems. Assign security groups and flag special access needs.",
+                "gate": "\u2691 You'll approve the special-access request"
+              },
+              {
+                "agent": "compliance_docs",
+                "agent_class": "comp",
+                "label": "Compliance & Docs",
+                "text": "Determine necessary documents for a US-based contractor. Monitor completion and issue reminders as the start date approaches.",
+                "gate": null
+              },
+              {
+                "agent": "manager_prep",
+                "agent_class": "mgr",
+                "label": "Manager Prep",
+                "text": "Draft a personalized 30-60-90 day plan. Schedule an introductory meeting with the manager. Suggest an onboarding buddy and prep checklist for the manager.",
+                "gate": "\u2691 You'll review & send it to the manager"
+              },
+              {
+                "agent": "coordinator",
+                "agent_class": "coord",
+                "label": "Assistant",
+                "text": "Render the consolidated onboarding plan for approval. Draft a personalized welcome message. Conduct readiness check 3 days before start date.",
+                "gate": "\u2691 Needs your review before sending"
+              }
+            ]
+          },
+          "gate": null
+        },
+        {
+          "id": "it",
+          "agent": "it_provisioning",
+          "agent_class": "it",
+          "title": "IT Provisioning",
+          "status": "complete",
+          "summary": "MacBook Pro 16-inch (M-series) \u00b7 GitHub Enterprise, Slack (engineering channels), Datadog \u00b7 AWS Console held for approval",
+          "reasoning": [
+            "Provision the default MacBook Pro hardware for Diana; shipping within 2 business days given the US location.",
+            "Create accounts for all relevant software and assign default access levels, omitting disallowed systems for contractors.",
+            "Add Diana to engineering security groups.",
+            "Request approval for read-only AWS Console access as it touches production systems, complying with the seniority and employment type."
+          ],
+          "details": {
+            "hardware": {
+              "item": "MacBook Pro 16-inch (M-series)",
+              "status": "in_progress",
+              "notes": null
+            },
+            "software_access": [
+              {
+                "system": "GitHub Enterprise",
+                "access_level": "developer",
+                "status": "complete"
+              },
+              {
+                "system": "Slack (engineering channels)",
+                "access_level": "member",
+                "status": "complete"
+              },
+              {
+                "system": "Datadog",
+                "access_level": "read",
+                "status": "complete"
+              }
+            ],
+            "security_groups": [
+              {
+                "group": "engineering-all",
+                "status": "complete"
+              },
+              {
+                "group": "production-readonly",
+                "status": "complete"
+              }
+            ],
+            "special_access_requests": [
+              {
+                "system": "AWS Console",
+                "access": "read",
+                "rationale": "Read-only AWS access is standard for senior data scientists, but requires approval since it touches production systems."
+              }
+            ],
+            "warnings": [
+              "PagerDuty (responder) access not provisioned due to contractor restrictions."
+            ]
+          },
+          "gate": null
+        },
+        {
+          "id": "compliance",
+          "agent": "compliance_docs",
+          "agent_class": "comp",
+          "title": "Compliance & Docs",
+          "status": "complete",
+          "summary": "4 documents \u00b7 Form W-9, Contractor MSA, IP Assignment Agreement, NDA",
+          "reasoning": [
+            "Checked role family (engineering), country (US), and employment type (contractor) against known jurisdictions and policy context.",
+            "Called the get_required_documents function which returned a list of required documents specifically for a contractor in the US.",
+            "Ensured all documents have correct deadlines and are marked as 'not_started'.",
+            "Confirmed the jurisdiction was known and no escalation was required."
+          ],
+          "details": {
+            "required_documents": [
+              {
+                "name": "Form W-9",
+                "deadline": "Jul 12, 2026",
+                "status": "not_started",
+                "rationale": "Taxpayer identification for 1099 reporting."
+              },
+              {
+                "name": "Contractor MSA",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Master services agreement defines scope and terms."
+              },
+              {
+                "name": "IP Assignment Agreement",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Contractors must explicitly assign IP \u2014 no default work-for-hire status."
+              },
+              {
+                "name": "NDA",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Confidentiality protection."
+              }
+            ],
+            "escalations": []
+          },
+          "gate": null
+        },
+        {
+          "id": "manager_prep",
+          "agent": "manager_prep",
+          "agent_class": "mgr",
+          "title": "Manager Prep",
+          "status": "awaiting_approval",
+          "summary": "Ready to send to Alex Morgan \u00b7 draft 30-60-90 \u00b7 intro booked (Jul 6, 2026) \u00b7 suggested buddy Ben Silva",
+          "reasoning": [
+            "Checked the manager's calendar and scheduled the earliest available introductory slot.",
+            "Evaluated available onboarding buddies and selected one based on tenure and expertise alignment.",
+            "Drafted a detailed 30-60-90 day onboarding plan tailored to the data science role leveraging the team's tools.",
+            "Sent a preparatory checklist to the hiring manager."
+          ],
+          "details": {
+            "manager_name": "Alex Morgan",
+            "actions": [
+              {
+                "label": "Schedule intro meeting with the manager",
+                "status": "done",
+                "detail": "Jul 6, 2026 \u00b7 30 min"
+              },
+              {
+                "label": "Identify an onboarding buddy",
+                "status": "done",
+                "detail": "Ben Silva \u00b7 1.8 yrs (a suggestion)"
+              },
+              {
+                "label": "Generate the 30-60-90 onboarding plan",
+                "status": "done",
+                "detail": "Draft for the manager to own & customize"
+              }
+            ],
+            "note": {
+              "subject_line": "Onboarding Details for Diana Okafor",
+              "body": "Hi Alex,\n\nI'm pleased to share the onboarding package for Diana Okafor, who will join us as a Senior Data Scientist on the ml_platform team. Diana starts in 21 days on 2026-07-05.\n\nWe've scheduled the intro meeting for 2026-07-06 at 10:00 AM for 30 minutes.\n\nI'd suggest Ben Silva as Diana\u2019s onboarding buddy. Ben has expertise in model serving and feature stores, closely aligning with Diana\u2019s role, and his experience and availability make him a strong fit for providing support.\n\nAttached is a draft of the 30-60-90 day plan. It's a starting point for you to review and personalize to fit how you\u2019d like to approach Diana\u2019s onboarding.\n\nFinally, please review the manager prep checklist below for comprehensive guidance.\n\nBest,  \nThe Onboarding Team"
+            },
+            "thirty_sixty_ninety": {
+              "thirty_days": [
+                "Learn the architecture of the ML platform by reviewing documentation and shadowing team members.",
+                "Integrate into engineering workflows by completing a GitHub pull request on a minor bug fix or documentation update.",
+                "Meet with key team members and related teams to understand their data needs and current projects (5 meetings)."
+              ],
+              "sixty_days": [
+                "Build a machine learning model for a small feature by collaborating with engineering using Datadog for monitoring and feedback loops.",
+                "Lead a retrospective session about an ongoing project to gain insights into team processes.",
+                "Solidify relationships with cross-functional teams by participating in at least 3 interdisciplinary meetings."
+              ],
+              "ninety_days": [
+                "Deliver a comprehensive analysis report on the feature performance of a newly shipped model.\nPresent findings to the team and stakeholders.",
+                "Propose a project to improve the efficiency of data pipelines leveraging AWS and orchestrating work across data and engineering teams.",
+                "Establish a thought-leadership role within the team by authoring a blog post on a technical topic of interest."
+              ]
+            },
+            "manager_checklist": [
+              "Review Diana Okafor\u2019s resume and skills profile.",
+              "Prepare the team introduction email.",
+              "Ensure all systems access, including AWS, will be ready for July 5.",
+              "Plan first 1:1 to discuss initial projects and expectations.",
+              "Review current data science projects for potential involvement."
+            ]
+          },
+          "gate": {
+            "gate_type": "30_60_90_signoff",
+            "agent": "manager_prep",
+            "summary": "Review and send the onboarding package to Alex Morgan.",
+            "proposed_decision": "Send the cover note + draft 30-60-90 to Alex Morgan.",
+            "rationale": "The 30-60-90 is a starting draft for the manager to own and customize. Review the package, then send it to them.",
+            "alternatives": [],
+            "shape": "decision",
+            "actions": [
+              "approve",
+              "edit",
+              "request_changes"
+            ],
+            "payload": {
+              "plan": {
+                "thirty_days": [
+                  "Learn the architecture of the ML platform by reviewing documentation and shadowing team members.",
+                  "Integrate into engineering workflows by completing a GitHub pull request on a minor bug fix or documentation update.",
+                  "Meet with key team members and related teams to understand their data needs and current projects (5 meetings)."
+                ],
+                "sixty_days": [
+                  "Build a machine learning model for a small feature by collaborating with engineering using Datadog for monitoring and feedback loops.",
+                  "Lead a retrospective session about an ongoing project to gain insights into team processes.",
+                  "Solidify relationships with cross-functional teams by participating in at least 3 interdisciplinary meetings."
+                ],
+                "ninety_days": [
+                  "Deliver a comprehensive analysis report on the feature performance of a newly shipped model.\nPresent findings to the team and stakeholders.",
+                  "Propose a project to improve the efficiency of data pipelines leveraging AWS and orchestrating work across data and engineering teams.",
+                  "Establish a thought-leadership role within the team by authoring a blog post on a technical topic of interest."
+                ],
+                "status": "draft_awaiting_signoff"
+              },
+              "note": {
+                "reasoning": {
+                  "summary": "I framed the note to concisely introduce each element of the onboarding process. This helps the manager quickly understand the steps they need to take and any actions required from them.",
+                  "steps": [
+                    "Greet the manager and introduce the new hire, including their role and start date.",
+                    "Provide details on the scheduled intro meeting.",
+                    "Suggest an onboarding buddy and explain the recommendation.",
+                    "Introduce the 30-60-90 day plan as a draft for the manager to review and customize.",
+                    "Direct the manager to the prep checklist for additional guidance."
+                  ]
+                },
+                "subject_line": "Onboarding Details for Diana Okafor",
+                "body": "Hi Alex,\n\nI'm pleased to share the onboarding package for Diana Okafor, who will join us as a Senior Data Scientist on the ml_platform team. Diana starts in 21 days on 2026-07-05.\n\nWe've scheduled the intro meeting for 2026-07-06 at 10:00 AM for 30 minutes.\n\nI'd suggest Ben Silva as Diana\u2019s onboarding buddy. Ben has expertise in model serving and feature stores, closely aligning with Diana\u2019s role, and his experience and availability make him a strong fit for providing support.\n\nAttached is a draft of the 30-60-90 day plan. It's a starting point for you to review and personalize to fit how you\u2019d like to approach Diana\u2019s onboarding.\n\nFinally, please review the manager prep checklist below for comprehensive guidance.\n\nBest,  \nThe Onboarding Team"
+              },
+              "manager_name": "Alex Morgan"
+            }
+          }
+        },
+        {
+          "id": "welcome",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Welcome message",
+          "status": "pending",
+          "summary": "Drafted once the specialists report back\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "readiness",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Readiness check",
+          "status": "pending",
+          "summary": "Runs 3 days before start. Surfaces anything still outstanding \u2014 the 'no laptop on day one' safety net.",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        }
+      ],
+      "pending_gate": {
+        "gate_type": "30_60_90_signoff",
+        "agent": "manager_prep",
+        "summary": "Review and send the onboarding package to Alex Morgan.",
+        "proposed_decision": "Send the cover note + draft 30-60-90 to Alex Morgan.",
+        "rationale": "The 30-60-90 is a starting draft for the manager to own and customize. Review the package, then send it to them.",
+        "alternatives": [],
+        "shape": "decision",
+        "actions": [
+          "approve",
+          "edit",
+          "request_changes"
+        ],
+        "payload": {
+          "plan": {
+            "thirty_days": [
+              "Learn the architecture of the ML platform by reviewing documentation and shadowing team members.",
+              "Integrate into engineering workflows by completing a GitHub pull request on a minor bug fix or documentation update.",
+              "Meet with key team members and related teams to understand their data needs and current projects (5 meetings)."
+            ],
+            "sixty_days": [
+              "Build a machine learning model for a small feature by collaborating with engineering using Datadog for monitoring and feedback loops.",
+              "Lead a retrospective session about an ongoing project to gain insights into team processes.",
+              "Solidify relationships with cross-functional teams by participating in at least 3 interdisciplinary meetings."
+            ],
+            "ninety_days": [
+              "Deliver a comprehensive analysis report on the feature performance of a newly shipped model.\nPresent findings to the team and stakeholders.",
+              "Propose a project to improve the efficiency of data pipelines leveraging AWS and orchestrating work across data and engineering teams.",
+              "Establish a thought-leadership role within the team by authoring a blog post on a technical topic of interest."
+            ],
+            "status": "draft_awaiting_signoff"
+          },
+          "note": {
+            "reasoning": {
+              "summary": "I framed the note to concisely introduce each element of the onboarding process. This helps the manager quickly understand the steps they need to take and any actions required from them.",
+              "steps": [
+                "Greet the manager and introduce the new hire, including their role and start date.",
+                "Provide details on the scheduled intro meeting.",
+                "Suggest an onboarding buddy and explain the recommendation.",
+                "Introduce the 30-60-90 day plan as a draft for the manager to review and customize.",
+                "Direct the manager to the prep checklist for additional guidance."
+              ]
+            },
+            "subject_line": "Onboarding Details for Diana Okafor",
+            "body": "Hi Alex,\n\nI'm pleased to share the onboarding package for Diana Okafor, who will join us as a Senior Data Scientist on the ml_platform team. Diana starts in 21 days on 2026-07-05.\n\nWe've scheduled the intro meeting for 2026-07-06 at 10:00 AM for 30 minutes.\n\nI'd suggest Ben Silva as Diana\u2019s onboarding buddy. Ben has expertise in model serving and feature stores, closely aligning with Diana\u2019s role, and his experience and availability make him a strong fit for providing support.\n\nAttached is a draft of the 30-60-90 day plan. It's a starting point for you to review and personalize to fit how you\u2019d like to approach Diana\u2019s onboarding.\n\nFinally, please review the manager prep checklist below for comprehensive guidance.\n\nBest,  \nThe Onboarding Team"
+          },
+          "manager_name": "Alex Morgan"
+        }
+      },
+      "events": [
+        "Received profile h_003.",
+        "Validated Diana Okafor (Senior Data Scientist).",
+        "Built consolidated plan. engineering/contractor in US: IT + Compliance run in parallel, Manager Prep follows IT.",
+        "Rendered plan summary for approval.",
+        "IT Provisioning complete: MacBook Pro 16-inch (M-series).",
+        "Compliance complete: 4 document(s).",
+        "Special-access gate surfaced for: AWS Console.",
+        "Manager Prep complete: draft 30-60-90 + cover note ready to send to Alex Morgan."
+      ]
+    },
+    {
+      "state": "drafting_welcome",
+      "ok": true,
+      "hire": {
+        "name": "Diana Okafor",
+        "role_title": "Senior Data Scientist",
+        "team": "Ml Platform",
+        "location": "New York, US",
+        "employment": "Contractor",
+        "manager": "Alex Morgan",
+        "start_date": "Jul 5, 2026"
+      },
+      "orchestrator": {
+        "name": "Onboarding Assistant",
+        "agent_class": "coord",
+        "status": "Coordinating Diana's onboarding \u00b7 1 approval waiting for you.",
+        "waiting": true
+      },
+      "stages": [
+        {
+          "id": "plan",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Consolidated plan",
+          "status": "complete",
+          "summary": "One plan covering all four agents \u2014 approved in a single click, not four.",
+          "reasoning": [
+            "Senior Data Scientist \u2192 Requires special access and elevated security group assignments.",
+            "US-based contractor \u2192 Needs specific compliance documentation per US contractor requirements.",
+            "Start date in 21 days \u2192 Time-sensitive readiness checks and reminders needed.",
+            "Engineering focus \u2192 IT setup emphasizes high-performance hardware and system access."
+          ],
+          "details": {
+            "sections": [
+              {
+                "agent": "it_provisioning",
+                "agent_class": "it",
+                "label": "IT Provisioning",
+                "text": "Provision MacBook Pro 16-inch (M-series). Create accounts for 5 role-standard systems. Assign security groups and flag special access needs.",
+                "gate": "\u2691 You'll approve the special-access request"
+              },
+              {
+                "agent": "compliance_docs",
+                "agent_class": "comp",
+                "label": "Compliance & Docs",
+                "text": "Determine necessary documents for a US-based contractor. Monitor completion and issue reminders as the start date approaches.",
+                "gate": null
+              },
+              {
+                "agent": "manager_prep",
+                "agent_class": "mgr",
+                "label": "Manager Prep",
+                "text": "Draft a personalized 30-60-90 day plan. Schedule an introductory meeting with the manager. Suggest an onboarding buddy and prep checklist for the manager.",
+                "gate": "\u2691 You'll review & send it to the manager"
+              },
+              {
+                "agent": "coordinator",
+                "agent_class": "coord",
+                "label": "Assistant",
+                "text": "Render the consolidated onboarding plan for approval. Draft a personalized welcome message. Conduct readiness check 3 days before start date.",
+                "gate": "\u2691 Needs your review before sending"
+              }
+            ]
+          },
+          "gate": null
+        },
+        {
+          "id": "it",
+          "agent": "it_provisioning",
+          "agent_class": "it",
+          "title": "IT Provisioning",
+          "status": "complete",
+          "summary": "MacBook Pro 16-inch (M-series) \u00b7 GitHub Enterprise, Slack (engineering channels), Datadog \u00b7 AWS Console held for approval",
+          "reasoning": [
+            "Provision the default MacBook Pro hardware for Diana; shipping within 2 business days given the US location.",
+            "Create accounts for all relevant software and assign default access levels, omitting disallowed systems for contractors.",
+            "Add Diana to engineering security groups.",
+            "Request approval for read-only AWS Console access as it touches production systems, complying with the seniority and employment type."
+          ],
+          "details": {
+            "hardware": {
+              "item": "MacBook Pro 16-inch (M-series)",
+              "status": "in_progress",
+              "notes": null
+            },
+            "software_access": [
+              {
+                "system": "GitHub Enterprise",
+                "access_level": "developer",
+                "status": "complete"
+              },
+              {
+                "system": "Slack (engineering channels)",
+                "access_level": "member",
+                "status": "complete"
+              },
+              {
+                "system": "Datadog",
+                "access_level": "read",
+                "status": "complete"
+              }
+            ],
+            "security_groups": [
+              {
+                "group": "engineering-all",
+                "status": "complete"
+              },
+              {
+                "group": "production-readonly",
+                "status": "complete"
+              }
+            ],
+            "special_access_requests": [
+              {
+                "system": "AWS Console",
+                "access": "read",
+                "rationale": "Read-only AWS access is standard for senior data scientists, but requires approval since it touches production systems."
+              }
+            ],
+            "warnings": [
+              "PagerDuty (responder) access not provisioned due to contractor restrictions."
+            ]
+          },
+          "gate": null
+        },
+        {
+          "id": "compliance",
+          "agent": "compliance_docs",
+          "agent_class": "comp",
+          "title": "Compliance & Docs",
+          "status": "complete",
+          "summary": "4 documents \u00b7 Form W-9, Contractor MSA, IP Assignment Agreement, NDA",
+          "reasoning": [
+            "Checked role family (engineering), country (US), and employment type (contractor) against known jurisdictions and policy context.",
+            "Called the get_required_documents function which returned a list of required documents specifically for a contractor in the US.",
+            "Ensured all documents have correct deadlines and are marked as 'not_started'.",
+            "Confirmed the jurisdiction was known and no escalation was required."
+          ],
+          "details": {
+            "required_documents": [
+              {
+                "name": "Form W-9",
+                "deadline": "Jul 12, 2026",
+                "status": "not_started",
+                "rationale": "Taxpayer identification for 1099 reporting."
+              },
+              {
+                "name": "Contractor MSA",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Master services agreement defines scope and terms."
+              },
+              {
+                "name": "IP Assignment Agreement",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Contractors must explicitly assign IP \u2014 no default work-for-hire status."
+              },
+              {
+                "name": "NDA",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Confidentiality protection."
+              }
+            ],
+            "escalations": []
+          },
+          "gate": null
+        },
+        {
+          "id": "manager_prep",
+          "agent": "manager_prep",
+          "agent_class": "mgr",
+          "title": "Manager Prep",
+          "status": "complete",
+          "summary": "Ready to send to Alex Morgan \u00b7 draft 30-60-90 \u00b7 intro booked (Jul 6, 2026) \u00b7 suggested buddy Ben Silva",
+          "reasoning": [
+            "Checked the manager's calendar and scheduled the earliest available introductory slot.",
+            "Evaluated available onboarding buddies and selected one based on tenure and expertise alignment.",
+            "Drafted a detailed 30-60-90 day onboarding plan tailored to the data science role leveraging the team's tools.",
+            "Sent a preparatory checklist to the hiring manager."
+          ],
+          "details": {
+            "manager_name": "Alex Morgan",
+            "actions": [
+              {
+                "label": "Schedule intro meeting with the manager",
+                "status": "done",
+                "detail": "Jul 6, 2026 \u00b7 30 min"
+              },
+              {
+                "label": "Identify an onboarding buddy",
+                "status": "done",
+                "detail": "Ben Silva \u00b7 1.8 yrs (a suggestion)"
+              },
+              {
+                "label": "Generate the 30-60-90 onboarding plan",
+                "status": "done",
+                "detail": "Draft for the manager to own & customize"
+              }
+            ],
+            "note": {
+              "subject_line": "Onboarding Details for Diana Okafor",
+              "body": "Hi Alex,\n\nI'm pleased to share the onboarding package for Diana Okafor, who will join us as a Senior Data Scientist on the ml_platform team. Diana starts in 21 days on 2026-07-05.\n\nWe've scheduled the intro meeting for 2026-07-06 at 10:00 AM for 30 minutes.\n\nI'd suggest Ben Silva as Diana\u2019s onboarding buddy. Ben has expertise in model serving and feature stores, closely aligning with Diana\u2019s role, and his experience and availability make him a strong fit for providing support.\n\nAttached is a draft of the 30-60-90 day plan. It's a starting point for you to review and personalize to fit how you\u2019d like to approach Diana\u2019s onboarding.\n\nFinally, please review the manager prep checklist below for comprehensive guidance.\n\nBest,  \nThe Onboarding Team"
+            },
+            "thirty_sixty_ninety": {
+              "thirty_days": [
+                "Learn the architecture of the ML platform by reviewing documentation and shadowing team members.",
+                "Integrate into engineering workflows by completing a GitHub pull request on a minor bug fix or documentation update.",
+                "Meet with key team members and related teams to understand their data needs and current projects (5 meetings)."
+              ],
+              "sixty_days": [
+                "Build a machine learning model for a small feature by collaborating with engineering using Datadog for monitoring and feedback loops.",
+                "Lead a retrospective session about an ongoing project to gain insights into team processes.",
+                "Solidify relationships with cross-functional teams by participating in at least 3 interdisciplinary meetings."
+              ],
+              "ninety_days": [
+                "Deliver a comprehensive analysis report on the feature performance of a newly shipped model.\nPresent findings to the team and stakeholders.",
+                "Propose a project to improve the efficiency of data pipelines leveraging AWS and orchestrating work across data and engineering teams.",
+                "Establish a thought-leadership role within the team by authoring a blog post on a technical topic of interest."
+              ]
+            },
+            "manager_checklist": [
+              "Review Diana Okafor\u2019s resume and skills profile.",
+              "Prepare the team introduction email.",
+              "Ensure all systems access, including AWS, will be ready for July 5.",
+              "Plan first 1:1 to discuss initial projects and expectations.",
+              "Review current data science projects for potential involvement."
+            ]
+          },
+          "gate": null
+        },
+        {
+          "id": "welcome",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Welcome message",
+          "status": "awaiting_approval",
+          "summary": "Personalized note ready. Scheduled to send Jun 21, 2026 (2 weeks before start).",
+          "reasoning": [
+            "Start with a welcoming address using Diana's first name.",
+            "Mention her role as a Senior Data Scientist and her team, ML Platform.",
+            "Introduce onboarding buddy Ben Silva.",
+            "List specific first-day logistics: MacBook setup, access to tools, and a meeting with her manager.",
+            "Conclude with a warm, friendly sign-off."
+          ],
+          "details": {
+            "subject_line": "Welcome to the ML Platform Team, Diana!",
+            "body": "Hi Diana,\n\nWelcome to the ML Platform team! We're thrilled to have you join us as a Senior Data Scientist. On your first day, you'll find your MacBook Pro all set up and ready for you, and you'll have access to all the essential tools like GitHub Enterprise, Slack (especially our engineering channels), and Datadog.\n\nYou're in great hands with your onboarding buddy, Ben Silva, who will be reaching out to help you settle in. Plus, you'll have an introductory meeting with your manager on July 6th at 10:00 AM.\n\nWe're really looking forward to seeing you shine in your role here. If you have any questions or need anything before you start, feel free to reach out!\n\nWarm regards,\nThe ML Platform Team",
+            "send_strategy": "schedule",
+            "scheduled_send_date": "Jun 21, 2026"
+          },
+          "gate": {
+            "gate_type": "welcome_message_review",
+            "agent": "coordinator",
+            "summary": "Review the welcome message before it is sent.",
+            "proposed_decision": "schedule the message.",
+            "rationale": "Personalized messages are reviewed before reaching the new hire.",
+            "alternatives": [],
+            "shape": "decision",
+            "actions": [
+              "approve",
+              "edit",
+              "request_changes"
+            ],
+            "payload": {
+              "draft": {
+                "reasoning": {
+                  "summary": "The message is personalized to welcome Diana Okafor, referencing her role, team, and onboarding buddy, and outlining her first day expectations. The tone is warm and inviting without being overly corporate.",
+                  "steps": [
+                    "Start with a welcoming address using Diana's first name.",
+                    "Mention her role as a Senior Data Scientist and her team, ML Platform.",
+                    "Introduce onboarding buddy Ben Silva.",
+                    "List specific first-day logistics: MacBook setup, access to tools, and a meeting with her manager.",
+                    "Conclude with a warm, friendly sign-off."
+                  ]
+                },
+                "subject_line": "Welcome to the ML Platform Team, Diana!",
+                "body": "Hi Diana,\n\nWelcome to the ML Platform team! We're thrilled to have you join us as a Senior Data Scientist. On your first day, you'll find your MacBook Pro all set up and ready for you, and you'll have access to all the essential tools like GitHub Enterprise, Slack (especially our engineering channels), and Datadog.\n\nYou're in great hands with your onboarding buddy, Ben Silva, who will be reaching out to help you settle in. Plus, you'll have an introductory meeting with your manager on July 6th at 10:00 AM.\n\nWe're really looking forward to seeing you shine in your role here. If you have any questions or need anything before you start, feel free to reach out!\n\nWarm regards,\nThe ML Platform Team",
+                "send_strategy": "schedule",
+                "scheduled_send_date": "2026-06-21"
+              }
+            }
+          }
+        },
+        {
+          "id": "readiness",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Readiness check",
+          "status": "pending",
+          "summary": "Runs 3 days before start. Surfaces anything still outstanding \u2014 the 'no laptop on day one' safety net.",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        }
+      ],
+      "pending_gate": {
+        "gate_type": "welcome_message_review",
+        "agent": "coordinator",
+        "summary": "Review the welcome message before it is sent.",
+        "proposed_decision": "schedule the message.",
+        "rationale": "Personalized messages are reviewed before reaching the new hire.",
+        "alternatives": [],
+        "shape": "decision",
+        "actions": [
+          "approve",
+          "edit",
+          "request_changes"
+        ],
+        "payload": {
+          "draft": {
+            "reasoning": {
+              "summary": "The message is personalized to welcome Diana Okafor, referencing her role, team, and onboarding buddy, and outlining her first day expectations. The tone is warm and inviting without being overly corporate.",
+              "steps": [
+                "Start with a welcoming address using Diana's first name.",
+                "Mention her role as a Senior Data Scientist and her team, ML Platform.",
+                "Introduce onboarding buddy Ben Silva.",
+                "List specific first-day logistics: MacBook setup, access to tools, and a meeting with her manager.",
+                "Conclude with a warm, friendly sign-off."
+              ]
+            },
+            "subject_line": "Welcome to the ML Platform Team, Diana!",
+            "body": "Hi Diana,\n\nWelcome to the ML Platform team! We're thrilled to have you join us as a Senior Data Scientist. On your first day, you'll find your MacBook Pro all set up and ready for you, and you'll have access to all the essential tools like GitHub Enterprise, Slack (especially our engineering channels), and Datadog.\n\nYou're in great hands with your onboarding buddy, Ben Silva, who will be reaching out to help you settle in. Plus, you'll have an introductory meeting with your manager on July 6th at 10:00 AM.\n\nWe're really looking forward to seeing you shine in your role here. If you have any questions or need anything before you start, feel free to reach out!\n\nWarm regards,\nThe ML Platform Team",
+            "send_strategy": "schedule",
+            "scheduled_send_date": "2026-06-21"
+          }
+        }
+      },
+      "events": [
+        "Received profile h_003.",
+        "Validated Diana Okafor (Senior Data Scientist).",
+        "Built consolidated plan. engineering/contractor in US: IT + Compliance run in parallel, Manager Prep follows IT.",
+        "Rendered plan summary for approval.",
+        "IT Provisioning complete: MacBook Pro 16-inch (M-series).",
+        "Compliance complete: 4 document(s).",
+        "Special-access gate surfaced for: AWS Console.",
+        "Manager Prep complete: draft 30-60-90 + cover note ready to send to Alex Morgan."
+      ]
+    }
+  ],
+  "final": {
+    "state": "complete",
+    "ok": true,
+    "hire": {
+      "name": "Diana Okafor",
+      "role_title": "Senior Data Scientist",
+      "team": "Ml Platform",
+      "location": "New York, US",
+      "employment": "Contractor",
+      "manager": "Alex Morgan",
+      "start_date": "Jul 5, 2026"
+    },
+    "orchestrator": {
+      "name": "Onboarding Assistant",
+      "agent_class": "coord",
+      "status": "All agents complete \u00b7 every gate resolved \u00b7 onboarding assembled.",
+      "waiting": false
+    },
+    "stages": [
+      {
+        "id": "plan",
+        "agent": "coordinator",
+        "agent_class": "coord",
+        "title": "Consolidated plan",
+        "status": "complete",
+        "summary": "One plan covering all four agents \u2014 approved in a single click, not four.",
+        "reasoning": [
+          "Senior Data Scientist \u2192 Requires special access and elevated security group assignments.",
+          "US-based contractor \u2192 Needs specific compliance documentation per US contractor requirements.",
+          "Start date in 21 days \u2192 Time-sensitive readiness checks and reminders needed.",
+          "Engineering focus \u2192 IT setup emphasizes high-performance hardware and system access."
+        ],
+        "details": {
+          "sections": [
+            {
+              "agent": "it_provisioning",
+              "agent_class": "it",
+              "label": "IT Provisioning",
+              "text": "Provision MacBook Pro 16-inch (M-series). Create accounts for 5 role-standard systems. Assign security groups and flag special access needs.",
+              "gate": "\u2691 You'll approve the special-access request"
+            },
+            {
+              "agent": "compliance_docs",
+              "agent_class": "comp",
+              "label": "Compliance & Docs",
+              "text": "Determine necessary documents for a US-based contractor. Monitor completion and issue reminders as the start date approaches.",
+              "gate": null
+            },
+            {
+              "agent": "manager_prep",
+              "agent_class": "mgr",
+              "label": "Manager Prep",
+              "text": "Draft a personalized 30-60-90 day plan. Schedule an introductory meeting with the manager. Suggest an onboarding buddy and prep checklist for the manager.",
+              "gate": "\u2691 You'll review & send it to the manager"
+            },
+            {
+              "agent": "coordinator",
+              "agent_class": "coord",
+              "label": "Assistant",
+              "text": "Render the consolidated onboarding plan for approval. Draft a personalized welcome message. Conduct readiness check 3 days before start date.",
+              "gate": "\u2691 Needs your review before sending"
+            }
+          ]
+        },
+        "gate": null
+      },
+      {
+        "id": "it",
+        "agent": "it_provisioning",
+        "agent_class": "it",
+        "title": "IT Provisioning",
+        "status": "complete",
+        "summary": "MacBook Pro 16-inch (M-series) \u00b7 GitHub Enterprise, Slack (engineering channels), Datadog \u00b7 AWS Console held for approval",
+        "reasoning": [
+          "Provision the default MacBook Pro hardware for Diana; shipping within 2 business days given the US location.",
+          "Create accounts for all relevant software and assign default access levels, omitting disallowed systems for contractors.",
+          "Add Diana to engineering security groups.",
+          "Request approval for read-only AWS Console access as it touches production systems, complying with the seniority and employment type."
+        ],
+        "details": {
+          "hardware": {
+            "item": "MacBook Pro 16-inch (M-series)",
+            "status": "in_progress",
+            "notes": null
+          },
+          "software_access": [
+            {
+              "system": "GitHub Enterprise",
+              "access_level": "developer",
+              "status": "complete"
+            },
+            {
+              "system": "Slack (engineering channels)",
+              "access_level": "member",
+              "status": "complete"
+            },
+            {
+              "system": "Datadog",
+              "access_level": "read",
+              "status": "complete"
+            }
+          ],
+          "security_groups": [
+            {
+              "group": "engineering-all",
+              "status": "complete"
+            },
+            {
+              "group": "production-readonly",
+              "status": "complete"
+            }
+          ],
+          "special_access_requests": [
+            {
+              "system": "AWS Console",
+              "access": "read",
+              "rationale": "Read-only AWS access is standard for senior data scientists, but requires approval since it touches production systems."
+            }
+          ],
+          "warnings": [
+            "PagerDuty (responder) access not provisioned due to contractor restrictions."
+          ]
+        },
+        "gate": null
+      },
+      {
+        "id": "compliance",
+        "agent": "compliance_docs",
+        "agent_class": "comp",
+        "title": "Compliance & Docs",
+        "status": "complete",
+        "summary": "4 documents \u00b7 Form W-9, Contractor MSA, IP Assignment Agreement, NDA",
+        "reasoning": [
+          "Checked role family (engineering), country (US), and employment type (contractor) against known jurisdictions and policy context.",
+          "Called the get_required_documents function which returned a list of required documents specifically for a contractor in the US.",
+          "Ensured all documents have correct deadlines and are marked as 'not_started'.",
+          "Confirmed the jurisdiction was known and no escalation was required."
+        ],
+        "details": {
+          "required_documents": [
+            {
+              "name": "Form W-9",
+              "deadline": "Jul 12, 2026",
+              "status": "not_started",
+              "rationale": "Taxpayer identification for 1099 reporting."
+            },
+            {
+              "name": "Contractor MSA",
+              "deadline": "Jul 5, 2026",
+              "status": "not_started",
+              "rationale": "Master services agreement defines scope and terms."
+            },
+            {
+              "name": "IP Assignment Agreement",
+              "deadline": "Jul 5, 2026",
+              "status": "not_started",
+              "rationale": "Contractors must explicitly assign IP \u2014 no default work-for-hire status."
+            },
+            {
+              "name": "NDA",
+              "deadline": "Jul 5, 2026",
+              "status": "not_started",
+              "rationale": "Confidentiality protection."
+            }
+          ],
+          "escalations": []
+        },
+        "gate": null
+      },
+      {
+        "id": "manager_prep",
+        "agent": "manager_prep",
+        "agent_class": "mgr",
+        "title": "Manager Prep",
+        "status": "complete",
+        "summary": "Ready to send to Alex Morgan \u00b7 draft 30-60-90 \u00b7 intro booked (Jul 6, 2026) \u00b7 suggested buddy Ben Silva",
+        "reasoning": [
+          "Checked the manager's calendar and scheduled the earliest available introductory slot.",
+          "Evaluated available onboarding buddies and selected one based on tenure and expertise alignment.",
+          "Drafted a detailed 30-60-90 day onboarding plan tailored to the data science role leveraging the team's tools.",
+          "Sent a preparatory checklist to the hiring manager."
+        ],
+        "details": {
+          "manager_name": "Alex Morgan",
+          "actions": [
+            {
+              "label": "Schedule intro meeting with the manager",
+              "status": "done",
+              "detail": "Jul 6, 2026 \u00b7 30 min"
+            },
+            {
+              "label": "Identify an onboarding buddy",
+              "status": "done",
+              "detail": "Ben Silva \u00b7 1.8 yrs (a suggestion)"
+            },
+            {
+              "label": "Generate the 30-60-90 onboarding plan",
+              "status": "done",
+              "detail": "Draft for the manager to own & customize"
+            }
+          ],
+          "note": {
+            "subject_line": "Onboarding Details for Diana Okafor",
+            "body": "Hi Alex,\n\nI'm pleased to share the onboarding package for Diana Okafor, who will join us as a Senior Data Scientist on the ml_platform team. Diana starts in 21 days on 2026-07-05.\n\nWe've scheduled the intro meeting for 2026-07-06 at 10:00 AM for 30 minutes.\n\nI'd suggest Ben Silva as Diana\u2019s onboarding buddy. Ben has expertise in model serving and feature stores, closely aligning with Diana\u2019s role, and his experience and availability make him a strong fit for providing support.\n\nAttached is a draft of the 30-60-90 day plan. It's a starting point for you to review and personalize to fit how you\u2019d like to approach Diana\u2019s onboarding.\n\nFinally, please review the manager prep checklist below for comprehensive guidance.\n\nBest,  \nThe Onboarding Team"
+          },
+          "thirty_sixty_ninety": {
+            "thirty_days": [
+              "Learn the architecture of the ML platform by reviewing documentation and shadowing team members.",
+              "Integrate into engineering workflows by completing a GitHub pull request on a minor bug fix or documentation update.",
+              "Meet with key team members and related teams to understand their data needs and current projects (5 meetings)."
+            ],
+            "sixty_days": [
+              "Build a machine learning model for a small feature by collaborating with engineering using Datadog for monitoring and feedback loops.",
+              "Lead a retrospective session about an ongoing project to gain insights into team processes.",
+              "Solidify relationships with cross-functional teams by participating in at least 3 interdisciplinary meetings."
+            ],
+            "ninety_days": [
+              "Deliver a comprehensive analysis report on the feature performance of a newly shipped model.\nPresent findings to the team and stakeholders.",
+              "Propose a project to improve the efficiency of data pipelines leveraging AWS and orchestrating work across data and engineering teams.",
+              "Establish a thought-leadership role within the team by authoring a blog post on a technical topic of interest."
+            ]
+          },
+          "manager_checklist": [
+            "Review Diana Okafor\u2019s resume and skills profile.",
+            "Prepare the team introduction email.",
+            "Ensure all systems access, including AWS, will be ready for July 5.",
+            "Plan first 1:1 to discuss initial projects and expectations.",
+            "Review current data science projects for potential involvement."
+          ]
+        },
+        "gate": null
+      },
+      {
+        "id": "welcome",
+        "agent": "coordinator",
+        "agent_class": "coord",
+        "title": "Welcome message",
+        "status": "complete",
+        "summary": "Personalized note ready. Scheduled to send Jun 21, 2026 (2 weeks before start).",
+        "reasoning": [
+          "Start with a welcoming address using Diana's first name.",
+          "Mention her role as a Senior Data Scientist and her team, ML Platform.",
+          "Introduce onboarding buddy Ben Silva.",
+          "List specific first-day logistics: MacBook setup, access to tools, and a meeting with her manager.",
+          "Conclude with a warm, friendly sign-off."
+        ],
+        "details": {
+          "subject_line": "Welcome to the ML Platform Team, Diana!",
+          "body": "Hi Diana,\n\nWelcome to the ML Platform team! We're thrilled to have you join us as a Senior Data Scientist. On your first day, you'll find your MacBook Pro all set up and ready for you, and you'll have access to all the essential tools like GitHub Enterprise, Slack (especially our engineering channels), and Datadog.\n\nYou're in great hands with your onboarding buddy, Ben Silva, who will be reaching out to help you settle in. Plus, you'll have an introductory meeting with your manager on July 6th at 10:00 AM.\n\nWe're really looking forward to seeing you shine in your role here. If you have any questions or need anything before you start, feel free to reach out!\n\nWarm regards,\nThe ML Platform Team",
+          "send_strategy": "schedule",
+          "scheduled_send_date": "Jun 21, 2026"
+        },
+        "gate": null
+      },
+      {
+        "id": "readiness",
+        "agent": "coordinator",
+        "agent_class": "coord",
+        "title": "Readiness check",
+        "status": "scheduled",
+        "summary": "Runs 3 days before start. Surfaces anything still outstanding \u2014 the 'no laptop on day one' safety net.",
+        "reasoning": [],
+        "details": {},
+        "gate": null
+      }
+    ],
+    "pending_gate": null,
+    "events": [
+      "Received profile h_003.",
+      "Validated Diana Okafor (Senior Data Scientist).",
+      "Built consolidated plan. engineering/contractor in US: IT + Compliance run in parallel, Manager Prep follows IT.",
+      "Rendered plan summary for approval.",
+      "IT Provisioning complete: MacBook Pro 16-inch (M-series).",
+      "Compliance complete: 4 document(s).",
+      "Special-access gate surfaced for: AWS Console.",
+      "Manager Prep complete: draft 30-60-90 + cover note ready to send to Alex Morgan.",
+      "Welcome message ready (schedule).",
+      "Scheduled readiness check for 3 days before start date.",
+      "Onboarding plan fully assembled. All gates resolved."
+    ]
+  }
+}

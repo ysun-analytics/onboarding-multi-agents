@@ -1,0 +1,1783 @@
+{
+  "hire_id": "h_004",
+  "steps": [
+    {
+      "state": "received",
+      "ok": true,
+      "hire": {
+        "name": "Rachel Steinberg",
+        "role_title": "VP Engineering",
+        "team": "Engineering Leadership",
+        "location": "San Francisco, US",
+        "employment": "Full-time",
+        "manager": "Michael Park",
+        "start_date": "Jun 28, 2026"
+      },
+      "orchestrator": {
+        "name": "Onboarding Assistant",
+        "agent_class": "coord",
+        "status": "Coordinating Rachel's onboarding \u00b7 1 approval waiting for you.",
+        "waiting": true
+      },
+      "stages": [
+        {
+          "id": "plan",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Consolidated plan",
+          "status": "awaiting_approval",
+          "summary": "One plan covering all four agents \u2014 approve in a single click, not four.",
+          "reasoning": [
+            "Executive role \u2192 personalized and detailed welcome process",
+            "US-based FTE \u2192 specific compliance documents required for US employment",
+            "Engineering leadership \u2192 elevated access provision with manager approval needed",
+            "High-priority onboarding \u2192 IT and Compliance run concurrently, Manager Prep follows"
+          ],
+          "details": {
+            "sections": [
+              {
+                "agent": "it_provisioning",
+                "agent_class": "it",
+                "label": "IT Provisioning",
+                "text": "Provision hardware: MacBook Pro 16-inch (M-series) Create accounts for 3 role-standard systems Assign role security groups and flag for elevated access approval",
+                "gate": "\u2691 You'll approve the special-access request"
+              },
+              {
+                "agent": "compliance_docs",
+                "agent_class": "comp",
+                "label": "Compliance & Docs",
+                "text": "Determine required documents for US / FTE Track completion and send reminders as start date approaches",
+                "gate": null
+              },
+              {
+                "agent": "manager_prep",
+                "agent_class": "mgr",
+                "label": "Manager Prep",
+                "text": "Draft a role-tailored 30-60-90 day plan Schedule a manager introduction meeting Send the manager a prep checklist",
+                "gate": "\u2691 You'll review & send it to the manager"
+              },
+              {
+                "agent": "coordinator",
+                "agent_class": "coord",
+                "label": "Assistant",
+                "text": "Render this consolidated plan for approval Draft a personalized welcome message Run a readiness check 3 days before start date",
+                "gate": "\u2691 Needs your review before sending"
+              }
+            ]
+          },
+          "gate": {
+            "gate_type": "plan_approval",
+            "agent": "coordinator",
+            "summary": "Approve the onboarding plan for Rachel Steinberg.",
+            "proposed_decision": "Proceed with the consolidated plan as shown.",
+            "rationale": "executive/fte in US: IT + Compliance run in parallel, Manager Prep follows IT.",
+            "alternatives": [],
+            "shape": "decision",
+            "actions": [
+              "approve",
+              "edit",
+              "request_changes"
+            ],
+            "payload": {
+              "plan": {
+                "hire_id": "h_004",
+                "profile": {
+                  "hire_id": "h_004",
+                  "full_name": "Rachel Steinberg",
+                  "role_title": "VP Engineering",
+                  "role_family": "executive",
+                  "team": "engineering_leadership",
+                  "manager_id": "u_michael_park",
+                  "location": {
+                    "country": "US",
+                    "city": "San Francisco"
+                  },
+                  "employment_type": "fte",
+                  "start_date": "2026-06-28",
+                  "seniority": "exec"
+                },
+                "work": [
+                  {
+                    "agent": "coordinator",
+                    "will_run": true,
+                    "run_wave": 0,
+                    "anticipated_actions": [
+                      "Render this consolidated plan for approval",
+                      "Draft a personalized welcome message",
+                      "Run a readiness check 3 days before start date"
+                    ],
+                    "anticipated_gates": [
+                      "plan_approval",
+                      "welcome_message_review",
+                      "readiness_at_risk"
+                    ]
+                  },
+                  {
+                    "agent": "it_provisioning",
+                    "will_run": true,
+                    "run_wave": 1,
+                    "anticipated_actions": [
+                      "Provision hardware: MacBook Pro 16-inch (M-series)",
+                      "Create accounts for 3 role-standard system(s)",
+                      "Assign role security groups",
+                      "Flag elevated/sensitive access for manager approval"
+                    ],
+                    "anticipated_gates": [
+                      "special_access"
+                    ]
+                  },
+                  {
+                    "agent": "compliance_docs",
+                    "will_run": true,
+                    "run_wave": 1,
+                    "anticipated_actions": [
+                      "Determine required documents for US / fte",
+                      "Track completion and send reminders as start date approaches"
+                    ],
+                    "anticipated_gates": []
+                  },
+                  {
+                    "agent": "manager_prep",
+                    "will_run": true,
+                    "run_wave": 2,
+                    "anticipated_actions": [
+                      "Draft a role-tailored 30-60-90 day plan",
+                      "Schedule a manager intro meeting",
+                      "Recommend an onboarding buddy",
+                      "Send the manager a prep checklist"
+                    ],
+                    "anticipated_gates": [
+                      "30_60_90_signoff"
+                    ]
+                  }
+                ],
+                "note": "executive/fte in US: IT + Compliance run in parallel, Manager Prep follows IT."
+              },
+              "plan_summary": {
+                "reasoning": {
+                  "summary": "Rachel Steinberg is joining as a VP Engineering, an executive position, in the US, and will require expedited onboarding with precise coordination due to her senior role.",
+                  "steps": [
+                    "Executive role \u2192 personalized and detailed welcome process",
+                    "US-based FTE \u2192 specific compliance documents required for US employment",
+                    "Engineering leadership \u2192 elevated access provision with manager approval needed",
+                    "High-priority onboarding \u2192 IT and Compliance run concurrently, Manager Prep follows"
+                  ]
+                },
+                "it_provisioning": {
+                  "actions": [
+                    "Provision hardware: MacBook Pro 16-inch (M-series)",
+                    "Create accounts for 3 role-standard systems",
+                    "Assign role security groups and flag for elevated access approval"
+                  ],
+                  "gates": [
+                    "special_access"
+                  ]
+                },
+                "manager_prep": {
+                  "actions": [
+                    "Draft a role-tailored 30-60-90 day plan",
+                    "Schedule a manager introduction meeting",
+                    "Send the manager a prep checklist"
+                  ],
+                  "gates": [
+                    "30_60_90_signoff"
+                  ]
+                },
+                "compliance_docs": {
+                  "actions": [
+                    "Determine required documents for US / FTE",
+                    "Track completion and send reminders as start date approaches"
+                  ],
+                  "gates": []
+                },
+                "coordinator": {
+                  "actions": [
+                    "Render this consolidated plan for approval",
+                    "Draft a personalized welcome message",
+                    "Run a readiness check 3 days before start date"
+                  ],
+                  "gates": [
+                    "plan_approval",
+                    "welcome_message_review",
+                    "readiness_at_risk"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "it",
+          "agent": "it_provisioning",
+          "agent_class": "it",
+          "title": "IT Provisioning",
+          "status": "pending",
+          "summary": "Waiting on plan approval\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "compliance",
+          "agent": "compliance_docs",
+          "agent_class": "comp",
+          "title": "Compliance & Docs",
+          "status": "pending",
+          "summary": "Waiting on plan approval\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "manager_prep",
+          "agent": "manager_prep",
+          "agent_class": "mgr",
+          "title": "Manager Prep",
+          "status": "pending",
+          "summary": "Waiting on IT's provisioning summary\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "welcome",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Welcome message",
+          "status": "pending",
+          "summary": "Drafted once the specialists report back\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "readiness",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Readiness check",
+          "status": "pending",
+          "summary": "Runs 3 days before start. Surfaces anything still outstanding \u2014 the 'no laptop on day one' safety net.",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        }
+      ],
+      "pending_gate": {
+        "gate_type": "plan_approval",
+        "agent": "coordinator",
+        "summary": "Approve the onboarding plan for Rachel Steinberg.",
+        "proposed_decision": "Proceed with the consolidated plan as shown.",
+        "rationale": "executive/fte in US: IT + Compliance run in parallel, Manager Prep follows IT.",
+        "alternatives": [],
+        "shape": "decision",
+        "actions": [
+          "approve",
+          "edit",
+          "request_changes"
+        ],
+        "payload": {
+          "plan": {
+            "hire_id": "h_004",
+            "profile": {
+              "hire_id": "h_004",
+              "full_name": "Rachel Steinberg",
+              "role_title": "VP Engineering",
+              "role_family": "executive",
+              "team": "engineering_leadership",
+              "manager_id": "u_michael_park",
+              "location": {
+                "country": "US",
+                "city": "San Francisco"
+              },
+              "employment_type": "fte",
+              "start_date": "2026-06-28",
+              "seniority": "exec"
+            },
+            "work": [
+              {
+                "agent": "coordinator",
+                "will_run": true,
+                "run_wave": 0,
+                "anticipated_actions": [
+                  "Render this consolidated plan for approval",
+                  "Draft a personalized welcome message",
+                  "Run a readiness check 3 days before start date"
+                ],
+                "anticipated_gates": [
+                  "plan_approval",
+                  "welcome_message_review",
+                  "readiness_at_risk"
+                ]
+              },
+              {
+                "agent": "it_provisioning",
+                "will_run": true,
+                "run_wave": 1,
+                "anticipated_actions": [
+                  "Provision hardware: MacBook Pro 16-inch (M-series)",
+                  "Create accounts for 3 role-standard system(s)",
+                  "Assign role security groups",
+                  "Flag elevated/sensitive access for manager approval"
+                ],
+                "anticipated_gates": [
+                  "special_access"
+                ]
+              },
+              {
+                "agent": "compliance_docs",
+                "will_run": true,
+                "run_wave": 1,
+                "anticipated_actions": [
+                  "Determine required documents for US / fte",
+                  "Track completion and send reminders as start date approaches"
+                ],
+                "anticipated_gates": []
+              },
+              {
+                "agent": "manager_prep",
+                "will_run": true,
+                "run_wave": 2,
+                "anticipated_actions": [
+                  "Draft a role-tailored 30-60-90 day plan",
+                  "Schedule a manager intro meeting",
+                  "Recommend an onboarding buddy",
+                  "Send the manager a prep checklist"
+                ],
+                "anticipated_gates": [
+                  "30_60_90_signoff"
+                ]
+              }
+            ],
+            "note": "executive/fte in US: IT + Compliance run in parallel, Manager Prep follows IT."
+          },
+          "plan_summary": {
+            "reasoning": {
+              "summary": "Rachel Steinberg is joining as a VP Engineering, an executive position, in the US, and will require expedited onboarding with precise coordination due to her senior role.",
+              "steps": [
+                "Executive role \u2192 personalized and detailed welcome process",
+                "US-based FTE \u2192 specific compliance documents required for US employment",
+                "Engineering leadership \u2192 elevated access provision with manager approval needed",
+                "High-priority onboarding \u2192 IT and Compliance run concurrently, Manager Prep follows"
+              ]
+            },
+            "it_provisioning": {
+              "actions": [
+                "Provision hardware: MacBook Pro 16-inch (M-series)",
+                "Create accounts for 3 role-standard systems",
+                "Assign role security groups and flag for elevated access approval"
+              ],
+              "gates": [
+                "special_access"
+              ]
+            },
+            "manager_prep": {
+              "actions": [
+                "Draft a role-tailored 30-60-90 day plan",
+                "Schedule a manager introduction meeting",
+                "Send the manager a prep checklist"
+              ],
+              "gates": [
+                "30_60_90_signoff"
+              ]
+            },
+            "compliance_docs": {
+              "actions": [
+                "Determine required documents for US / FTE",
+                "Track completion and send reminders as start date approaches"
+              ],
+              "gates": []
+            },
+            "coordinator": {
+              "actions": [
+                "Render this consolidated plan for approval",
+                "Draft a personalized welcome message",
+                "Run a readiness check 3 days before start date"
+              ],
+              "gates": [
+                "plan_approval",
+                "welcome_message_review",
+                "readiness_at_risk"
+              ]
+            }
+          }
+        }
+      },
+      "events": [
+        "Received profile h_004.",
+        "Validated Rachel Steinberg (VP Engineering).",
+        "Built consolidated plan. executive/fte in US: IT + Compliance run in parallel, Manager Prep follows IT.",
+        "Rendered plan summary for approval."
+      ]
+    },
+    {
+      "state": "provisioning_and_compliance",
+      "ok": true,
+      "hire": {
+        "name": "Rachel Steinberg",
+        "role_title": "VP Engineering",
+        "team": "Engineering Leadership",
+        "location": "San Francisco, US",
+        "employment": "Full-time",
+        "manager": "Michael Park",
+        "start_date": "Jun 28, 2026"
+      },
+      "orchestrator": {
+        "name": "Onboarding Assistant",
+        "agent_class": "coord",
+        "status": "Coordinating Rachel's onboarding \u00b7 1 approval waiting for you.",
+        "waiting": true
+      },
+      "stages": [
+        {
+          "id": "plan",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Consolidated plan",
+          "status": "complete",
+          "summary": "One plan covering all four agents \u2014 approved in a single click, not four.",
+          "reasoning": [
+            "Executive role \u2192 personalized and detailed welcome process",
+            "US-based FTE \u2192 specific compliance documents required for US employment",
+            "Engineering leadership \u2192 elevated access provision with manager approval needed",
+            "High-priority onboarding \u2192 IT and Compliance run concurrently, Manager Prep follows"
+          ],
+          "details": {
+            "sections": [
+              {
+                "agent": "it_provisioning",
+                "agent_class": "it",
+                "label": "IT Provisioning",
+                "text": "Provision hardware: MacBook Pro 16-inch (M-series) Create accounts for 3 role-standard systems Assign role security groups and flag for elevated access approval",
+                "gate": "\u2691 You'll approve the special-access request"
+              },
+              {
+                "agent": "compliance_docs",
+                "agent_class": "comp",
+                "label": "Compliance & Docs",
+                "text": "Determine required documents for US / FTE Track completion and send reminders as start date approaches",
+                "gate": null
+              },
+              {
+                "agent": "manager_prep",
+                "agent_class": "mgr",
+                "label": "Manager Prep",
+                "text": "Draft a role-tailored 30-60-90 day plan Schedule a manager introduction meeting Send the manager a prep checklist",
+                "gate": "\u2691 You'll review & send it to the manager"
+              },
+              {
+                "agent": "coordinator",
+                "agent_class": "coord",
+                "label": "Assistant",
+                "text": "Render this consolidated plan for approval Draft a personalized welcome message Run a readiness check 3 days before start date",
+                "gate": "\u2691 Needs your review before sending"
+              }
+            ]
+          },
+          "gate": null
+        },
+        {
+          "id": "it",
+          "agent": "it_provisioning",
+          "agent_class": "it",
+          "title": "IT Provisioning",
+          "status": "awaiting_approval",
+          "summary": "MacBook Pro 16-inch (M-series) \u00b7  \u00b7 Slack (#leadership), Notion (board-docs space), Carta held for approval",
+          "reasoning": [
+            "Provision a MacBook Pro as per standard hardware for an executive in the engineering leadership role.",
+            "Request special access for Slack (#leadership), Notion (board-docs space), and Carta due to sensitive nature and board-level exposure of the information.",
+            "Assign the new hire to the 'leadership' security group as specified in the catalog."
+          ],
+          "details": {
+            "hardware": {
+              "item": "MacBook Pro 16-inch (M-series)",
+              "status": "in_progress",
+              "notes": "Shipping to the US with an estimated lead time of 2 business days."
+            },
+            "software_access": [],
+            "security_groups": [
+              {
+                "group": "leadership",
+                "status": "complete"
+              }
+            ],
+            "special_access_requests": [
+              {
+                "system": "Slack (#leadership)",
+                "access": "member",
+                "rationale": "This is standard for Rachel's role as an executive; however, it involves board-level material that requires explicit approval."
+              },
+              {
+                "system": "Notion (board-docs space)",
+                "access": "viewer",
+                "rationale": "This access to board documents is standard for Rachel's executive role but requires explicit approval due to the sensitive content."
+              },
+              {
+                "system": "Carta",
+                "access": "admin",
+                "rationale": "Admin access is typical for a VP role; however, it involves handling equity information, which still requires coordinator approval."
+              }
+            ],
+            "warnings": []
+          },
+          "gate": {
+            "gate_type": "special_access",
+            "agent": "it_provisioning",
+            "summary": "Approve Slack (#leadership) access (member).",
+            "proposed_decision": "Grant member on Slack (#leadership).",
+            "rationale": "This is standard for Rachel's role as an executive; however, it involves board-level material that requires explicit approval.",
+            "alternatives": [],
+            "shape": "decision",
+            "actions": [
+              "approve",
+              "edit",
+              "request_changes"
+            ],
+            "payload": {
+              "requests": [
+                {
+                  "system": "Slack (#leadership)",
+                  "requested_access": "member",
+                  "rationale": "This is standard for Rachel's role as an executive; however, it involves board-level material that requires explicit approval.",
+                  "status": "awaiting_approval"
+                },
+                {
+                  "system": "Notion (board-docs space)",
+                  "requested_access": "viewer",
+                  "rationale": "This access to board documents is standard for Rachel's executive role but requires explicit approval due to the sensitive content.",
+                  "status": "awaiting_approval"
+                },
+                {
+                  "system": "Carta",
+                  "requested_access": "admin",
+                  "rationale": "Admin access is typical for a VP role; however, it involves handling equity information, which still requires coordinator approval.",
+                  "status": "awaiting_approval"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "compliance",
+          "agent": "compliance_docs",
+          "agent_class": "comp",
+          "title": "Compliance & Docs",
+          "status": "complete",
+          "summary": "10 documents \u00b7 Form I-9, Form W-4, IP Assignment Agreement, NDA, Direct Deposit Form, Benefits Enrollment",
+          "reasoning": [
+            "Checked known jurisdictions; US is a known jurisdiction for compliance requirements.",
+            "Determined role family as 'executive' which requires additional documents like equity grants and board-level confidentiality.",
+            "Confirmed employment type as full-time, adding standard documents such as I-9, W-4, and benefits enrollment per US law.",
+            "Identified the role involves sensitive data handling, necessitating additional confidentiality agreements."
+          ],
+          "details": {
+            "required_documents": [
+              {
+                "name": "Form I-9",
+                "deadline": "Jul 1, 2026",
+                "status": "not_started",
+                "rationale": "Federal law requires identity and work authorization verification within 3 business days of start."
+              },
+              {
+                "name": "Form W-4",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Federal tax withholding election."
+              },
+              {
+                "name": "IP Assignment Agreement",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Assigns work-product IP to the company."
+              },
+              {
+                "name": "NDA",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Standard confidentiality protection."
+              },
+              {
+                "name": "Direct Deposit Form",
+                "deadline": "Jul 12, 2026",
+                "status": "not_started",
+                "rationale": "Payroll banking setup."
+              },
+              {
+                "name": "Benefits Enrollment",
+                "deadline": "Jul 28, 2026",
+                "status": "not_started",
+                "rationale": "Health insurance and 401(k) elections; 30-day enrollment window."
+              },
+              {
+                "name": "Equity Grant Agreement",
+                "deadline": "Jul 12, 2026",
+                "status": "not_started",
+                "rationale": "Documents stock option or RSU grant; board-approved."
+              },
+              {
+                "name": "Board-Level Confidentiality Agreement",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Extends confidentiality to board-level information."
+              },
+              {
+                "name": "Post-Employment Restrictions",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Non-compete and non-solicit covenants where legally enforceable."
+              },
+              {
+                "name": "Sensitive Data Access Agreement",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Additional controls for roles touching PII, financial, or legal data."
+              }
+            ],
+            "escalations": []
+          },
+          "gate": null
+        },
+        {
+          "id": "manager_prep",
+          "agent": "manager_prep",
+          "agent_class": "mgr",
+          "title": "Manager Prep",
+          "status": "pending",
+          "summary": "Waiting on IT's provisioning summary\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "welcome",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Welcome message",
+          "status": "pending",
+          "summary": "Drafted once the specialists report back\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "readiness",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Readiness check",
+          "status": "pending",
+          "summary": "Runs 3 days before start. Surfaces anything still outstanding \u2014 the 'no laptop on day one' safety net.",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        }
+      ],
+      "pending_gate": {
+        "gate_type": "special_access",
+        "agent": "it_provisioning",
+        "summary": "Approve Slack (#leadership) access (member).",
+        "proposed_decision": "Grant member on Slack (#leadership).",
+        "rationale": "This is standard for Rachel's role as an executive; however, it involves board-level material that requires explicit approval.",
+        "alternatives": [],
+        "shape": "decision",
+        "actions": [
+          "approve",
+          "edit",
+          "request_changes"
+        ],
+        "payload": {
+          "requests": [
+            {
+              "system": "Slack (#leadership)",
+              "requested_access": "member",
+              "rationale": "This is standard for Rachel's role as an executive; however, it involves board-level material that requires explicit approval.",
+              "status": "awaiting_approval"
+            },
+            {
+              "system": "Notion (board-docs space)",
+              "requested_access": "viewer",
+              "rationale": "This access to board documents is standard for Rachel's executive role but requires explicit approval due to the sensitive content.",
+              "status": "awaiting_approval"
+            },
+            {
+              "system": "Carta",
+              "requested_access": "admin",
+              "rationale": "Admin access is typical for a VP role; however, it involves handling equity information, which still requires coordinator approval.",
+              "status": "awaiting_approval"
+            }
+          ]
+        }
+      },
+      "events": [
+        "Received profile h_004.",
+        "Validated Rachel Steinberg (VP Engineering).",
+        "Built consolidated plan. executive/fte in US: IT + Compliance run in parallel, Manager Prep follows IT.",
+        "Rendered plan summary for approval.",
+        "IT Provisioning complete: MacBook Pro 16-inch (M-series).",
+        "Compliance complete: 10 document(s)."
+      ]
+    },
+    {
+      "state": "manager_prep",
+      "ok": true,
+      "hire": {
+        "name": "Rachel Steinberg",
+        "role_title": "VP Engineering",
+        "team": "Engineering Leadership",
+        "location": "San Francisco, US",
+        "employment": "Full-time",
+        "manager": "Michael Park",
+        "start_date": "Jun 28, 2026"
+      },
+      "orchestrator": {
+        "name": "Onboarding Assistant",
+        "agent_class": "coord",
+        "status": "Coordinating Rachel's onboarding \u00b7 1 approval waiting for you.",
+        "waiting": true
+      },
+      "stages": [
+        {
+          "id": "plan",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Consolidated plan",
+          "status": "complete",
+          "summary": "One plan covering all four agents \u2014 approved in a single click, not four.",
+          "reasoning": [
+            "Executive role \u2192 personalized and detailed welcome process",
+            "US-based FTE \u2192 specific compliance documents required for US employment",
+            "Engineering leadership \u2192 elevated access provision with manager approval needed",
+            "High-priority onboarding \u2192 IT and Compliance run concurrently, Manager Prep follows"
+          ],
+          "details": {
+            "sections": [
+              {
+                "agent": "it_provisioning",
+                "agent_class": "it",
+                "label": "IT Provisioning",
+                "text": "Provision hardware: MacBook Pro 16-inch (M-series) Create accounts for 3 role-standard systems Assign role security groups and flag for elevated access approval",
+                "gate": "\u2691 You'll approve the special-access request"
+              },
+              {
+                "agent": "compliance_docs",
+                "agent_class": "comp",
+                "label": "Compliance & Docs",
+                "text": "Determine required documents for US / FTE Track completion and send reminders as start date approaches",
+                "gate": null
+              },
+              {
+                "agent": "manager_prep",
+                "agent_class": "mgr",
+                "label": "Manager Prep",
+                "text": "Draft a role-tailored 30-60-90 day plan Schedule a manager introduction meeting Send the manager a prep checklist",
+                "gate": "\u2691 You'll review & send it to the manager"
+              },
+              {
+                "agent": "coordinator",
+                "agent_class": "coord",
+                "label": "Assistant",
+                "text": "Render this consolidated plan for approval Draft a personalized welcome message Run a readiness check 3 days before start date",
+                "gate": "\u2691 Needs your review before sending"
+              }
+            ]
+          },
+          "gate": null
+        },
+        {
+          "id": "it",
+          "agent": "it_provisioning",
+          "agent_class": "it",
+          "title": "IT Provisioning",
+          "status": "complete",
+          "summary": "MacBook Pro 16-inch (M-series) \u00b7  \u00b7 Slack (#leadership), Notion (board-docs space), Carta held for approval",
+          "reasoning": [
+            "Provision a MacBook Pro as per standard hardware for an executive in the engineering leadership role.",
+            "Request special access for Slack (#leadership), Notion (board-docs space), and Carta due to sensitive nature and board-level exposure of the information.",
+            "Assign the new hire to the 'leadership' security group as specified in the catalog."
+          ],
+          "details": {
+            "hardware": {
+              "item": "MacBook Pro 16-inch (M-series)",
+              "status": "in_progress",
+              "notes": "Shipping to the US with an estimated lead time of 2 business days."
+            },
+            "software_access": [],
+            "security_groups": [
+              {
+                "group": "leadership",
+                "status": "complete"
+              }
+            ],
+            "special_access_requests": [
+              {
+                "system": "Slack (#leadership)",
+                "access": "member",
+                "rationale": "This is standard for Rachel's role as an executive; however, it involves board-level material that requires explicit approval."
+              },
+              {
+                "system": "Notion (board-docs space)",
+                "access": "viewer",
+                "rationale": "This access to board documents is standard for Rachel's executive role but requires explicit approval due to the sensitive content."
+              },
+              {
+                "system": "Carta",
+                "access": "admin",
+                "rationale": "Admin access is typical for a VP role; however, it involves handling equity information, which still requires coordinator approval."
+              }
+            ],
+            "warnings": []
+          },
+          "gate": null
+        },
+        {
+          "id": "compliance",
+          "agent": "compliance_docs",
+          "agent_class": "comp",
+          "title": "Compliance & Docs",
+          "status": "complete",
+          "summary": "10 documents \u00b7 Form I-9, Form W-4, IP Assignment Agreement, NDA, Direct Deposit Form, Benefits Enrollment",
+          "reasoning": [
+            "Checked known jurisdictions; US is a known jurisdiction for compliance requirements.",
+            "Determined role family as 'executive' which requires additional documents like equity grants and board-level confidentiality.",
+            "Confirmed employment type as full-time, adding standard documents such as I-9, W-4, and benefits enrollment per US law.",
+            "Identified the role involves sensitive data handling, necessitating additional confidentiality agreements."
+          ],
+          "details": {
+            "required_documents": [
+              {
+                "name": "Form I-9",
+                "deadline": "Jul 1, 2026",
+                "status": "not_started",
+                "rationale": "Federal law requires identity and work authorization verification within 3 business days of start."
+              },
+              {
+                "name": "Form W-4",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Federal tax withholding election."
+              },
+              {
+                "name": "IP Assignment Agreement",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Assigns work-product IP to the company."
+              },
+              {
+                "name": "NDA",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Standard confidentiality protection."
+              },
+              {
+                "name": "Direct Deposit Form",
+                "deadline": "Jul 12, 2026",
+                "status": "not_started",
+                "rationale": "Payroll banking setup."
+              },
+              {
+                "name": "Benefits Enrollment",
+                "deadline": "Jul 28, 2026",
+                "status": "not_started",
+                "rationale": "Health insurance and 401(k) elections; 30-day enrollment window."
+              },
+              {
+                "name": "Equity Grant Agreement",
+                "deadline": "Jul 12, 2026",
+                "status": "not_started",
+                "rationale": "Documents stock option or RSU grant; board-approved."
+              },
+              {
+                "name": "Board-Level Confidentiality Agreement",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Extends confidentiality to board-level information."
+              },
+              {
+                "name": "Post-Employment Restrictions",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Non-compete and non-solicit covenants where legally enforceable."
+              },
+              {
+                "name": "Sensitive Data Access Agreement",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Additional controls for roles touching PII, financial, or legal data."
+              }
+            ],
+            "escalations": []
+          },
+          "gate": null
+        },
+        {
+          "id": "manager_prep",
+          "agent": "manager_prep",
+          "agent_class": "mgr",
+          "title": "Manager Prep",
+          "status": "awaiting_approval",
+          "summary": "Ready to send to Michael Park \u00b7 draft 30-60-90 \u00b7 intro booked (Jun 29, 2026) \u00b7 suggested buddy Helena Friedman",
+          "reasoning": [
+            "Checked Michael Park's calendar for available times to schedule an intro meeting.",
+            "Scheduled the intro meeting in the earliest available slot on 2026-06-29 at 8:30 AM.",
+            "Selected an onboarding buddy, Helena Friedman, based on her relevant experience and tenure.",
+            "Prepared and sent a checklist to Michael Park with crucial tasks to complete before Rachel's arrival.",
+            "Drafted a 30-60-90 day plan for Rachel Steinberg's integration."
+          ],
+          "details": {
+            "manager_name": "Michael Park",
+            "actions": [
+              {
+                "label": "Schedule intro meeting with the manager",
+                "status": "done",
+                "detail": "Jun 29, 2026 \u00b7 30 min"
+              },
+              {
+                "label": "Identify an onboarding buddy",
+                "status": "done",
+                "detail": "Helena Friedman \u00b7 3.4 yrs (a suggestion)"
+              },
+              {
+                "label": "Generate the 30-60-90 onboarding plan",
+                "status": "done",
+                "detail": "Draft for the manager to own & customize"
+              }
+            ],
+            "note": {
+              "subject_line": "Onboarding Details for Rachel Steinberg",
+              "body": "Hi Michael,\n\nWe're excited to welcome Rachel Steinberg to the team as the new VP Engineering, starting in 14 days on 2026-06-28.\n\nThe intro meeting has been scheduled for 2026-06-29 at 8:30 AM. This will be a great opportunity for you both to connect.\n\nFor the onboarding buddy, I'd suggest Helena Friedman. With her 3.4 years at the company and alignment in product strategy, she'll be beneficial for Rachel's transition.\n\nAttached below is a draft of Rachel's 30-60-90 day plan. Please review and adjust it to fit your onboarding approach\u2014it\u2019s a starting point for your customization.\n\nAdditionally, you\u2019ll find a manager prep checklist to ensure everything is ready for her first day.\n\nBest regards,\n\nThe Onboarding team"
+            },
+            "thirty_sixty_ninety": {
+              "thirty_days": [
+                "Meet with key stakeholders across engineering, product, and leadership teams.",
+                "Review the current strategic initiatives and engineering projects in Notion and Slack.",
+                "Participate in board meetings or review board-docs to understand the current company outlook.",
+                "Conduct 1:1 meetings with direct reports to understand team dynamics."
+              ],
+              "sixty_days": [
+                "Develop an actionable plan to address any gaps or opportunities noted in the first 30 days.",
+                "Initiate a small cross-functional project to drive collaboration within the team.",
+                "Report on progress and initial learnings in a leadership team meeting."
+              ],
+              "ninety_days": [
+                "Present a strategic vision for the engineering department to the executive team.",
+                "Deliver a key initiative that aligns with company goals.",
+                "Establish a benchmark for future engineering projects and performance."
+              ]
+            },
+            "manager_checklist": [
+              "Review Rachel's resume and cover letter for context on past achievements.",
+              "Prepare an introductory email to the team, announcing Rachel's role and start date.",
+              "Schedule a 1:1 meeting during Rachel's first week to discuss her onboarding experience and expectations.",
+              "Ensure all IT equipment and system accesses are ready for her first day.",
+              "Familiarize yourself with Rachel\u2019s onboarding buddy to align on key onboarding priorities.",
+              "Prepare a list of key stakeholders for Rachel to meet in her first month."
+            ]
+          },
+          "gate": {
+            "gate_type": "30_60_90_signoff",
+            "agent": "manager_prep",
+            "summary": "Review and send the onboarding package to Michael Park.",
+            "proposed_decision": "Send the cover note + draft 30-60-90 to Michael Park.",
+            "rationale": "The 30-60-90 is a starting draft for the manager to own and customize. Review the package, then send it to them.",
+            "alternatives": [],
+            "shape": "decision",
+            "actions": [
+              "approve",
+              "edit",
+              "request_changes"
+            ],
+            "payload": {
+              "plan": {
+                "thirty_days": [
+                  "Meet with key stakeholders across engineering, product, and leadership teams.",
+                  "Review the current strategic initiatives and engineering projects in Notion and Slack.",
+                  "Participate in board meetings or review board-docs to understand the current company outlook.",
+                  "Conduct 1:1 meetings with direct reports to understand team dynamics."
+                ],
+                "sixty_days": [
+                  "Develop an actionable plan to address any gaps or opportunities noted in the first 30 days.",
+                  "Initiate a small cross-functional project to drive collaboration within the team.",
+                  "Report on progress and initial learnings in a leadership team meeting."
+                ],
+                "ninety_days": [
+                  "Present a strategic vision for the engineering department to the executive team.",
+                  "Deliver a key initiative that aligns with company goals.",
+                  "Establish a benchmark for future engineering projects and performance."
+                ],
+                "status": "draft_awaiting_signoff"
+              },
+              "note": {
+                "reasoning": {
+                  "summary": "The note provides Michael with all the essential onboarding details for Rachel Steinberg, the new VP Engineering. It confirms the scheduled intro meeting and recommends Helena Friedman as the onboarding buddy, explaining why she's a good choice. The note also stresses that the 30-60-90 day plan is a draft for Michael to customize, ensuring he has ownership over Rachel's onboarding. Finally, it directs him to the manager prep checklist included in the dashboard.",
+                  "steps": [
+                    "Opened with a greeting to Michael Park and introduced new hire Rachel Steinberg, highlighting her start date.",
+                    "Mentioned the already scheduled intro meeting for efficient scheduling clarity.",
+                    "Recommended Helena Friedman as the onboarding buddy, providing rationale for her selection.",
+                    "Clarified that the 30-60-90 plan is a draft for Michael's review and adjustments.",
+                    "Directed attention to the manager prep checklist included below the note."
+                  ]
+                },
+                "subject_line": "Onboarding Details for Rachel Steinberg",
+                "body": "Hi Michael,\n\nWe're excited to welcome Rachel Steinberg to the team as the new VP Engineering, starting in 14 days on 2026-06-28.\n\nThe intro meeting has been scheduled for 2026-06-29 at 8:30 AM. This will be a great opportunity for you both to connect.\n\nFor the onboarding buddy, I'd suggest Helena Friedman. With her 3.4 years at the company and alignment in product strategy, she'll be beneficial for Rachel's transition.\n\nAttached below is a draft of Rachel's 30-60-90 day plan. Please review and adjust it to fit your onboarding approach\u2014it\u2019s a starting point for your customization.\n\nAdditionally, you\u2019ll find a manager prep checklist to ensure everything is ready for her first day.\n\nBest regards,\n\nThe Onboarding team"
+              },
+              "manager_name": "Michael Park"
+            }
+          }
+        },
+        {
+          "id": "welcome",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Welcome message",
+          "status": "pending",
+          "summary": "Drafted once the specialists report back\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "readiness",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Readiness check",
+          "status": "pending",
+          "summary": "Runs 3 days before start. Surfaces anything still outstanding \u2014 the 'no laptop on day one' safety net.",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        }
+      ],
+      "pending_gate": {
+        "gate_type": "30_60_90_signoff",
+        "agent": "manager_prep",
+        "summary": "Review and send the onboarding package to Michael Park.",
+        "proposed_decision": "Send the cover note + draft 30-60-90 to Michael Park.",
+        "rationale": "The 30-60-90 is a starting draft for the manager to own and customize. Review the package, then send it to them.",
+        "alternatives": [],
+        "shape": "decision",
+        "actions": [
+          "approve",
+          "edit",
+          "request_changes"
+        ],
+        "payload": {
+          "plan": {
+            "thirty_days": [
+              "Meet with key stakeholders across engineering, product, and leadership teams.",
+              "Review the current strategic initiatives and engineering projects in Notion and Slack.",
+              "Participate in board meetings or review board-docs to understand the current company outlook.",
+              "Conduct 1:1 meetings with direct reports to understand team dynamics."
+            ],
+            "sixty_days": [
+              "Develop an actionable plan to address any gaps or opportunities noted in the first 30 days.",
+              "Initiate a small cross-functional project to drive collaboration within the team.",
+              "Report on progress and initial learnings in a leadership team meeting."
+            ],
+            "ninety_days": [
+              "Present a strategic vision for the engineering department to the executive team.",
+              "Deliver a key initiative that aligns with company goals.",
+              "Establish a benchmark for future engineering projects and performance."
+            ],
+            "status": "draft_awaiting_signoff"
+          },
+          "note": {
+            "reasoning": {
+              "summary": "The note provides Michael with all the essential onboarding details for Rachel Steinberg, the new VP Engineering. It confirms the scheduled intro meeting and recommends Helena Friedman as the onboarding buddy, explaining why she's a good choice. The note also stresses that the 30-60-90 day plan is a draft for Michael to customize, ensuring he has ownership over Rachel's onboarding. Finally, it directs him to the manager prep checklist included in the dashboard.",
+              "steps": [
+                "Opened with a greeting to Michael Park and introduced new hire Rachel Steinberg, highlighting her start date.",
+                "Mentioned the already scheduled intro meeting for efficient scheduling clarity.",
+                "Recommended Helena Friedman as the onboarding buddy, providing rationale for her selection.",
+                "Clarified that the 30-60-90 plan is a draft for Michael's review and adjustments.",
+                "Directed attention to the manager prep checklist included below the note."
+              ]
+            },
+            "subject_line": "Onboarding Details for Rachel Steinberg",
+            "body": "Hi Michael,\n\nWe're excited to welcome Rachel Steinberg to the team as the new VP Engineering, starting in 14 days on 2026-06-28.\n\nThe intro meeting has been scheduled for 2026-06-29 at 8:30 AM. This will be a great opportunity for you both to connect.\n\nFor the onboarding buddy, I'd suggest Helena Friedman. With her 3.4 years at the company and alignment in product strategy, she'll be beneficial for Rachel's transition.\n\nAttached below is a draft of Rachel's 30-60-90 day plan. Please review and adjust it to fit your onboarding approach\u2014it\u2019s a starting point for your customization.\n\nAdditionally, you\u2019ll find a manager prep checklist to ensure everything is ready for her first day.\n\nBest regards,\n\nThe Onboarding team"
+          },
+          "manager_name": "Michael Park"
+        }
+      },
+      "events": [
+        "Received profile h_004.",
+        "Validated Rachel Steinberg (VP Engineering).",
+        "Built consolidated plan. executive/fte in US: IT + Compliance run in parallel, Manager Prep follows IT.",
+        "Rendered plan summary for approval.",
+        "IT Provisioning complete: MacBook Pro 16-inch (M-series).",
+        "Compliance complete: 10 document(s).",
+        "Special-access gate surfaced for: Slack (#leadership), Notion (board-docs space), Carta.",
+        "Manager Prep complete: draft 30-60-90 + cover note ready to send to Michael Park."
+      ]
+    },
+    {
+      "state": "drafting_welcome",
+      "ok": true,
+      "hire": {
+        "name": "Rachel Steinberg",
+        "role_title": "VP Engineering",
+        "team": "Engineering Leadership",
+        "location": "San Francisco, US",
+        "employment": "Full-time",
+        "manager": "Michael Park",
+        "start_date": "Jun 28, 2026"
+      },
+      "orchestrator": {
+        "name": "Onboarding Assistant",
+        "agent_class": "coord",
+        "status": "Coordinating Rachel's onboarding \u00b7 1 approval waiting for you.",
+        "waiting": true
+      },
+      "stages": [
+        {
+          "id": "plan",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Consolidated plan",
+          "status": "complete",
+          "summary": "One plan covering all four agents \u2014 approved in a single click, not four.",
+          "reasoning": [
+            "Executive role \u2192 personalized and detailed welcome process",
+            "US-based FTE \u2192 specific compliance documents required for US employment",
+            "Engineering leadership \u2192 elevated access provision with manager approval needed",
+            "High-priority onboarding \u2192 IT and Compliance run concurrently, Manager Prep follows"
+          ],
+          "details": {
+            "sections": [
+              {
+                "agent": "it_provisioning",
+                "agent_class": "it",
+                "label": "IT Provisioning",
+                "text": "Provision hardware: MacBook Pro 16-inch (M-series) Create accounts for 3 role-standard systems Assign role security groups and flag for elevated access approval",
+                "gate": "\u2691 You'll approve the special-access request"
+              },
+              {
+                "agent": "compliance_docs",
+                "agent_class": "comp",
+                "label": "Compliance & Docs",
+                "text": "Determine required documents for US / FTE Track completion and send reminders as start date approaches",
+                "gate": null
+              },
+              {
+                "agent": "manager_prep",
+                "agent_class": "mgr",
+                "label": "Manager Prep",
+                "text": "Draft a role-tailored 30-60-90 day plan Schedule a manager introduction meeting Send the manager a prep checklist",
+                "gate": "\u2691 You'll review & send it to the manager"
+              },
+              {
+                "agent": "coordinator",
+                "agent_class": "coord",
+                "label": "Assistant",
+                "text": "Render this consolidated plan for approval Draft a personalized welcome message Run a readiness check 3 days before start date",
+                "gate": "\u2691 Needs your review before sending"
+              }
+            ]
+          },
+          "gate": null
+        },
+        {
+          "id": "it",
+          "agent": "it_provisioning",
+          "agent_class": "it",
+          "title": "IT Provisioning",
+          "status": "complete",
+          "summary": "MacBook Pro 16-inch (M-series) \u00b7  \u00b7 Slack (#leadership), Notion (board-docs space), Carta held for approval",
+          "reasoning": [
+            "Provision a MacBook Pro as per standard hardware for an executive in the engineering leadership role.",
+            "Request special access for Slack (#leadership), Notion (board-docs space), and Carta due to sensitive nature and board-level exposure of the information.",
+            "Assign the new hire to the 'leadership' security group as specified in the catalog."
+          ],
+          "details": {
+            "hardware": {
+              "item": "MacBook Pro 16-inch (M-series)",
+              "status": "in_progress",
+              "notes": "Shipping to the US with an estimated lead time of 2 business days."
+            },
+            "software_access": [],
+            "security_groups": [
+              {
+                "group": "leadership",
+                "status": "complete"
+              }
+            ],
+            "special_access_requests": [
+              {
+                "system": "Slack (#leadership)",
+                "access": "member",
+                "rationale": "This is standard for Rachel's role as an executive; however, it involves board-level material that requires explicit approval."
+              },
+              {
+                "system": "Notion (board-docs space)",
+                "access": "viewer",
+                "rationale": "This access to board documents is standard for Rachel's executive role but requires explicit approval due to the sensitive content."
+              },
+              {
+                "system": "Carta",
+                "access": "admin",
+                "rationale": "Admin access is typical for a VP role; however, it involves handling equity information, which still requires coordinator approval."
+              }
+            ],
+            "warnings": []
+          },
+          "gate": null
+        },
+        {
+          "id": "compliance",
+          "agent": "compliance_docs",
+          "agent_class": "comp",
+          "title": "Compliance & Docs",
+          "status": "complete",
+          "summary": "10 documents \u00b7 Form I-9, Form W-4, IP Assignment Agreement, NDA, Direct Deposit Form, Benefits Enrollment",
+          "reasoning": [
+            "Checked known jurisdictions; US is a known jurisdiction for compliance requirements.",
+            "Determined role family as 'executive' which requires additional documents like equity grants and board-level confidentiality.",
+            "Confirmed employment type as full-time, adding standard documents such as I-9, W-4, and benefits enrollment per US law.",
+            "Identified the role involves sensitive data handling, necessitating additional confidentiality agreements."
+          ],
+          "details": {
+            "required_documents": [
+              {
+                "name": "Form I-9",
+                "deadline": "Jul 1, 2026",
+                "status": "not_started",
+                "rationale": "Federal law requires identity and work authorization verification within 3 business days of start."
+              },
+              {
+                "name": "Form W-4",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Federal tax withholding election."
+              },
+              {
+                "name": "IP Assignment Agreement",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Assigns work-product IP to the company."
+              },
+              {
+                "name": "NDA",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Standard confidentiality protection."
+              },
+              {
+                "name": "Direct Deposit Form",
+                "deadline": "Jul 12, 2026",
+                "status": "not_started",
+                "rationale": "Payroll banking setup."
+              },
+              {
+                "name": "Benefits Enrollment",
+                "deadline": "Jul 28, 2026",
+                "status": "not_started",
+                "rationale": "Health insurance and 401(k) elections; 30-day enrollment window."
+              },
+              {
+                "name": "Equity Grant Agreement",
+                "deadline": "Jul 12, 2026",
+                "status": "not_started",
+                "rationale": "Documents stock option or RSU grant; board-approved."
+              },
+              {
+                "name": "Board-Level Confidentiality Agreement",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Extends confidentiality to board-level information."
+              },
+              {
+                "name": "Post-Employment Restrictions",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Non-compete and non-solicit covenants where legally enforceable."
+              },
+              {
+                "name": "Sensitive Data Access Agreement",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Additional controls for roles touching PII, financial, or legal data."
+              }
+            ],
+            "escalations": []
+          },
+          "gate": null
+        },
+        {
+          "id": "manager_prep",
+          "agent": "manager_prep",
+          "agent_class": "mgr",
+          "title": "Manager Prep",
+          "status": "complete",
+          "summary": "Ready to send to Michael Park \u00b7 draft 30-60-90 \u00b7 intro booked (Jun 29, 2026) \u00b7 suggested buddy Helena Friedman",
+          "reasoning": [
+            "Checked Michael Park's calendar for available times to schedule an intro meeting.",
+            "Scheduled the intro meeting in the earliest available slot on 2026-06-29 at 8:30 AM.",
+            "Selected an onboarding buddy, Helena Friedman, based on her relevant experience and tenure.",
+            "Prepared and sent a checklist to Michael Park with crucial tasks to complete before Rachel's arrival.",
+            "Drafted a 30-60-90 day plan for Rachel Steinberg's integration."
+          ],
+          "details": {
+            "manager_name": "Michael Park",
+            "actions": [
+              {
+                "label": "Schedule intro meeting with the manager",
+                "status": "done",
+                "detail": "Jun 29, 2026 \u00b7 30 min"
+              },
+              {
+                "label": "Identify an onboarding buddy",
+                "status": "done",
+                "detail": "Helena Friedman \u00b7 3.4 yrs (a suggestion)"
+              },
+              {
+                "label": "Generate the 30-60-90 onboarding plan",
+                "status": "done",
+                "detail": "Draft for the manager to own & customize"
+              }
+            ],
+            "note": {
+              "subject_line": "Onboarding Details for Rachel Steinberg",
+              "body": "Hi Michael,\n\nWe're excited to welcome Rachel Steinberg to the team as the new VP Engineering, starting in 14 days on 2026-06-28.\n\nThe intro meeting has been scheduled for 2026-06-29 at 8:30 AM. This will be a great opportunity for you both to connect.\n\nFor the onboarding buddy, I'd suggest Helena Friedman. With her 3.4 years at the company and alignment in product strategy, she'll be beneficial for Rachel's transition.\n\nAttached below is a draft of Rachel's 30-60-90 day plan. Please review and adjust it to fit your onboarding approach\u2014it\u2019s a starting point for your customization.\n\nAdditionally, you\u2019ll find a manager prep checklist to ensure everything is ready for her first day.\n\nBest regards,\n\nThe Onboarding team"
+            },
+            "thirty_sixty_ninety": {
+              "thirty_days": [
+                "Meet with key stakeholders across engineering, product, and leadership teams.",
+                "Review the current strategic initiatives and engineering projects in Notion and Slack.",
+                "Participate in board meetings or review board-docs to understand the current company outlook.",
+                "Conduct 1:1 meetings with direct reports to understand team dynamics."
+              ],
+              "sixty_days": [
+                "Develop an actionable plan to address any gaps or opportunities noted in the first 30 days.",
+                "Initiate a small cross-functional project to drive collaboration within the team.",
+                "Report on progress and initial learnings in a leadership team meeting."
+              ],
+              "ninety_days": [
+                "Present a strategic vision for the engineering department to the executive team.",
+                "Deliver a key initiative that aligns with company goals.",
+                "Establish a benchmark for future engineering projects and performance."
+              ]
+            },
+            "manager_checklist": [
+              "Review Rachel's resume and cover letter for context on past achievements.",
+              "Prepare an introductory email to the team, announcing Rachel's role and start date.",
+              "Schedule a 1:1 meeting during Rachel's first week to discuss her onboarding experience and expectations.",
+              "Ensure all IT equipment and system accesses are ready for her first day.",
+              "Familiarize yourself with Rachel\u2019s onboarding buddy to align on key onboarding priorities.",
+              "Prepare a list of key stakeholders for Rachel to meet in her first month."
+            ]
+          },
+          "gate": null
+        },
+        {
+          "id": "welcome",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Welcome message",
+          "status": "awaiting_approval",
+          "summary": "Personalized note ready. Starts within 2 weeks \u2192 sends on approval.",
+          "reasoning": [
+            "Address Rachel by first name.",
+            "Mention her role as VP Engineering and the engineering leadership team.",
+            "Name her onboarding buddy, Helena Friedman.",
+            "Include day-one logistics like her MacBook setup and intro meeting with her manager.",
+            "Maintain a warm and welcoming tone, avoiding corporate jargon."
+          ],
+          "details": {
+            "subject_line": "Welcome to the Team, Rachel!",
+            "body": "Hi Rachel,\n\nWe're thrilled to welcome you as our new VP of Engineering! The entire engineering leadership team is excited to have you join us here in San Francisco.\n\nOn your first day, you'll find your new MacBook Pro 16-inch all set up and ready to help you dive into the exciting work ahead. Helena Friedman, your onboarding buddy, will be there to guide you and make sure you feel right at home. Plus, you'll kick things off with an intro meeting with Michael Park at 8:30 AM to get a firsthand look at how we roll.\n\nWe can\u2019t wait to see the amazing things you\u2019ll accomplish with us!\n\nBest,\n\nThe Team",
+            "send_strategy": "send_now",
+            "scheduled_send_date": null
+          },
+          "gate": {
+            "gate_type": "welcome_message_review",
+            "agent": "coordinator",
+            "summary": "Review the welcome message before it is sent.",
+            "proposed_decision": "send_now the message.",
+            "rationale": "Personalized messages are reviewed before reaching the new hire.",
+            "alternatives": [],
+            "shape": "decision",
+            "actions": [
+              "approve",
+              "edit",
+              "request_changes"
+            ],
+            "payload": {
+              "draft": {
+                "reasoning": {
+                  "summary": "I crafted a personalized welcome message for Rachel Steinberg, incorporating specific details about her team, role, and day-one logistics. This ensures the message is warm and informative without delving into unauthorized areas such as compensation or HR specifics.",
+                  "steps": [
+                    "Address Rachel by first name.",
+                    "Mention her role as VP Engineering and the engineering leadership team.",
+                    "Name her onboarding buddy, Helena Friedman.",
+                    "Include day-one logistics like her MacBook setup and intro meeting with her manager.",
+                    "Maintain a warm and welcoming tone, avoiding corporate jargon."
+                  ]
+                },
+                "subject_line": "Welcome to the Team, Rachel!",
+                "body": "Hi Rachel,\n\nWe're thrilled to welcome you as our new VP of Engineering! The entire engineering leadership team is excited to have you join us here in San Francisco.\n\nOn your first day, you'll find your new MacBook Pro 16-inch all set up and ready to help you dive into the exciting work ahead. Helena Friedman, your onboarding buddy, will be there to guide you and make sure you feel right at home. Plus, you'll kick things off with an intro meeting with Michael Park at 8:30 AM to get a firsthand look at how we roll.\n\nWe can\u2019t wait to see the amazing things you\u2019ll accomplish with us!\n\nBest,\n\nThe Team",
+                "send_strategy": "send_now",
+                "scheduled_send_date": null
+              }
+            }
+          }
+        },
+        {
+          "id": "readiness",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Readiness check",
+          "status": "pending",
+          "summary": "Runs 3 days before start. Surfaces anything still outstanding \u2014 the 'no laptop on day one' safety net.",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        }
+      ],
+      "pending_gate": {
+        "gate_type": "welcome_message_review",
+        "agent": "coordinator",
+        "summary": "Review the welcome message before it is sent.",
+        "proposed_decision": "send_now the message.",
+        "rationale": "Personalized messages are reviewed before reaching the new hire.",
+        "alternatives": [],
+        "shape": "decision",
+        "actions": [
+          "approve",
+          "edit",
+          "request_changes"
+        ],
+        "payload": {
+          "draft": {
+            "reasoning": {
+              "summary": "I crafted a personalized welcome message for Rachel Steinberg, incorporating specific details about her team, role, and day-one logistics. This ensures the message is warm and informative without delving into unauthorized areas such as compensation or HR specifics.",
+              "steps": [
+                "Address Rachel by first name.",
+                "Mention her role as VP Engineering and the engineering leadership team.",
+                "Name her onboarding buddy, Helena Friedman.",
+                "Include day-one logistics like her MacBook setup and intro meeting with her manager.",
+                "Maintain a warm and welcoming tone, avoiding corporate jargon."
+              ]
+            },
+            "subject_line": "Welcome to the Team, Rachel!",
+            "body": "Hi Rachel,\n\nWe're thrilled to welcome you as our new VP of Engineering! The entire engineering leadership team is excited to have you join us here in San Francisco.\n\nOn your first day, you'll find your new MacBook Pro 16-inch all set up and ready to help you dive into the exciting work ahead. Helena Friedman, your onboarding buddy, will be there to guide you and make sure you feel right at home. Plus, you'll kick things off with an intro meeting with Michael Park at 8:30 AM to get a firsthand look at how we roll.\n\nWe can\u2019t wait to see the amazing things you\u2019ll accomplish with us!\n\nBest,\n\nThe Team",
+            "send_strategy": "send_now",
+            "scheduled_send_date": null
+          }
+        }
+      },
+      "events": [
+        "Received profile h_004.",
+        "Validated Rachel Steinberg (VP Engineering).",
+        "Built consolidated plan. executive/fte in US: IT + Compliance run in parallel, Manager Prep follows IT.",
+        "Rendered plan summary for approval.",
+        "IT Provisioning complete: MacBook Pro 16-inch (M-series).",
+        "Compliance complete: 10 document(s).",
+        "Special-access gate surfaced for: Slack (#leadership), Notion (board-docs space), Carta.",
+        "Manager Prep complete: draft 30-60-90 + cover note ready to send to Michael Park."
+      ]
+    }
+  ],
+  "final": {
+    "state": "complete",
+    "ok": true,
+    "hire": {
+      "name": "Rachel Steinberg",
+      "role_title": "VP Engineering",
+      "team": "Engineering Leadership",
+      "location": "San Francisco, US",
+      "employment": "Full-time",
+      "manager": "Michael Park",
+      "start_date": "Jun 28, 2026"
+    },
+    "orchestrator": {
+      "name": "Onboarding Assistant",
+      "agent_class": "coord",
+      "status": "All agents complete \u00b7 every gate resolved \u00b7 onboarding assembled.",
+      "waiting": false
+    },
+    "stages": [
+      {
+        "id": "plan",
+        "agent": "coordinator",
+        "agent_class": "coord",
+        "title": "Consolidated plan",
+        "status": "complete",
+        "summary": "One plan covering all four agents \u2014 approved in a single click, not four.",
+        "reasoning": [
+          "Executive role \u2192 personalized and detailed welcome process",
+          "US-based FTE \u2192 specific compliance documents required for US employment",
+          "Engineering leadership \u2192 elevated access provision with manager approval needed",
+          "High-priority onboarding \u2192 IT and Compliance run concurrently, Manager Prep follows"
+        ],
+        "details": {
+          "sections": [
+            {
+              "agent": "it_provisioning",
+              "agent_class": "it",
+              "label": "IT Provisioning",
+              "text": "Provision hardware: MacBook Pro 16-inch (M-series) Create accounts for 3 role-standard systems Assign role security groups and flag for elevated access approval",
+              "gate": "\u2691 You'll approve the special-access request"
+            },
+            {
+              "agent": "compliance_docs",
+              "agent_class": "comp",
+              "label": "Compliance & Docs",
+              "text": "Determine required documents for US / FTE Track completion and send reminders as start date approaches",
+              "gate": null
+            },
+            {
+              "agent": "manager_prep",
+              "agent_class": "mgr",
+              "label": "Manager Prep",
+              "text": "Draft a role-tailored 30-60-90 day plan Schedule a manager introduction meeting Send the manager a prep checklist",
+              "gate": "\u2691 You'll review & send it to the manager"
+            },
+            {
+              "agent": "coordinator",
+              "agent_class": "coord",
+              "label": "Assistant",
+              "text": "Render this consolidated plan for approval Draft a personalized welcome message Run a readiness check 3 days before start date",
+              "gate": "\u2691 Needs your review before sending"
+            }
+          ]
+        },
+        "gate": null
+      },
+      {
+        "id": "it",
+        "agent": "it_provisioning",
+        "agent_class": "it",
+        "title": "IT Provisioning",
+        "status": "complete",
+        "summary": "MacBook Pro 16-inch (M-series) \u00b7  \u00b7 Slack (#leadership), Notion (board-docs space), Carta held for approval",
+        "reasoning": [
+          "Provision a MacBook Pro as per standard hardware for an executive in the engineering leadership role.",
+          "Request special access for Slack (#leadership), Notion (board-docs space), and Carta due to sensitive nature and board-level exposure of the information.",
+          "Assign the new hire to the 'leadership' security group as specified in the catalog."
+        ],
+        "details": {
+          "hardware": {
+            "item": "MacBook Pro 16-inch (M-series)",
+            "status": "in_progress",
+            "notes": "Shipping to the US with an estimated lead time of 2 business days."
+          },
+          "software_access": [],
+          "security_groups": [
+            {
+              "group": "leadership",
+              "status": "complete"
+            }
+          ],
+          "special_access_requests": [
+            {
+              "system": "Slack (#leadership)",
+              "access": "member",
+              "rationale": "This is standard for Rachel's role as an executive; however, it involves board-level material that requires explicit approval."
+            },
+            {
+              "system": "Notion (board-docs space)",
+              "access": "viewer",
+              "rationale": "This access to board documents is standard for Rachel's executive role but requires explicit approval due to the sensitive content."
+            },
+            {
+              "system": "Carta",
+              "access": "admin",
+              "rationale": "Admin access is typical for a VP role; however, it involves handling equity information, which still requires coordinator approval."
+            }
+          ],
+          "warnings": []
+        },
+        "gate": null
+      },
+      {
+        "id": "compliance",
+        "agent": "compliance_docs",
+        "agent_class": "comp",
+        "title": "Compliance & Docs",
+        "status": "complete",
+        "summary": "10 documents \u00b7 Form I-9, Form W-4, IP Assignment Agreement, NDA, Direct Deposit Form, Benefits Enrollment",
+        "reasoning": [
+          "Checked known jurisdictions; US is a known jurisdiction for compliance requirements.",
+          "Determined role family as 'executive' which requires additional documents like equity grants and board-level confidentiality.",
+          "Confirmed employment type as full-time, adding standard documents such as I-9, W-4, and benefits enrollment per US law.",
+          "Identified the role involves sensitive data handling, necessitating additional confidentiality agreements."
+        ],
+        "details": {
+          "required_documents": [
+            {
+              "name": "Form I-9",
+              "deadline": "Jul 1, 2026",
+              "status": "not_started",
+              "rationale": "Federal law requires identity and work authorization verification within 3 business days of start."
+            },
+            {
+              "name": "Form W-4",
+              "deadline": "Jul 5, 2026",
+              "status": "not_started",
+              "rationale": "Federal tax withholding election."
+            },
+            {
+              "name": "IP Assignment Agreement",
+              "deadline": "Jul 5, 2026",
+              "status": "not_started",
+              "rationale": "Assigns work-product IP to the company."
+            },
+            {
+              "name": "NDA",
+              "deadline": "Jul 5, 2026",
+              "status": "not_started",
+              "rationale": "Standard confidentiality protection."
+            },
+            {
+              "name": "Direct Deposit Form",
+              "deadline": "Jul 12, 2026",
+              "status": "not_started",
+              "rationale": "Payroll banking setup."
+            },
+            {
+              "name": "Benefits Enrollment",
+              "deadline": "Jul 28, 2026",
+              "status": "not_started",
+              "rationale": "Health insurance and 401(k) elections; 30-day enrollment window."
+            },
+            {
+              "name": "Equity Grant Agreement",
+              "deadline": "Jul 12, 2026",
+              "status": "not_started",
+              "rationale": "Documents stock option or RSU grant; board-approved."
+            },
+            {
+              "name": "Board-Level Confidentiality Agreement",
+              "deadline": "Jul 5, 2026",
+              "status": "not_started",
+              "rationale": "Extends confidentiality to board-level information."
+            },
+            {
+              "name": "Post-Employment Restrictions",
+              "deadline": "Jul 5, 2026",
+              "status": "not_started",
+              "rationale": "Non-compete and non-solicit covenants where legally enforceable."
+            },
+            {
+              "name": "Sensitive Data Access Agreement",
+              "deadline": "Jul 5, 2026",
+              "status": "not_started",
+              "rationale": "Additional controls for roles touching PII, financial, or legal data."
+            }
+          ],
+          "escalations": []
+        },
+        "gate": null
+      },
+      {
+        "id": "manager_prep",
+        "agent": "manager_prep",
+        "agent_class": "mgr",
+        "title": "Manager Prep",
+        "status": "complete",
+        "summary": "Ready to send to Michael Park \u00b7 draft 30-60-90 \u00b7 intro booked (Jun 29, 2026) \u00b7 suggested buddy Helena Friedman",
+        "reasoning": [
+          "Checked Michael Park's calendar for available times to schedule an intro meeting.",
+          "Scheduled the intro meeting in the earliest available slot on 2026-06-29 at 8:30 AM.",
+          "Selected an onboarding buddy, Helena Friedman, based on her relevant experience and tenure.",
+          "Prepared and sent a checklist to Michael Park with crucial tasks to complete before Rachel's arrival.",
+          "Drafted a 30-60-90 day plan for Rachel Steinberg's integration."
+        ],
+        "details": {
+          "manager_name": "Michael Park",
+          "actions": [
+            {
+              "label": "Schedule intro meeting with the manager",
+              "status": "done",
+              "detail": "Jun 29, 2026 \u00b7 30 min"
+            },
+            {
+              "label": "Identify an onboarding buddy",
+              "status": "done",
+              "detail": "Helena Friedman \u00b7 3.4 yrs (a suggestion)"
+            },
+            {
+              "label": "Generate the 30-60-90 onboarding plan",
+              "status": "done",
+              "detail": "Draft for the manager to own & customize"
+            }
+          ],
+          "note": {
+            "subject_line": "Onboarding Details for Rachel Steinberg",
+            "body": "Hi Michael,\n\nWe're excited to welcome Rachel Steinberg to the team as the new VP Engineering, starting in 14 days on 2026-06-28.\n\nThe intro meeting has been scheduled for 2026-06-29 at 8:30 AM. This will be a great opportunity for you both to connect.\n\nFor the onboarding buddy, I'd suggest Helena Friedman. With her 3.4 years at the company and alignment in product strategy, she'll be beneficial for Rachel's transition.\n\nAttached below is a draft of Rachel's 30-60-90 day plan. Please review and adjust it to fit your onboarding approach\u2014it\u2019s a starting point for your customization.\n\nAdditionally, you\u2019ll find a manager prep checklist to ensure everything is ready for her first day.\n\nBest regards,\n\nThe Onboarding team"
+          },
+          "thirty_sixty_ninety": {
+            "thirty_days": [
+              "Meet with key stakeholders across engineering, product, and leadership teams.",
+              "Review the current strategic initiatives and engineering projects in Notion and Slack.",
+              "Participate in board meetings or review board-docs to understand the current company outlook.",
+              "Conduct 1:1 meetings with direct reports to understand team dynamics."
+            ],
+            "sixty_days": [
+              "Develop an actionable plan to address any gaps or opportunities noted in the first 30 days.",
+              "Initiate a small cross-functional project to drive collaboration within the team.",
+              "Report on progress and initial learnings in a leadership team meeting."
+            ],
+            "ninety_days": [
+              "Present a strategic vision for the engineering department to the executive team.",
+              "Deliver a key initiative that aligns with company goals.",
+              "Establish a benchmark for future engineering projects and performance."
+            ]
+          },
+          "manager_checklist": [
+            "Review Rachel's resume and cover letter for context on past achievements.",
+            "Prepare an introductory email to the team, announcing Rachel's role and start date.",
+            "Schedule a 1:1 meeting during Rachel's first week to discuss her onboarding experience and expectations.",
+            "Ensure all IT equipment and system accesses are ready for her first day.",
+            "Familiarize yourself with Rachel\u2019s onboarding buddy to align on key onboarding priorities.",
+            "Prepare a list of key stakeholders for Rachel to meet in her first month."
+          ]
+        },
+        "gate": null
+      },
+      {
+        "id": "welcome",
+        "agent": "coordinator",
+        "agent_class": "coord",
+        "title": "Welcome message",
+        "status": "complete",
+        "summary": "Personalized note ready. Starts within 2 weeks \u2192 sends on approval.",
+        "reasoning": [
+          "Address Rachel by first name.",
+          "Mention her role as VP Engineering and the engineering leadership team.",
+          "Name her onboarding buddy, Helena Friedman.",
+          "Include day-one logistics like her MacBook setup and intro meeting with her manager.",
+          "Maintain a warm and welcoming tone, avoiding corporate jargon."
+        ],
+        "details": {
+          "subject_line": "Welcome to the Team, Rachel!",
+          "body": "Hi Rachel,\n\nWe're thrilled to welcome you as our new VP of Engineering! The entire engineering leadership team is excited to have you join us here in San Francisco.\n\nOn your first day, you'll find your new MacBook Pro 16-inch all set up and ready to help you dive into the exciting work ahead. Helena Friedman, your onboarding buddy, will be there to guide you and make sure you feel right at home. Plus, you'll kick things off with an intro meeting with Michael Park at 8:30 AM to get a firsthand look at how we roll.\n\nWe can\u2019t wait to see the amazing things you\u2019ll accomplish with us!\n\nBest,\n\nThe Team",
+          "send_strategy": "send_now",
+          "scheduled_send_date": null
+        },
+        "gate": null
+      },
+      {
+        "id": "readiness",
+        "agent": "coordinator",
+        "agent_class": "coord",
+        "title": "Readiness check",
+        "status": "scheduled",
+        "summary": "Runs 3 days before start. Surfaces anything still outstanding \u2014 the 'no laptop on day one' safety net.",
+        "reasoning": [],
+        "details": {},
+        "gate": null
+      }
+    ],
+    "pending_gate": null,
+    "events": [
+      "Received profile h_004.",
+      "Validated Rachel Steinberg (VP Engineering).",
+      "Built consolidated plan. executive/fte in US: IT + Compliance run in parallel, Manager Prep follows IT.",
+      "Rendered plan summary for approval.",
+      "IT Provisioning complete: MacBook Pro 16-inch (M-series).",
+      "Compliance complete: 10 document(s).",
+      "Special-access gate surfaced for: Slack (#leadership), Notion (board-docs space), Carta.",
+      "Manager Prep complete: draft 30-60-90 + cover note ready to send to Michael Park.",
+      "Welcome message ready (send_now).",
+      "Scheduled readiness check for 3 days before start date.",
+      "Onboarding plan fully assembled. All gates resolved."
+    ]
+  }
+}

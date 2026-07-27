@@ -1,0 +1,44 @@
+{
+  "profiles": [
+    {
+      "hire_id": "h_001",
+      "name": "Sarah Chen",
+      "role_title": "Senior Software Engineer",
+      "label": "Sarah Chen \u2014 Senior Software Engineer \u00b7 Seattle \u00b7 FTE",
+      "cached": true,
+      "valid": true
+    },
+    {
+      "hire_id": "h_002",
+      "name": "Marcus Webb",
+      "role_title": "Account Executive",
+      "label": "Marcus Webb \u2014 Account Executive \u00b7 London \u00b7 Contractor",
+      "cached": true,
+      "valid": true
+    },
+    {
+      "hire_id": "h_003",
+      "name": "Diana Okafor",
+      "role_title": "Senior Data Scientist",
+      "label": "Diana Okafor \u2014 Senior Data Scientist \u00b7 New York \u00b7 Contractor",
+      "cached": true,
+      "valid": true
+    },
+    {
+      "hire_id": "h_004",
+      "name": "Rachel Steinberg",
+      "role_title": "VP Engineering",
+      "label": "Rachel Steinberg \u2014 VP Engineering \u00b7 San Francisco \u00b7 FTE",
+      "cached": true,
+      "valid": true
+    },
+    {
+      "hire_id": "h_005",
+      "name": "Yuki Tanaka",
+      "role_title": "Account Executive",
+      "label": "Yuki Tanaka \u2014 Account Executive \u00b7 Singapore \u00b7 Contractor",
+      "cached": true,
+      "valid": true
+    }
+  ]
+}

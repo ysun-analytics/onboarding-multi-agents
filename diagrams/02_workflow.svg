@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 830" font-family="'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L8,4.5 L0,9 Z" fill="#7c8a9c"/>
+    </marker>
+    <filter id="sh" x="-14%" y="-14%" width="128%" height="138%">
+      <feDropShadow dx="0" dy="1.2" stdDeviation="1.5" flood-color="#0f172a" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <text x="560" y="32" text-anchor="middle" font-size="20" font-weight="700" fill="#1f2937">Onboarding Workflow — end to end</text>
+
+  <!-- column headers -->
+  <text x="168" y="62" text-anchor="middle" font-size="13" font-weight="700" fill="#b45309">✋ Your decisions</text>
+  <text x="560" y="62" text-anchor="middle" font-size="13" font-weight="700" fill="#334155">Workflow</text>
+  <text x="930" y="62" text-anchor="middle" font-size="13" font-weight="700" fill="#5b46a8">Tools &amp; systems</text>
+
+  <!-- ===================== CENTER SPINE CONNECTORS ===================== -->
+  <g fill="none" stroke="#7c8a9c" stroke-width="1.7">
+    <path d="M560,116 L560,134" marker-end="url(#arr)"/>
+    <path d="M560,180 L560,206" marker-end="url(#arr)"/>
+    <path d="M548,244 L478,280" marker-end="url(#arr)"/>
+    <path d="M572,244 L642,280" marker-end="url(#arr)"/>
+    <path d="M470,346 L548,386" marker-end="url(#arr)"/>
+    <path d="M650,346 L650,648" marker-end="url(#arr)"/>
+    <path d="M560,436 L560,462" marker-end="url(#arr)"/>
+    <path d="M560,500 L560,522" marker-end="url(#arr)"/>
+    <path d="M560,566 L560,594" marker-end="url(#arr)"/>
+    <path d="M560,632 L560,652" marker-end="url(#arr)"/>
+    <path d="M560,698 L560,726" marker-end="url(#arr)"/>
+    <path d="M560,762 L560,768" marker-end="url(#arr)"/>
+  </g>
+
+  <!-- ===================== CENTER NODES ===================== -->
+  <!-- start -->
+  <g filter="url(#sh)"><circle cx="560" cy="92" r="26" fill="#a7ece4" stroke="#2bb3a3" stroke-width="2"/></g>
+  <text x="560" y="89" text-anchor="middle" font-size="9.5" font-weight="700" fill="#0c4a44">New hire</text>
+  <text x="560" y="100" text-anchor="middle" font-size="9.5" font-weight="700" fill="#0c4a44">arrives</text>
+
+  <!-- build plan (Assistant) -->
+  <g filter="url(#sh)"><rect x="466" y="134" width="188" height="46" rx="9" fill="#cfe3f7" stroke="#4f86cf"/></g>
+  <text x="560" y="153" text-anchor="middle" font-size="11" font-weight="700" fill="#1e3a5f">Build &amp; summarize the plan</text>
+  <text x="560" y="168" text-anchor="middle" font-size="8.5" fill="#2c4d70">Assistant · LLM writes the summary</text>
+  <text x="690" y="150" font-size="8" fill="#94a3b8">invalid profile → safe error,</text>
+  <text x="690" y="161" font-size="8" fill="#94a3b8">nothing half-provisioned</text>
+
+  <!-- gate 1: plan approval -->
+  <g filter="url(#sh)"><rect x="472" y="206" width="176" height="38" rx="19" fill="#fde9b8" stroke="#e0a93f" stroke-width="1.5"/></g>
+  <text x="560" y="230" text-anchor="middle" font-size="11" font-weight="700" fill="#92400e">① Approve the plan</text>
+
+  <!-- parallel marker -->
+  <text x="560" y="270" text-anchor="middle" font-size="9" font-style="italic" fill="#64748b">⫶ IT &amp; Compliance run in parallel</text>
+
+  <!-- IT agent -->
+  <g filter="url(#sh)"><rect x="404" y="280" width="132" height="66" rx="9" fill="#d6f3e4" stroke="#15a06d"/></g>
+  <text x="470" y="301" text-anchor="middle" font-size="11" font-weight="700" fill="#0c4a34">IT Provisioning</text>
+  <rect x="416" y="312" width="108" height="24" rx="12" fill="#fde9b8" stroke="#e0a93f"/>
+  <text x="470" y="328" text-anchor="middle" font-size="8.3" font-weight="600" fill="#92400e">② special access?</text>
+
+  <!-- CD agent -->
+  <g filter="url(#sh)"><rect x="584" y="280" width="132" height="66" rx="9" fill="#d6f3e4" stroke="#15a06d"/></g>
+  <text x="650" y="301" text-anchor="middle" font-size="11" font-weight="700" fill="#0c4a34">Compliance &amp; Docs</text>
+  <rect x="596" y="312" width="108" height="24" rx="12" fill="#fde9b8" stroke="#e0a93f"/>
+  <text x="650" y="328" text-anchor="middle" font-size="8.3" font-weight="600" fill="#92400e">escalation?</text>
+
+  <!-- Manager Prep (Assistant drafts note) -->
+  <g filter="url(#sh)"><rect x="460" y="386" width="200" height="50" rx="9" fill="#d6f3e4" stroke="#15a06d"/></g>
+  <text x="560" y="406" text-anchor="middle" font-size="11" font-weight="700" fill="#0c4a34">Manager Prep</text>
+  <text x="560" y="421" text-anchor="middle" font-size="8.5" fill="#15803d">draft 30-60-90 + the Assistant's cover note</text>
+
+  <!-- gate 3: review & send -->
+  <g filter="url(#sh)"><rect x="472" y="462" width="176" height="38" rx="19" fill="#fde9b8" stroke="#e0a93f" stroke-width="1.5"/></g>
+  <text x="560" y="486" text-anchor="middle" font-size="11" font-weight="700" fill="#92400e">③ Review &amp; send to manager</text>
+
+  <!-- welcome (Assistant) -->
+  <g filter="url(#sh)"><rect x="466" y="522" width="188" height="44" rx="9" fill="#cfe3f7" stroke="#4f86cf"/></g>
+  <text x="560" y="541" text-anchor="middle" font-size="11" font-weight="700" fill="#1e3a5f">Draft the welcome message</text>
+  <text x="560" y="555" text-anchor="middle" font-size="8.5" fill="#2c4d70">Assistant · LLM</text>
+
+  <!-- gate 4: welcome review -->
+  <g filter="url(#sh)"><rect x="472" y="594" width="176" height="38" rx="19" fill="#fde9b8" stroke="#e0a93f" stroke-width="1.5"/></g>
+  <text x="560" y="618" text-anchor="middle" font-size="11" font-weight="700" fill="#92400e">④ Review the welcome</text>
+
+  <!-- readiness (Assistant) -->
+  <g filter="url(#sh)"><rect x="460" y="652" width="200" height="46" rx="9" fill="#cfe3f7" stroke="#4f86cf"/></g>
+  <text x="560" y="672" text-anchor="middle" font-size="11" font-weight="700" fill="#1e3a5f">Readiness check · T-3 days</text>
+  <text x="560" y="687" text-anchor="middle" font-size="8.5" fill="#2c4d70">deterministic · no LLM</text>
+
+  <!-- gate 5: readiness alert -->
+  <g filter="url(#sh)"><rect x="472" y="726" width="176" height="36" rx="18" fill="#fde2e2" stroke="#ef9a9a" stroke-width="1.5"/></g>
+  <text x="560" y="749" text-anchor="middle" font-size="11" font-weight="700" fill="#9b1c1c">⑤ Heads-up if outstanding</text>
+
+  <!-- end -->
+  <g filter="url(#sh)"><circle cx="560" cy="792" r="26" fill="#f7c5c5" stroke="#e06a6a" stroke-width="2"/></g>
+  <text x="560" y="789" text-anchor="middle" font-size="9.5" font-weight="700" fill="#7a1f1f">Ready on</text>
+  <text x="560" y="800" text-anchor="middle" font-size="9.5" font-weight="700" fill="#7a1f1f">day one</text>
+
+  <!-- ===================== LEFT: YOUR DECISIONS ===================== -->
+  <g font-size="9" fill="#7c5310">
+    <g filter="url(#sh)"><rect x="40" y="202" width="262" height="44" rx="8" fill="#fef9c3" stroke="#e6d27a"/></g>
+    <text x="52" y="221">Approve <tspan font-weight="700">one consolidated plan</tspan> —</text>
+    <text x="52" y="234">a click, not four separate emails.</text>
+
+    <g filter="url(#sh)"><rect x="40" y="292" width="262" height="44" rx="8" fill="#fef9c3" stroke="#e6d27a"/></g>
+    <text x="52" y="311">OK <tspan font-weight="700">sensitive access</tspan> (e.g. AWS admin)</text>
+    <text x="52" y="324">only when an agent flags it.</text>
+
+    <g filter="url(#sh)"><rect x="40" y="458" width="262" height="44" rx="8" fill="#fef9c3" stroke="#e6d27a"/></g>
+    <text x="52" y="477">Review the 30-60-90 and <tspan font-weight="700">send it</tspan></text>
+    <text x="52" y="490">to the manager to own &amp; customize.</text>
+
+    <g filter="url(#sh)"><rect x="40" y="590" width="262" height="44" rx="8" fill="#fef9c3" stroke="#e6d27a"/></g>
+    <text x="52" y="609">Review the <tspan font-weight="700">welcome message</tspan></text>
+    <text x="52" y="622">before it reaches the new hire.</text>
+
+    <g filter="url(#sh)"><rect x="40" y="722" width="262" height="44" rx="8" fill="#fef9c3" stroke="#e6d27a"/></g>
+    <text x="52" y="741">At T-3, act on the <tspan font-weight="700">heads-up</tspan> if</text>
+    <text x="52" y="754">anything is still outstanding.</text>
+  </g>
+  <g fill="none" stroke="#d9b94a" stroke-width="1.3" stroke-dasharray="4 4">
+    <path d="M302,224 L472,224"/>
+    <path d="M302,314 L404,314"/>
+    <path d="M302,480 L472,480"/>
+    <path d="M302,612 L472,612"/>
+    <path d="M302,744 L472,744"/>
+  </g>
+
+  <!-- ===================== RIGHT: TOOLS & SYSTEMS ===================== -->
+  <g>
+    <g filter="url(#sh)"><rect x="780" y="278" width="300" height="30" rx="8" fill="#ede9fe" stroke="#b9a8e8"/></g>
+    <text x="792" y="297" font-size="9.3" fill="#4c1d95"><tspan font-weight="700">IT</tspan> → Okta · Google Workspace · Jira</text>
+
+    <g filter="url(#sh)"><rect x="780" y="316" width="300" height="30" rx="8" fill="#ede9fe" stroke="#b9a8e8"/></g>
+    <text x="792" y="335" font-size="9.3" fill="#4c1d95"><tspan font-weight="700">Compliance</tspan> → DocuSign · E-Verify / HRIS</text>
+
+    <g filter="url(#sh)"><rect x="780" y="396" width="300" height="30" rx="8" fill="#ede9fe" stroke="#b9a8e8"/></g>
+    <text x="792" y="415" font-size="9.3" fill="#4c1d95"><tspan font-weight="700">Manager Prep</tspan> → Calendar · Gmail · Slack</text>
+  </g>
+  <g fill="none" stroke="#a99adf" stroke-width="1.3" stroke-dasharray="4 4">
+    <path d="M536,300 L780,293"/>
+    <path d="M716,326 L780,331"/>
+    <path d="M660,410 L780,411"/>
+  </g>
+  <text x="930" y="448" text-anchor="middle" font-size="8.5" font-style="italic" fill="#7c5fc0">mock JSON now → real APIs in prod</text>
+
+  <!-- legend -->
+  <rect x="430" y="804" width="16" height="12" rx="3" fill="#fde9b8" stroke="#e0a93f"/>
+  <text x="452" y="814" font-size="9.5" fill="#92400e">Amber = a human-in-the-loop gate · your approval keeps the flow paused until you act.</text>
+</svg>

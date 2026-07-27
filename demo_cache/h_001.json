@@ -1,0 +1,1735 @@
+{
+  "hire_id": "h_001",
+  "steps": [
+    {
+      "state": "received",
+      "ok": true,
+      "hire": {
+        "name": "Sarah Chen",
+        "role_title": "Senior Software Engineer",
+        "team": "Platform",
+        "location": "Seattle, US",
+        "employment": "Full-time",
+        "manager": "James Reilly",
+        "start_date": "Jun 21, 2026"
+      },
+      "orchestrator": {
+        "name": "Onboarding Assistant",
+        "agent_class": "coord",
+        "status": "Coordinating Sarah's onboarding \u00b7 1 approval waiting for you.",
+        "waiting": true
+      },
+      "stages": [
+        {
+          "id": "plan",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Consolidated plan",
+          "status": "awaiting_approval",
+          "summary": "One plan covering all four agents \u2014 approve in a single click, not four.",
+          "reasoning": [
+            "Senior engineer in engineering \u2192 Expect AWS access gate for manager approval due to elevated access needs.",
+            "Located in US and full-time employee \u2192 Compliance will manage US-specific document requirements without international adjustments.",
+            "Starts in 7 days \u2192 Coordinated readiness and welcome plans must be finalized quickly.",
+            "Manager in Seattle \u2192 Local manager intro and buddy assignment for effective team integration."
+          ],
+          "details": {
+            "sections": [
+              {
+                "agent": "it_provisioning",
+                "agent_class": "it",
+                "label": "IT Provisioning",
+                "text": "Provision hardware: MacBook Pro 16-inch (M-series) Create accounts for 5 role-standard systems Assign role security groups and flag elevated access for approval",
+                "gate": "\u2691 You'll approve the special-access request"
+              },
+              {
+                "agent": "compliance_docs",
+                "agent_class": "comp",
+                "label": "Compliance & Docs",
+                "text": "Determine required documents for US full-time employee Track completion and send reminders as start date approaches",
+                "gate": null
+              },
+              {
+                "agent": "manager_prep",
+                "agent_class": "mgr",
+                "label": "Manager Prep",
+                "text": "Draft a role-tailored 30-60-90 day plan Schedule a manager intro meeting and recommend a buddy Send a prep checklist to the manager",
+                "gate": "\u2691 You'll review & send it to the manager"
+              },
+              {
+                "agent": "coordinator",
+                "agent_class": "coord",
+                "label": "Assistant",
+                "text": "Render this consolidated plan for approval Draft a personalized welcome message Run a readiness check 3 days before start date",
+                "gate": "\u2691 Needs your review before sending"
+              }
+            ]
+          },
+          "gate": {
+            "gate_type": "plan_approval",
+            "agent": "coordinator",
+            "summary": "Approve the onboarding plan for Sarah Chen.",
+            "proposed_decision": "Proceed with the consolidated plan as shown.",
+            "rationale": "engineering/fte in US: IT + Compliance run in parallel, Manager Prep follows IT.",
+            "alternatives": [],
+            "shape": "decision",
+            "actions": [
+              "approve",
+              "edit",
+              "request_changes"
+            ],
+            "payload": {
+              "plan": {
+                "hire_id": "h_001",
+                "profile": {
+                  "hire_id": "h_001",
+                  "full_name": "Sarah Chen",
+                  "role_title": "Senior Software Engineer",
+                  "role_family": "engineering",
+                  "team": "platform",
+                  "manager_id": "u_james_reilly",
+                  "location": {
+                    "country": "US",
+                    "city": "Seattle"
+                  },
+                  "employment_type": "fte",
+                  "start_date": "2026-06-21",
+                  "seniority": "senior"
+                },
+                "work": [
+                  {
+                    "agent": "coordinator",
+                    "will_run": true,
+                    "run_wave": 0,
+                    "anticipated_actions": [
+                      "Render this consolidated plan for approval",
+                      "Draft a personalized welcome message",
+                      "Run a readiness check 3 days before start date"
+                    ],
+                    "anticipated_gates": [
+                      "plan_approval",
+                      "welcome_message_review",
+                      "readiness_at_risk"
+                    ]
+                  },
+                  {
+                    "agent": "it_provisioning",
+                    "will_run": true,
+                    "run_wave": 1,
+                    "anticipated_actions": [
+                      "Provision hardware: MacBook Pro 16-inch (M-series)",
+                      "Create accounts for 5 role-standard system(s)",
+                      "Assign role security groups",
+                      "Flag elevated/sensitive access for manager approval"
+                    ],
+                    "anticipated_gates": [
+                      "special_access"
+                    ]
+                  },
+                  {
+                    "agent": "compliance_docs",
+                    "will_run": true,
+                    "run_wave": 1,
+                    "anticipated_actions": [
+                      "Determine required documents for US / fte",
+                      "Track completion and send reminders as start date approaches"
+                    ],
+                    "anticipated_gates": []
+                  },
+                  {
+                    "agent": "manager_prep",
+                    "will_run": true,
+                    "run_wave": 2,
+                    "anticipated_actions": [
+                      "Draft a role-tailored 30-60-90 day plan",
+                      "Schedule a manager intro meeting",
+                      "Recommend an onboarding buddy",
+                      "Send the manager a prep checklist"
+                    ],
+                    "anticipated_gates": [
+                      "30_60_90_signoff"
+                    ]
+                  }
+                ],
+                "note": "engineering/fte in US: IT + Compliance run in parallel, Manager Prep follows IT."
+              },
+              "plan_summary": {
+                "reasoning": {
+                  "summary": "Sarah Chen is a Senior Software Engineer starting in Seattle, with specific needs for elevated access and a 30-60-90 day plan, typical for a senior US-based full-time engineer.",
+                  "steps": [
+                    "Senior engineer in engineering \u2192 Expect AWS access gate for manager approval due to elevated access needs.",
+                    "Located in US and full-time employee \u2192 Compliance will manage US-specific document requirements without international adjustments.",
+                    "Starts in 7 days \u2192 Coordinated readiness and welcome plans must be finalized quickly.",
+                    "Manager in Seattle \u2192 Local manager intro and buddy assignment for effective team integration."
+                  ]
+                },
+                "it_provisioning": {
+                  "actions": [
+                    "Provision hardware: MacBook Pro 16-inch (M-series)",
+                    "Create accounts for 5 role-standard systems",
+                    "Assign role security groups and flag elevated access for approval"
+                  ],
+                  "gates": [
+                    "special_access"
+                  ]
+                },
+                "manager_prep": {
+                  "actions": [
+                    "Draft a role-tailored 30-60-90 day plan",
+                    "Schedule a manager intro meeting and recommend a buddy",
+                    "Send a prep checklist to the manager"
+                  ],
+                  "gates": [
+                    "30_60_90_signoff"
+                  ]
+                },
+                "compliance_docs": {
+                  "actions": [
+                    "Determine required documents for US full-time employee",
+                    "Track completion and send reminders as start date approaches"
+                  ],
+                  "gates": []
+                },
+                "coordinator": {
+                  "actions": [
+                    "Render this consolidated plan for approval",
+                    "Draft a personalized welcome message",
+                    "Run a readiness check 3 days before start date"
+                  ],
+                  "gates": [
+                    "plan_approval",
+                    "welcome_message_review",
+                    "readiness_at_risk"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "it",
+          "agent": "it_provisioning",
+          "agent_class": "it",
+          "title": "IT Provisioning",
+          "status": "pending",
+          "summary": "Waiting on plan approval\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "compliance",
+          "agent": "compliance_docs",
+          "agent_class": "comp",
+          "title": "Compliance & Docs",
+          "status": "pending",
+          "summary": "Waiting on plan approval\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "manager_prep",
+          "agent": "manager_prep",
+          "agent_class": "mgr",
+          "title": "Manager Prep",
+          "status": "pending",
+          "summary": "Waiting on IT's provisioning summary\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "welcome",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Welcome message",
+          "status": "pending",
+          "summary": "Drafted once the specialists report back\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "readiness",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Readiness check",
+          "status": "pending",
+          "summary": "Runs 3 days before start. Surfaces anything still outstanding \u2014 the 'no laptop on day one' safety net.",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        }
+      ],
+      "pending_gate": {
+        "gate_type": "plan_approval",
+        "agent": "coordinator",
+        "summary": "Approve the onboarding plan for Sarah Chen.",
+        "proposed_decision": "Proceed with the consolidated plan as shown.",
+        "rationale": "engineering/fte in US: IT + Compliance run in parallel, Manager Prep follows IT.",
+        "alternatives": [],
+        "shape": "decision",
+        "actions": [
+          "approve",
+          "edit",
+          "request_changes"
+        ],
+        "payload": {
+          "plan": {
+            "hire_id": "h_001",
+            "profile": {
+              "hire_id": "h_001",
+              "full_name": "Sarah Chen",
+              "role_title": "Senior Software Engineer",
+              "role_family": "engineering",
+              "team": "platform",
+              "manager_id": "u_james_reilly",
+              "location": {
+                "country": "US",
+                "city": "Seattle"
+              },
+              "employment_type": "fte",
+              "start_date": "2026-06-21",
+              "seniority": "senior"
+            },
+            "work": [
+              {
+                "agent": "coordinator",
+                "will_run": true,
+                "run_wave": 0,
+                "anticipated_actions": [
+                  "Render this consolidated plan for approval",
+                  "Draft a personalized welcome message",
+                  "Run a readiness check 3 days before start date"
+                ],
+                "anticipated_gates": [
+                  "plan_approval",
+                  "welcome_message_review",
+                  "readiness_at_risk"
+                ]
+              },
+              {
+                "agent": "it_provisioning",
+                "will_run": true,
+                "run_wave": 1,
+                "anticipated_actions": [
+                  "Provision hardware: MacBook Pro 16-inch (M-series)",
+                  "Create accounts for 5 role-standard system(s)",
+                  "Assign role security groups",
+                  "Flag elevated/sensitive access for manager approval"
+                ],
+                "anticipated_gates": [
+                  "special_access"
+                ]
+              },
+              {
+                "agent": "compliance_docs",
+                "will_run": true,
+                "run_wave": 1,
+                "anticipated_actions": [
+                  "Determine required documents for US / fte",
+                  "Track completion and send reminders as start date approaches"
+                ],
+                "anticipated_gates": []
+              },
+              {
+                "agent": "manager_prep",
+                "will_run": true,
+                "run_wave": 2,
+                "anticipated_actions": [
+                  "Draft a role-tailored 30-60-90 day plan",
+                  "Schedule a manager intro meeting",
+                  "Recommend an onboarding buddy",
+                  "Send the manager a prep checklist"
+                ],
+                "anticipated_gates": [
+                  "30_60_90_signoff"
+                ]
+              }
+            ],
+            "note": "engineering/fte in US: IT + Compliance run in parallel, Manager Prep follows IT."
+          },
+          "plan_summary": {
+            "reasoning": {
+              "summary": "Sarah Chen is a Senior Software Engineer starting in Seattle, with specific needs for elevated access and a 30-60-90 day plan, typical for a senior US-based full-time engineer.",
+              "steps": [
+                "Senior engineer in engineering \u2192 Expect AWS access gate for manager approval due to elevated access needs.",
+                "Located in US and full-time employee \u2192 Compliance will manage US-specific document requirements without international adjustments.",
+                "Starts in 7 days \u2192 Coordinated readiness and welcome plans must be finalized quickly.",
+                "Manager in Seattle \u2192 Local manager intro and buddy assignment for effective team integration."
+              ]
+            },
+            "it_provisioning": {
+              "actions": [
+                "Provision hardware: MacBook Pro 16-inch (M-series)",
+                "Create accounts for 5 role-standard systems",
+                "Assign role security groups and flag elevated access for approval"
+              ],
+              "gates": [
+                "special_access"
+              ]
+            },
+            "manager_prep": {
+              "actions": [
+                "Draft a role-tailored 30-60-90 day plan",
+                "Schedule a manager intro meeting and recommend a buddy",
+                "Send a prep checklist to the manager"
+              ],
+              "gates": [
+                "30_60_90_signoff"
+              ]
+            },
+            "compliance_docs": {
+              "actions": [
+                "Determine required documents for US full-time employee",
+                "Track completion and send reminders as start date approaches"
+              ],
+              "gates": []
+            },
+            "coordinator": {
+              "actions": [
+                "Render this consolidated plan for approval",
+                "Draft a personalized welcome message",
+                "Run a readiness check 3 days before start date"
+              ],
+              "gates": [
+                "plan_approval",
+                "welcome_message_review",
+                "readiness_at_risk"
+              ]
+            }
+          }
+        }
+      },
+      "events": [
+        "Received profile h_001.",
+        "Validated Sarah Chen (Senior Software Engineer).",
+        "Built consolidated plan. engineering/fte in US: IT + Compliance run in parallel, Manager Prep follows IT.",
+        "Rendered plan summary for approval."
+      ]
+    },
+    {
+      "state": "provisioning_and_compliance",
+      "ok": true,
+      "hire": {
+        "name": "Sarah Chen",
+        "role_title": "Senior Software Engineer",
+        "team": "Platform",
+        "location": "Seattle, US",
+        "employment": "Full-time",
+        "manager": "James Reilly",
+        "start_date": "Jun 21, 2026"
+      },
+      "orchestrator": {
+        "name": "Onboarding Assistant",
+        "agent_class": "coord",
+        "status": "Coordinating Sarah's onboarding \u00b7 1 approval waiting for you.",
+        "waiting": true
+      },
+      "stages": [
+        {
+          "id": "plan",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Consolidated plan",
+          "status": "complete",
+          "summary": "One plan covering all four agents \u2014 approved in a single click, not four.",
+          "reasoning": [
+            "Senior engineer in engineering \u2192 Expect AWS access gate for manager approval due to elevated access needs.",
+            "Located in US and full-time employee \u2192 Compliance will manage US-specific document requirements without international adjustments.",
+            "Starts in 7 days \u2192 Coordinated readiness and welcome plans must be finalized quickly.",
+            "Manager in Seattle \u2192 Local manager intro and buddy assignment for effective team integration."
+          ],
+          "details": {
+            "sections": [
+              {
+                "agent": "it_provisioning",
+                "agent_class": "it",
+                "label": "IT Provisioning",
+                "text": "Provision hardware: MacBook Pro 16-inch (M-series) Create accounts for 5 role-standard systems Assign role security groups and flag elevated access for approval",
+                "gate": "\u2691 You'll approve the special-access request"
+              },
+              {
+                "agent": "compliance_docs",
+                "agent_class": "comp",
+                "label": "Compliance & Docs",
+                "text": "Determine required documents for US full-time employee Track completion and send reminders as start date approaches",
+                "gate": null
+              },
+              {
+                "agent": "manager_prep",
+                "agent_class": "mgr",
+                "label": "Manager Prep",
+                "text": "Draft a role-tailored 30-60-90 day plan Schedule a manager intro meeting and recommend a buddy Send a prep checklist to the manager",
+                "gate": "\u2691 You'll review & send it to the manager"
+              },
+              {
+                "agent": "coordinator",
+                "agent_class": "coord",
+                "label": "Assistant",
+                "text": "Render this consolidated plan for approval Draft a personalized welcome message Run a readiness check 3 days before start date",
+                "gate": "\u2691 Needs your review before sending"
+              }
+            ]
+          },
+          "gate": null
+        },
+        {
+          "id": "it",
+          "agent": "it_provisioning",
+          "agent_class": "it",
+          "title": "IT Provisioning",
+          "status": "awaiting_approval",
+          "summary": "MacBook Pro 16-inch (M-series) \u00b7 GitHub Enterprise, Slack (engineering channels), PagerDuty, Datadog \u00b7 AWS Console held for approval",
+          "reasoning": [
+            "Ordered a MacBook Pro for Sarah with a shipping time of 2 business days.",
+            "Created a GitHub Enterprise account with developer access.",
+            "Added Sarah to the required engineering Slack channels.",
+            "Provisioned PagerDuty responder access suitable for platform engineering.",
+            "Set up Datadog with read access for monitoring tasks.",
+            "Assigned Sarah to security groups for engineering and production read-only access.",
+            "Requested approval for AWS Console read access as it involves production systems."
+          ],
+          "details": {
+            "hardware": {
+              "item": "MacBook Pro 16-inch (M-series)",
+              "status": "in_progress",
+              "notes": "Expected delivery in 2 business days."
+            },
+            "software_access": [
+              {
+                "system": "GitHub Enterprise",
+                "access_level": "developer",
+                "status": "complete"
+              },
+              {
+                "system": "Slack (engineering channels)",
+                "access_level": "member",
+                "status": "complete"
+              },
+              {
+                "system": "PagerDuty",
+                "access_level": "responder",
+                "status": "complete"
+              },
+              {
+                "system": "Datadog",
+                "access_level": "read",
+                "status": "complete"
+              }
+            ],
+            "security_groups": [
+              {
+                "group": "engineering-all",
+                "status": "complete"
+              },
+              {
+                "group": "production-readonly",
+                "status": "complete"
+              }
+            ],
+            "special_access_requests": [
+              {
+                "system": "AWS Console",
+                "access": "read",
+                "rationale": "Read-only AWS access is standard for senior platform engineers to debug infrastructure issues. Access must be approved because it touches production systems."
+              }
+            ],
+            "warnings": []
+          },
+          "gate": {
+            "gate_type": "special_access",
+            "agent": "it_provisioning",
+            "summary": "Approve AWS Console access (read).",
+            "proposed_decision": "Grant read on AWS Console.",
+            "rationale": "Read-only AWS access is standard for senior platform engineers to debug infrastructure issues. Access must be approved because it touches production systems.",
+            "alternatives": [],
+            "shape": "decision",
+            "actions": [
+              "approve",
+              "edit",
+              "request_changes"
+            ],
+            "payload": {
+              "requests": [
+                {
+                  "system": "AWS Console",
+                  "requested_access": "read",
+                  "rationale": "Read-only AWS access is standard for senior platform engineers to debug infrastructure issues. Access must be approved because it touches production systems.",
+                  "status": "awaiting_approval"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "compliance",
+          "agent": "compliance_docs",
+          "agent_class": "comp",
+          "title": "Compliance & Docs",
+          "status": "complete",
+          "summary": "6 documents \u00b7 Form I-9, Form W-4, IP Assignment Agreement, NDA, Direct Deposit Form, Benefits Enrollment",
+          "reasoning": [
+            "Identify the hire's role family as 'engineering'.",
+            "Recognize location country as 'US' and employment type as 'FTE'.",
+            "Use get_required_documents tool for the US FTE combination.",
+            "Receive and list the required documents with deadlines and rationales."
+          ],
+          "details": {
+            "required_documents": [
+              {
+                "name": "Form I-9",
+                "deadline": "Jun 24, 2026",
+                "status": "not_started",
+                "rationale": "Federal law requires identity and work authorization verification within 3 business days of start."
+              },
+              {
+                "name": "Form W-4",
+                "deadline": "Jun 28, 2026",
+                "status": "not_started",
+                "rationale": "Federal tax withholding election."
+              },
+              {
+                "name": "IP Assignment Agreement",
+                "deadline": "Jun 28, 2026",
+                "status": "not_started",
+                "rationale": "Assigns work-product IP to the company."
+              },
+              {
+                "name": "NDA",
+                "deadline": "Jun 28, 2026",
+                "status": "not_started",
+                "rationale": "Standard confidentiality protection."
+              },
+              {
+                "name": "Direct Deposit Form",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Payroll banking setup."
+              },
+              {
+                "name": "Benefits Enrollment",
+                "deadline": "Jul 21, 2026",
+                "status": "not_started",
+                "rationale": "Health insurance and 401(k) elections; 30-day enrollment window."
+              }
+            ],
+            "escalations": []
+          },
+          "gate": null
+        },
+        {
+          "id": "manager_prep",
+          "agent": "manager_prep",
+          "agent_class": "mgr",
+          "title": "Manager Prep",
+          "status": "pending",
+          "summary": "Waiting on IT's provisioning summary\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "welcome",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Welcome message",
+          "status": "pending",
+          "summary": "Drafted once the specialists report back\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "readiness",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Readiness check",
+          "status": "pending",
+          "summary": "Runs 3 days before start. Surfaces anything still outstanding \u2014 the 'no laptop on day one' safety net.",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        }
+      ],
+      "pending_gate": {
+        "gate_type": "special_access",
+        "agent": "it_provisioning",
+        "summary": "Approve AWS Console access (read).",
+        "proposed_decision": "Grant read on AWS Console.",
+        "rationale": "Read-only AWS access is standard for senior platform engineers to debug infrastructure issues. Access must be approved because it touches production systems.",
+        "alternatives": [],
+        "shape": "decision",
+        "actions": [
+          "approve",
+          "edit",
+          "request_changes"
+        ],
+        "payload": {
+          "requests": [
+            {
+              "system": "AWS Console",
+              "requested_access": "read",
+              "rationale": "Read-only AWS access is standard for senior platform engineers to debug infrastructure issues. Access must be approved because it touches production systems.",
+              "status": "awaiting_approval"
+            }
+          ]
+        }
+      },
+      "events": [
+        "Received profile h_001.",
+        "Validated Sarah Chen (Senior Software Engineer).",
+        "Built consolidated plan. engineering/fte in US: IT + Compliance run in parallel, Manager Prep follows IT.",
+        "Rendered plan summary for approval.",
+        "IT Provisioning complete: MacBook Pro 16-inch (M-series).",
+        "Compliance complete: 6 document(s)."
+      ]
+    },
+    {
+      "state": "manager_prep",
+      "ok": true,
+      "hire": {
+        "name": "Sarah Chen",
+        "role_title": "Senior Software Engineer",
+        "team": "Platform",
+        "location": "Seattle, US",
+        "employment": "Full-time",
+        "manager": "James Reilly",
+        "start_date": "Jun 21, 2026"
+      },
+      "orchestrator": {
+        "name": "Onboarding Assistant",
+        "agent_class": "coord",
+        "status": "Coordinating Sarah's onboarding \u00b7 1 approval waiting for you.",
+        "waiting": true
+      },
+      "stages": [
+        {
+          "id": "plan",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Consolidated plan",
+          "status": "complete",
+          "summary": "One plan covering all four agents \u2014 approved in a single click, not four.",
+          "reasoning": [
+            "Senior engineer in engineering \u2192 Expect AWS access gate for manager approval due to elevated access needs.",
+            "Located in US and full-time employee \u2192 Compliance will manage US-specific document requirements without international adjustments.",
+            "Starts in 7 days \u2192 Coordinated readiness and welcome plans must be finalized quickly.",
+            "Manager in Seattle \u2192 Local manager intro and buddy assignment for effective team integration."
+          ],
+          "details": {
+            "sections": [
+              {
+                "agent": "it_provisioning",
+                "agent_class": "it",
+                "label": "IT Provisioning",
+                "text": "Provision hardware: MacBook Pro 16-inch (M-series) Create accounts for 5 role-standard systems Assign role security groups and flag elevated access for approval",
+                "gate": "\u2691 You'll approve the special-access request"
+              },
+              {
+                "agent": "compliance_docs",
+                "agent_class": "comp",
+                "label": "Compliance & Docs",
+                "text": "Determine required documents for US full-time employee Track completion and send reminders as start date approaches",
+                "gate": null
+              },
+              {
+                "agent": "manager_prep",
+                "agent_class": "mgr",
+                "label": "Manager Prep",
+                "text": "Draft a role-tailored 30-60-90 day plan Schedule a manager intro meeting and recommend a buddy Send a prep checklist to the manager",
+                "gate": "\u2691 You'll review & send it to the manager"
+              },
+              {
+                "agent": "coordinator",
+                "agent_class": "coord",
+                "label": "Assistant",
+                "text": "Render this consolidated plan for approval Draft a personalized welcome message Run a readiness check 3 days before start date",
+                "gate": "\u2691 Needs your review before sending"
+              }
+            ]
+          },
+          "gate": null
+        },
+        {
+          "id": "it",
+          "agent": "it_provisioning",
+          "agent_class": "it",
+          "title": "IT Provisioning",
+          "status": "complete",
+          "summary": "MacBook Pro 16-inch (M-series) \u00b7 GitHub Enterprise, Slack (engineering channels), PagerDuty, Datadog \u00b7 AWS Console held for approval",
+          "reasoning": [
+            "Ordered a MacBook Pro for Sarah with a shipping time of 2 business days.",
+            "Created a GitHub Enterprise account with developer access.",
+            "Added Sarah to the required engineering Slack channels.",
+            "Provisioned PagerDuty responder access suitable for platform engineering.",
+            "Set up Datadog with read access for monitoring tasks.",
+            "Assigned Sarah to security groups for engineering and production read-only access.",
+            "Requested approval for AWS Console read access as it involves production systems."
+          ],
+          "details": {
+            "hardware": {
+              "item": "MacBook Pro 16-inch (M-series)",
+              "status": "in_progress",
+              "notes": "Expected delivery in 2 business days."
+            },
+            "software_access": [
+              {
+                "system": "GitHub Enterprise",
+                "access_level": "developer",
+                "status": "complete"
+              },
+              {
+                "system": "Slack (engineering channels)",
+                "access_level": "member",
+                "status": "complete"
+              },
+              {
+                "system": "PagerDuty",
+                "access_level": "responder",
+                "status": "complete"
+              },
+              {
+                "system": "Datadog",
+                "access_level": "read",
+                "status": "complete"
+              }
+            ],
+            "security_groups": [
+              {
+                "group": "engineering-all",
+                "status": "complete"
+              },
+              {
+                "group": "production-readonly",
+                "status": "complete"
+              }
+            ],
+            "special_access_requests": [
+              {
+                "system": "AWS Console",
+                "access": "read",
+                "rationale": "Read-only AWS access is standard for senior platform engineers to debug infrastructure issues. Access must be approved because it touches production systems."
+              }
+            ],
+            "warnings": []
+          },
+          "gate": null
+        },
+        {
+          "id": "compliance",
+          "agent": "compliance_docs",
+          "agent_class": "comp",
+          "title": "Compliance & Docs",
+          "status": "complete",
+          "summary": "6 documents \u00b7 Form I-9, Form W-4, IP Assignment Agreement, NDA, Direct Deposit Form, Benefits Enrollment",
+          "reasoning": [
+            "Identify the hire's role family as 'engineering'.",
+            "Recognize location country as 'US' and employment type as 'FTE'.",
+            "Use get_required_documents tool for the US FTE combination.",
+            "Receive and list the required documents with deadlines and rationales."
+          ],
+          "details": {
+            "required_documents": [
+              {
+                "name": "Form I-9",
+                "deadline": "Jun 24, 2026",
+                "status": "not_started",
+                "rationale": "Federal law requires identity and work authorization verification within 3 business days of start."
+              },
+              {
+                "name": "Form W-4",
+                "deadline": "Jun 28, 2026",
+                "status": "not_started",
+                "rationale": "Federal tax withholding election."
+              },
+              {
+                "name": "IP Assignment Agreement",
+                "deadline": "Jun 28, 2026",
+                "status": "not_started",
+                "rationale": "Assigns work-product IP to the company."
+              },
+              {
+                "name": "NDA",
+                "deadline": "Jun 28, 2026",
+                "status": "not_started",
+                "rationale": "Standard confidentiality protection."
+              },
+              {
+                "name": "Direct Deposit Form",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Payroll banking setup."
+              },
+              {
+                "name": "Benefits Enrollment",
+                "deadline": "Jul 21, 2026",
+                "status": "not_started",
+                "rationale": "Health insurance and 401(k) elections; 30-day enrollment window."
+              }
+            ],
+            "escalations": []
+          },
+          "gate": null
+        },
+        {
+          "id": "manager_prep",
+          "agent": "manager_prep",
+          "agent_class": "mgr",
+          "title": "Manager Prep",
+          "status": "awaiting_approval",
+          "summary": "Ready to send to James Reilly \u00b7 draft 30-60-90 \u00b7 intro booked (Jun 22, 2026) \u00b7 suggested buddy Tom Brennan",
+          "reasoning": [
+            "Scheduled the intro meeting at the earliest available slot to ensure a prompt welcome.",
+            "Selected Tom Brennan as the onboarding buddy for his balance of experience and availability.",
+            "Defined a 30-60-90 day plan focusing on learning key systems, contributing to projects, and fostering relationships.",
+            "Composed a checklist for the manager to set expectations and prepare for the new hire's arrival."
+          ],
+          "details": {
+            "manager_name": "James Reilly",
+            "actions": [
+              {
+                "label": "Schedule intro meeting with the manager",
+                "status": "done",
+                "detail": "Jun 22, 2026 \u00b7 30 min"
+              },
+              {
+                "label": "Identify an onboarding buddy",
+                "status": "done",
+                "detail": "Tom Brennan \u00b7 2.8 yrs (a suggestion)"
+              },
+              {
+                "label": "Generate the 30-60-90 onboarding plan",
+                "status": "done",
+                "detail": "Draft for the manager to own & customize"
+              }
+            ],
+            "note": {
+              "subject_line": "Onboarding Preparation for Sarah Chen",
+              "body": "Hi James,\n\nWe're excited to welcome Sarah Chen to the team as a Senior Software Engineer in the platform group. She starts in 7 days on 2026-06-21 (within 2 weeks).\n\nThe introductory meeting with Sarah is scheduled for June 22 at 2:00 PM for 30 minutes.\n\nI'd suggest Tom Brennan as her onboarding buddy. With 2.8 years at the company and expertise in platform infrastructure, Tom could be a great fit for guiding Sarah.\n\nAttached is a draft of the 30-60-90 day plan. This is a starting point for you to adjust and refine as needed before sharing it with Sarah.\n\nPlease also review the manager prep checklist below to help you get everything ready for her arrival.\n\nBest,\n\nThe Onboarding Team"
+            },
+            "thirty_sixty_ninety": {
+              "thirty_days": [
+                "Complete onboarding with all tools: GitHub, Slack, PagerDuty, Datadog.",
+                "Review and push a small code change to a low-risk module, getting it code-reviewed by a peer.",
+                "Meet one-on-one with each team member to understand their roles and current projects."
+              ],
+              "sixty_days": [
+                "Lead a review session on a current codebase process, proposing at least one improvement.",
+                "Deliver a small feature enhancement for the platform with successful deployment and documentation.",
+                "Collaborate on an incident response drill with Amy Zhao to learn the team's incident protocols."
+              ],
+              "ninety_days": [
+                "Take ownership of a medium-complexity feature, coordinating with cross-functional teams for delivery.",
+                "Lead a platform reliability improvement meeting, drawing on insights from observability tools.",
+                "Develop a proposal for a new platform tooling initiative based on identified gaps."
+              ]
+            },
+            "manager_checklist": [
+              "Review Sarah Chen's resume and portfolio to understand her past work and skills.",
+              "Familiarize with the team's current projects and any upcoming deadlines.",
+              "Prepare initial talking points for the intro meeting discussing team culture and expectations.",
+              "Ensure all IT hardware and software provisioning is complete before her start date.",
+              "Plan the first project Sarah will tackle to align with her 30-60-90 day plan.",
+              "Set up relevant permissions in AWS Console once access is approved."
+            ]
+          },
+          "gate": {
+            "gate_type": "30_60_90_signoff",
+            "agent": "manager_prep",
+            "summary": "Review and send the onboarding package to James Reilly.",
+            "proposed_decision": "Send the cover note + draft 30-60-90 to James Reilly.",
+            "rationale": "The 30-60-90 is a starting draft for the manager to own and customize. Review the package, then send it to them.",
+            "alternatives": [],
+            "shape": "decision",
+            "actions": [
+              "approve",
+              "edit",
+              "request_changes"
+            ],
+            "payload": {
+              "plan": {
+                "thirty_days": [
+                  "Complete onboarding with all tools: GitHub, Slack, PagerDuty, Datadog.",
+                  "Review and push a small code change to a low-risk module, getting it code-reviewed by a peer.",
+                  "Meet one-on-one with each team member to understand their roles and current projects."
+                ],
+                "sixty_days": [
+                  "Lead a review session on a current codebase process, proposing at least one improvement.",
+                  "Deliver a small feature enhancement for the platform with successful deployment and documentation.",
+                  "Collaborate on an incident response drill with Amy Zhao to learn the team's incident protocols."
+                ],
+                "ninety_days": [
+                  "Take ownership of a medium-complexity feature, coordinating with cross-functional teams for delivery.",
+                  "Lead a platform reliability improvement meeting, drawing on insights from observability tools.",
+                  "Develop a proposal for a new platform tooling initiative based on identified gaps."
+                ],
+                "status": "draft_awaiting_signoff"
+              },
+              "note": {
+                "reasoning": {
+                  "summary": "The note provides a warm introduction and outlines the onboarding process for the hiring manager, ensuring clarity around the new hire's start, the scheduled introduction, suggested buddy, and draft plan review. This aids the manager in efficiently integrating the new hire.",
+                  "steps": [
+                    "Open with a greeting to the manager and mention the new hire, role, and start date.",
+                    "Inform the manager that the intro meeting is scheduled, including the time.",
+                    "Suggest Tom Brennan as a potential buddy for the new hire, with a brief rationale.",
+                    "Emphasize that the 30-60-90 day plan is a draft for the manager's review and customization.",
+                    "Mention the manager preparation checklist provided below the note."
+                  ]
+                },
+                "subject_line": "Onboarding Preparation for Sarah Chen",
+                "body": "Hi James,\n\nWe're excited to welcome Sarah Chen to the team as a Senior Software Engineer in the platform group. She starts in 7 days on 2026-06-21 (within 2 weeks).\n\nThe introductory meeting with Sarah is scheduled for June 22 at 2:00 PM for 30 minutes.\n\nI'd suggest Tom Brennan as her onboarding buddy. With 2.8 years at the company and expertise in platform infrastructure, Tom could be a great fit for guiding Sarah.\n\nAttached is a draft of the 30-60-90 day plan. This is a starting point for you to adjust and refine as needed before sharing it with Sarah.\n\nPlease also review the manager prep checklist below to help you get everything ready for her arrival.\n\nBest,\n\nThe Onboarding Team"
+              },
+              "manager_name": "James Reilly"
+            }
+          }
+        },
+        {
+          "id": "welcome",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Welcome message",
+          "status": "pending",
+          "summary": "Drafted once the specialists report back\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "readiness",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Readiness check",
+          "status": "pending",
+          "summary": "Runs 3 days before start. Surfaces anything still outstanding \u2014 the 'no laptop on day one' safety net.",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        }
+      ],
+      "pending_gate": {
+        "gate_type": "30_60_90_signoff",
+        "agent": "manager_prep",
+        "summary": "Review and send the onboarding package to James Reilly.",
+        "proposed_decision": "Send the cover note + draft 30-60-90 to James Reilly.",
+        "rationale": "The 30-60-90 is a starting draft for the manager to own and customize. Review the package, then send it to them.",
+        "alternatives": [],
+        "shape": "decision",
+        "actions": [
+          "approve",
+          "edit",
+          "request_changes"
+        ],
+        "payload": {
+          "plan": {
+            "thirty_days": [
+              "Complete onboarding with all tools: GitHub, Slack, PagerDuty, Datadog.",
+              "Review and push a small code change to a low-risk module, getting it code-reviewed by a peer.",
+              "Meet one-on-one with each team member to understand their roles and current projects."
+            ],
+            "sixty_days": [
+              "Lead a review session on a current codebase process, proposing at least one improvement.",
+              "Deliver a small feature enhancement for the platform with successful deployment and documentation.",
+              "Collaborate on an incident response drill with Amy Zhao to learn the team's incident protocols."
+            ],
+            "ninety_days": [
+              "Take ownership of a medium-complexity feature, coordinating with cross-functional teams for delivery.",
+              "Lead a platform reliability improvement meeting, drawing on insights from observability tools.",
+              "Develop a proposal for a new platform tooling initiative based on identified gaps."
+            ],
+            "status": "draft_awaiting_signoff"
+          },
+          "note": {
+            "reasoning": {
+              "summary": "The note provides a warm introduction and outlines the onboarding process for the hiring manager, ensuring clarity around the new hire's start, the scheduled introduction, suggested buddy, and draft plan review. This aids the manager in efficiently integrating the new hire.",
+              "steps": [
+                "Open with a greeting to the manager and mention the new hire, role, and start date.",
+                "Inform the manager that the intro meeting is scheduled, including the time.",
+                "Suggest Tom Brennan as a potential buddy for the new hire, with a brief rationale.",
+                "Emphasize that the 30-60-90 day plan is a draft for the manager's review and customization.",
+                "Mention the manager preparation checklist provided below the note."
+              ]
+            },
+            "subject_line": "Onboarding Preparation for Sarah Chen",
+            "body": "Hi James,\n\nWe're excited to welcome Sarah Chen to the team as a Senior Software Engineer in the platform group. She starts in 7 days on 2026-06-21 (within 2 weeks).\n\nThe introductory meeting with Sarah is scheduled for June 22 at 2:00 PM for 30 minutes.\n\nI'd suggest Tom Brennan as her onboarding buddy. With 2.8 years at the company and expertise in platform infrastructure, Tom could be a great fit for guiding Sarah.\n\nAttached is a draft of the 30-60-90 day plan. This is a starting point for you to adjust and refine as needed before sharing it with Sarah.\n\nPlease also review the manager prep checklist below to help you get everything ready for her arrival.\n\nBest,\n\nThe Onboarding Team"
+          },
+          "manager_name": "James Reilly"
+        }
+      },
+      "events": [
+        "Received profile h_001.",
+        "Validated Sarah Chen (Senior Software Engineer).",
+        "Built consolidated plan. engineering/fte in US: IT + Compliance run in parallel, Manager Prep follows IT.",
+        "Rendered plan summary for approval.",
+        "IT Provisioning complete: MacBook Pro 16-inch (M-series).",
+        "Compliance complete: 6 document(s).",
+        "Special-access gate surfaced for: AWS Console.",
+        "Manager Prep complete: draft 30-60-90 + cover note ready to send to James Reilly."
+      ]
+    },
+    {
+      "state": "drafting_welcome",
+      "ok": true,
+      "hire": {
+        "name": "Sarah Chen",
+        "role_title": "Senior Software Engineer",
+        "team": "Platform",
+        "location": "Seattle, US",
+        "employment": "Full-time",
+        "manager": "James Reilly",
+        "start_date": "Jun 21, 2026"
+      },
+      "orchestrator": {
+        "name": "Onboarding Assistant",
+        "agent_class": "coord",
+        "status": "Coordinating Sarah's onboarding \u00b7 1 approval waiting for you.",
+        "waiting": true
+      },
+      "stages": [
+        {
+          "id": "plan",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Consolidated plan",
+          "status": "complete",
+          "summary": "One plan covering all four agents \u2014 approved in a single click, not four.",
+          "reasoning": [
+            "Senior engineer in engineering \u2192 Expect AWS access gate for manager approval due to elevated access needs.",
+            "Located in US and full-time employee \u2192 Compliance will manage US-specific document requirements without international adjustments.",
+            "Starts in 7 days \u2192 Coordinated readiness and welcome plans must be finalized quickly.",
+            "Manager in Seattle \u2192 Local manager intro and buddy assignment for effective team integration."
+          ],
+          "details": {
+            "sections": [
+              {
+                "agent": "it_provisioning",
+                "agent_class": "it",
+                "label": "IT Provisioning",
+                "text": "Provision hardware: MacBook Pro 16-inch (M-series) Create accounts for 5 role-standard systems Assign role security groups and flag elevated access for approval",
+                "gate": "\u2691 You'll approve the special-access request"
+              },
+              {
+                "agent": "compliance_docs",
+                "agent_class": "comp",
+                "label": "Compliance & Docs",
+                "text": "Determine required documents for US full-time employee Track completion and send reminders as start date approaches",
+                "gate": null
+              },
+              {
+                "agent": "manager_prep",
+                "agent_class": "mgr",
+                "label": "Manager Prep",
+                "text": "Draft a role-tailored 30-60-90 day plan Schedule a manager intro meeting and recommend a buddy Send a prep checklist to the manager",
+                "gate": "\u2691 You'll review & send it to the manager"
+              },
+              {
+                "agent": "coordinator",
+                "agent_class": "coord",
+                "label": "Assistant",
+                "text": "Render this consolidated plan for approval Draft a personalized welcome message Run a readiness check 3 days before start date",
+                "gate": "\u2691 Needs your review before sending"
+              }
+            ]
+          },
+          "gate": null
+        },
+        {
+          "id": "it",
+          "agent": "it_provisioning",
+          "agent_class": "it",
+          "title": "IT Provisioning",
+          "status": "complete",
+          "summary": "MacBook Pro 16-inch (M-series) \u00b7 GitHub Enterprise, Slack (engineering channels), PagerDuty, Datadog \u00b7 AWS Console held for approval",
+          "reasoning": [
+            "Ordered a MacBook Pro for Sarah with a shipping time of 2 business days.",
+            "Created a GitHub Enterprise account with developer access.",
+            "Added Sarah to the required engineering Slack channels.",
+            "Provisioned PagerDuty responder access suitable for platform engineering.",
+            "Set up Datadog with read access for monitoring tasks.",
+            "Assigned Sarah to security groups for engineering and production read-only access.",
+            "Requested approval for AWS Console read access as it involves production systems."
+          ],
+          "details": {
+            "hardware": {
+              "item": "MacBook Pro 16-inch (M-series)",
+              "status": "in_progress",
+              "notes": "Expected delivery in 2 business days."
+            },
+            "software_access": [
+              {
+                "system": "GitHub Enterprise",
+                "access_level": "developer",
+                "status": "complete"
+              },
+              {
+                "system": "Slack (engineering channels)",
+                "access_level": "member",
+                "status": "complete"
+              },
+              {
+                "system": "PagerDuty",
+                "access_level": "responder",
+                "status": "complete"
+              },
+              {
+                "system": "Datadog",
+                "access_level": "read",
+                "status": "complete"
+              }
+            ],
+            "security_groups": [
+              {
+                "group": "engineering-all",
+                "status": "complete"
+              },
+              {
+                "group": "production-readonly",
+                "status": "complete"
+              }
+            ],
+            "special_access_requests": [
+              {
+                "system": "AWS Console",
+                "access": "read",
+                "rationale": "Read-only AWS access is standard for senior platform engineers to debug infrastructure issues. Access must be approved because it touches production systems."
+              }
+            ],
+            "warnings": []
+          },
+          "gate": null
+        },
+        {
+          "id": "compliance",
+          "agent": "compliance_docs",
+          "agent_class": "comp",
+          "title": "Compliance & Docs",
+          "status": "complete",
+          "summary": "6 documents \u00b7 Form I-9, Form W-4, IP Assignment Agreement, NDA, Direct Deposit Form, Benefits Enrollment",
+          "reasoning": [
+            "Identify the hire's role family as 'engineering'.",
+            "Recognize location country as 'US' and employment type as 'FTE'.",
+            "Use get_required_documents tool for the US FTE combination.",
+            "Receive and list the required documents with deadlines and rationales."
+          ],
+          "details": {
+            "required_documents": [
+              {
+                "name": "Form I-9",
+                "deadline": "Jun 24, 2026",
+                "status": "not_started",
+                "rationale": "Federal law requires identity and work authorization verification within 3 business days of start."
+              },
+              {
+                "name": "Form W-4",
+                "deadline": "Jun 28, 2026",
+                "status": "not_started",
+                "rationale": "Federal tax withholding election."
+              },
+              {
+                "name": "IP Assignment Agreement",
+                "deadline": "Jun 28, 2026",
+                "status": "not_started",
+                "rationale": "Assigns work-product IP to the company."
+              },
+              {
+                "name": "NDA",
+                "deadline": "Jun 28, 2026",
+                "status": "not_started",
+                "rationale": "Standard confidentiality protection."
+              },
+              {
+                "name": "Direct Deposit Form",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Payroll banking setup."
+              },
+              {
+                "name": "Benefits Enrollment",
+                "deadline": "Jul 21, 2026",
+                "status": "not_started",
+                "rationale": "Health insurance and 401(k) elections; 30-day enrollment window."
+              }
+            ],
+            "escalations": []
+          },
+          "gate": null
+        },
+        {
+          "id": "manager_prep",
+          "agent": "manager_prep",
+          "agent_class": "mgr",
+          "title": "Manager Prep",
+          "status": "complete",
+          "summary": "Ready to send to James Reilly \u00b7 draft 30-60-90 \u00b7 intro booked (Jun 22, 2026) \u00b7 suggested buddy Tom Brennan",
+          "reasoning": [
+            "Scheduled the intro meeting at the earliest available slot to ensure a prompt welcome.",
+            "Selected Tom Brennan as the onboarding buddy for his balance of experience and availability.",
+            "Defined a 30-60-90 day plan focusing on learning key systems, contributing to projects, and fostering relationships.",
+            "Composed a checklist for the manager to set expectations and prepare for the new hire's arrival."
+          ],
+          "details": {
+            "manager_name": "James Reilly",
+            "actions": [
+              {
+                "label": "Schedule intro meeting with the manager",
+                "status": "done",
+                "detail": "Jun 22, 2026 \u00b7 30 min"
+              },
+              {
+                "label": "Identify an onboarding buddy",
+                "status": "done",
+                "detail": "Tom Brennan \u00b7 2.8 yrs (a suggestion)"
+              },
+              {
+                "label": "Generate the 30-60-90 onboarding plan",
+                "status": "done",
+                "detail": "Draft for the manager to own & customize"
+              }
+            ],
+            "note": {
+              "subject_line": "Onboarding Preparation for Sarah Chen",
+              "body": "Hi James,\n\nWe're excited to welcome Sarah Chen to the team as a Senior Software Engineer in the platform group. She starts in 7 days on 2026-06-21 (within 2 weeks).\n\nThe introductory meeting with Sarah is scheduled for June 22 at 2:00 PM for 30 minutes.\n\nI'd suggest Tom Brennan as her onboarding buddy. With 2.8 years at the company and expertise in platform infrastructure, Tom could be a great fit for guiding Sarah.\n\nAttached is a draft of the 30-60-90 day plan. This is a starting point for you to adjust and refine as needed before sharing it with Sarah.\n\nPlease also review the manager prep checklist below to help you get everything ready for her arrival.\n\nBest,\n\nThe Onboarding Team"
+            },
+            "thirty_sixty_ninety": {
+              "thirty_days": [
+                "Complete onboarding with all tools: GitHub, Slack, PagerDuty, Datadog.",
+                "Review and push a small code change to a low-risk module, getting it code-reviewed by a peer.",
+                "Meet one-on-one with each team member to understand their roles and current projects."
+              ],
+              "sixty_days": [
+                "Lead a review session on a current codebase process, proposing at least one improvement.",
+                "Deliver a small feature enhancement for the platform with successful deployment and documentation.",
+                "Collaborate on an incident response drill with Amy Zhao to learn the team's incident protocols."
+              ],
+              "ninety_days": [
+                "Take ownership of a medium-complexity feature, coordinating with cross-functional teams for delivery.",
+                "Lead a platform reliability improvement meeting, drawing on insights from observability tools.",
+                "Develop a proposal for a new platform tooling initiative based on identified gaps."
+              ]
+            },
+            "manager_checklist": [
+              "Review Sarah Chen's resume and portfolio to understand her past work and skills.",
+              "Familiarize with the team's current projects and any upcoming deadlines.",
+              "Prepare initial talking points for the intro meeting discussing team culture and expectations.",
+              "Ensure all IT hardware and software provisioning is complete before her start date.",
+              "Plan the first project Sarah will tackle to align with her 30-60-90 day plan.",
+              "Set up relevant permissions in AWS Console once access is approved."
+            ]
+          },
+          "gate": null
+        },
+        {
+          "id": "welcome",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Welcome message",
+          "status": "awaiting_approval",
+          "summary": "Personalized note ready. Starts within 2 weeks \u2192 sends on approval.",
+          "reasoning": [
+            "Start with a warm greeting using Sarah's first name.",
+            "Include her new role and team to make it personal.",
+            "Mention Tom Brennan as her onboarding buddy.",
+            "List specific things she can expect on her first day, such as equipment setup and tool access.",
+            "Keep the tone friendly and welcoming without being too formal or corporate.",
+            "Conclude with excitement about her joining the team."
+          ],
+          "details": {
+            "subject_line": "Welcome to the Platform Team, Sarah!",
+            "body": "Hi Sarah,\n\nWelcome to the Platform Team! We\u2019re thrilled to have you join us as a Senior Software Engineer. Your onboarding buddy, Tom Brennan, will reach out soon to help you settle in and ensure you have everything you need.\n\nOn your first day, your MacBook Pro will be set up and ready for you. You\u2019ll also get access to essential tools like GitHub Enterprise, Slack (including our engineering channels), and PagerDuty. Plus, there's an intro meeting with your manager on June 22nd to discuss your role and answer any questions.\n\nWe\u2019re excited to see the amazing work you\u2019ll do here. Looking forward to seeing you soon!\n\nBest,\nThe Platform Team",
+            "send_strategy": "send_now",
+            "scheduled_send_date": null
+          },
+          "gate": {
+            "gate_type": "welcome_message_review",
+            "agent": "coordinator",
+            "summary": "Review the welcome message before it is sent.",
+            "proposed_decision": "send_now the message.",
+            "rationale": "Personalized messages are reviewed before reaching the new hire.",
+            "alternatives": [],
+            "shape": "decision",
+            "actions": [
+              "approve",
+              "edit",
+              "request_changes"
+            ],
+            "payload": {
+              "draft": {
+                "reasoning": {
+                  "summary": "Crafted a personalized welcome message addressing Sarah Chen, a new Senior Software Engineer, including details about her role and team. Mentioned Tom Brennan as her onboarding buddy and added specific details about her first day, like access to key tools and a scheduled meeting with her manager.",
+                  "steps": [
+                    "Start with a warm greeting using Sarah's first name.",
+                    "Include her new role and team to make it personal.",
+                    "Mention Tom Brennan as her onboarding buddy.",
+                    "List specific things she can expect on her first day, such as equipment setup and tool access.",
+                    "Keep the tone friendly and welcoming without being too formal or corporate.",
+                    "Conclude with excitement about her joining the team."
+                  ]
+                },
+                "subject_line": "Welcome to the Platform Team, Sarah!",
+                "body": "Hi Sarah,\n\nWelcome to the Platform Team! We\u2019re thrilled to have you join us as a Senior Software Engineer. Your onboarding buddy, Tom Brennan, will reach out soon to help you settle in and ensure you have everything you need.\n\nOn your first day, your MacBook Pro will be set up and ready for you. You\u2019ll also get access to essential tools like GitHub Enterprise, Slack (including our engineering channels), and PagerDuty. Plus, there's an intro meeting with your manager on June 22nd to discuss your role and answer any questions.\n\nWe\u2019re excited to see the amazing work you\u2019ll do here. Looking forward to seeing you soon!\n\nBest,\nThe Platform Team",
+                "send_strategy": "send_now",
+                "scheduled_send_date": null
+              }
+            }
+          }
+        },
+        {
+          "id": "readiness",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Readiness check",
+          "status": "pending",
+          "summary": "Runs 3 days before start. Surfaces anything still outstanding \u2014 the 'no laptop on day one' safety net.",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        }
+      ],
+      "pending_gate": {
+        "gate_type": "welcome_message_review",
+        "agent": "coordinator",
+        "summary": "Review the welcome message before it is sent.",
+        "proposed_decision": "send_now the message.",
+        "rationale": "Personalized messages are reviewed before reaching the new hire.",
+        "alternatives": [],
+        "shape": "decision",
+        "actions": [
+          "approve",
+          "edit",
+          "request_changes"
+        ],
+        "payload": {
+          "draft": {
+            "reasoning": {
+              "summary": "Crafted a personalized welcome message addressing Sarah Chen, a new Senior Software Engineer, including details about her role and team. Mentioned Tom Brennan as her onboarding buddy and added specific details about her first day, like access to key tools and a scheduled meeting with her manager.",
+              "steps": [
+                "Start with a warm greeting using Sarah's first name.",
+                "Include her new role and team to make it personal.",
+                "Mention Tom Brennan as her onboarding buddy.",
+                "List specific things she can expect on her first day, such as equipment setup and tool access.",
+                "Keep the tone friendly and welcoming without being too formal or corporate.",
+                "Conclude with excitement about her joining the team."
+              ]
+            },
+            "subject_line": "Welcome to the Platform Team, Sarah!",
+            "body": "Hi Sarah,\n\nWelcome to the Platform Team! We\u2019re thrilled to have you join us as a Senior Software Engineer. Your onboarding buddy, Tom Brennan, will reach out soon to help you settle in and ensure you have everything you need.\n\nOn your first day, your MacBook Pro will be set up and ready for you. You\u2019ll also get access to essential tools like GitHub Enterprise, Slack (including our engineering channels), and PagerDuty. Plus, there's an intro meeting with your manager on June 22nd to discuss your role and answer any questions.\n\nWe\u2019re excited to see the amazing work you\u2019ll do here. Looking forward to seeing you soon!\n\nBest,\nThe Platform Team",
+            "send_strategy": "send_now",
+            "scheduled_send_date": null
+          }
+        }
+      },
+      "events": [
+        "Received profile h_001.",
+        "Validated Sarah Chen (Senior Software Engineer).",
+        "Built consolidated plan. engineering/fte in US: IT + Compliance run in parallel, Manager Prep follows IT.",
+        "Rendered plan summary for approval.",
+        "IT Provisioning complete: MacBook Pro 16-inch (M-series).",
+        "Compliance complete: 6 document(s).",
+        "Special-access gate surfaced for: AWS Console.",
+        "Manager Prep complete: draft 30-60-90 + cover note ready to send to James Reilly."
+      ]
+    }
+  ],
+  "final": {
+    "state": "complete",
+    "ok": true,
+    "hire": {
+      "name": "Sarah Chen",
+      "role_title": "Senior Software Engineer",
+      "team": "Platform",
+      "location": "Seattle, US",
+      "employment": "Full-time",
+      "manager": "James Reilly",
+      "start_date": "Jun 21, 2026"
+    },
+    "orchestrator": {
+      "name": "Onboarding Assistant",
+      "agent_class": "coord",
+      "status": "All agents complete \u00b7 every gate resolved \u00b7 onboarding assembled.",
+      "waiting": false
+    },
+    "stages": [
+      {
+        "id": "plan",
+        "agent": "coordinator",
+        "agent_class": "coord",
+        "title": "Consolidated plan",
+        "status": "complete",
+        "summary": "One plan covering all four agents \u2014 approved in a single click, not four.",
+        "reasoning": [
+          "Senior engineer in engineering \u2192 Expect AWS access gate for manager approval due to elevated access needs.",
+          "Located in US and full-time employee \u2192 Compliance will manage US-specific document requirements without international adjustments.",
+          "Starts in 7 days \u2192 Coordinated readiness and welcome plans must be finalized quickly.",
+          "Manager in Seattle \u2192 Local manager intro and buddy assignment for effective team integration."
+        ],
+        "details": {
+          "sections": [
+            {
+              "agent": "it_provisioning",
+              "agent_class": "it",
+              "label": "IT Provisioning",
+              "text": "Provision hardware: MacBook Pro 16-inch (M-series) Create accounts for 5 role-standard systems Assign role security groups and flag elevated access for approval",
+              "gate": "\u2691 You'll approve the special-access request"
+            },
+            {
+              "agent": "compliance_docs",
+              "agent_class": "comp",
+              "label": "Compliance & Docs",
+              "text": "Determine required documents for US full-time employee Track completion and send reminders as start date approaches",
+              "gate": null
+            },
+            {
+              "agent": "manager_prep",
+              "agent_class": "mgr",
+              "label": "Manager Prep",
+              "text": "Draft a role-tailored 30-60-90 day plan Schedule a manager intro meeting and recommend a buddy Send a prep checklist to the manager",
+              "gate": "\u2691 You'll review & send it to the manager"
+            },
+            {
+              "agent": "coordinator",
+              "agent_class": "coord",
+              "label": "Assistant",
+              "text": "Render this consolidated plan for approval Draft a personalized welcome message Run a readiness check 3 days before start date",
+              "gate": "\u2691 Needs your review before sending"
+            }
+          ]
+        },
+        "gate": null
+      },
+      {
+        "id": "it",
+        "agent": "it_provisioning",
+        "agent_class": "it",
+        "title": "IT Provisioning",
+        "status": "complete",
+        "summary": "MacBook Pro 16-inch (M-series) \u00b7 GitHub Enterprise, Slack (engineering channels), PagerDuty, Datadog \u00b7 AWS Console held for approval",
+        "reasoning": [
+          "Ordered a MacBook Pro for Sarah with a shipping time of 2 business days.",
+          "Created a GitHub Enterprise account with developer access.",
+          "Added Sarah to the required engineering Slack channels.",
+          "Provisioned PagerDuty responder access suitable for platform engineering.",
+          "Set up Datadog with read access for monitoring tasks.",
+          "Assigned Sarah to security groups for engineering and production read-only access.",
+          "Requested approval for AWS Console read access as it involves production systems."
+        ],
+        "details": {
+          "hardware": {
+            "item": "MacBook Pro 16-inch (M-series)",
+            "status": "in_progress",
+            "notes": "Expected delivery in 2 business days."
+          },
+          "software_access": [
+            {
+              "system": "GitHub Enterprise",
+              "access_level": "developer",
+              "status": "complete"
+            },
+            {
+              "system": "Slack (engineering channels)",
+              "access_level": "member",
+              "status": "complete"
+            },
+            {
+              "system": "PagerDuty",
+              "access_level": "responder",
+              "status": "complete"
+            },
+            {
+              "system": "Datadog",
+              "access_level": "read",
+              "status": "complete"
+            }
+          ],
+          "security_groups": [
+            {
+              "group": "engineering-all",
+              "status": "complete"
+            },
+            {
+              "group": "production-readonly",
+              "status": "complete"
+            }
+          ],
+          "special_access_requests": [
+            {
+              "system": "AWS Console",
+              "access": "read",
+              "rationale": "Read-only AWS access is standard for senior platform engineers to debug infrastructure issues. Access must be approved because it touches production systems."
+            }
+          ],
+          "warnings": []
+        },
+        "gate": null
+      },
+      {
+        "id": "compliance",
+        "agent": "compliance_docs",
+        "agent_class": "comp",
+        "title": "Compliance & Docs",
+        "status": "complete",
+        "summary": "6 documents \u00b7 Form I-9, Form W-4, IP Assignment Agreement, NDA, Direct Deposit Form, Benefits Enrollment",
+        "reasoning": [
+          "Identify the hire's role family as 'engineering'.",
+          "Recognize location country as 'US' and employment type as 'FTE'.",
+          "Use get_required_documents tool for the US FTE combination.",
+          "Receive and list the required documents with deadlines and rationales."
+        ],
+        "details": {
+          "required_documents": [
+            {
+              "name": "Form I-9",
+              "deadline": "Jun 24, 2026",
+              "status": "not_started",
+              "rationale": "Federal law requires identity and work authorization verification within 3 business days of start."
+            },
+            {
+              "name": "Form W-4",
+              "deadline": "Jun 28, 2026",
+              "status": "not_started",
+              "rationale": "Federal tax withholding election."
+            },
+            {
+              "name": "IP Assignment Agreement",
+              "deadline": "Jun 28, 2026",
+              "status": "not_started",
+              "rationale": "Assigns work-product IP to the company."
+            },
+            {
+              "name": "NDA",
+              "deadline": "Jun 28, 2026",
+              "status": "not_started",
+              "rationale": "Standard confidentiality protection."
+            },
+            {
+              "name": "Direct Deposit Form",
+              "deadline": "Jul 5, 2026",
+              "status": "not_started",
+              "rationale": "Payroll banking setup."
+            },
+            {
+              "name": "Benefits Enrollment",
+              "deadline": "Jul 21, 2026",
+              "status": "not_started",
+              "rationale": "Health insurance and 401(k) elections; 30-day enrollment window."
+            }
+          ],
+          "escalations": []
+        },
+        "gate": null
+      },
+      {
+        "id": "manager_prep",
+        "agent": "manager_prep",
+        "agent_class": "mgr",
+        "title": "Manager Prep",
+        "status": "complete",
+        "summary": "Ready to send to James Reilly \u00b7 draft 30-60-90 \u00b7 intro booked (Jun 22, 2026) \u00b7 suggested buddy Tom Brennan",
+        "reasoning": [
+          "Scheduled the intro meeting at the earliest available slot to ensure a prompt welcome.",
+          "Selected Tom Brennan as the onboarding buddy for his balance of experience and availability.",
+          "Defined a 30-60-90 day plan focusing on learning key systems, contributing to projects, and fostering relationships.",
+          "Composed a checklist for the manager to set expectations and prepare for the new hire's arrival."
+        ],
+        "details": {
+          "manager_name": "James Reilly",
+          "actions": [
+            {
+              "label": "Schedule intro meeting with the manager",
+              "status": "done",
+              "detail": "Jun 22, 2026 \u00b7 30 min"
+            },
+            {
+              "label": "Identify an onboarding buddy",
+              "status": "done",
+              "detail": "Tom Brennan \u00b7 2.8 yrs (a suggestion)"
+            },
+            {
+              "label": "Generate the 30-60-90 onboarding plan",
+              "status": "done",
+              "detail": "Draft for the manager to own & customize"
+            }
+          ],
+          "note": {
+            "subject_line": "Onboarding Preparation for Sarah Chen",
+            "body": "Hi James,\n\nWe're excited to welcome Sarah Chen to the team as a Senior Software Engineer in the platform group. She starts in 7 days on 2026-06-21 (within 2 weeks).\n\nThe introductory meeting with Sarah is scheduled for June 22 at 2:00 PM for 30 minutes.\n\nI'd suggest Tom Brennan as her onboarding buddy. With 2.8 years at the company and expertise in platform infrastructure, Tom could be a great fit for guiding Sarah.\n\nAttached is a draft of the 30-60-90 day plan. This is a starting point for you to adjust and refine as needed before sharing it with Sarah.\n\nPlease also review the manager prep checklist below to help you get everything ready for her arrival.\n\nBest,\n\nThe Onboarding Team"
+          },
+          "thirty_sixty_ninety": {
+            "thirty_days": [
+              "Complete onboarding with all tools: GitHub, Slack, PagerDuty, Datadog.",
+              "Review and push a small code change to a low-risk module, getting it code-reviewed by a peer.",
+              "Meet one-on-one with each team member to understand their roles and current projects."
+            ],
+            "sixty_days": [
+              "Lead a review session on a current codebase process, proposing at least one improvement.",
+              "Deliver a small feature enhancement for the platform with successful deployment and documentation.",
+              "Collaborate on an incident response drill with Amy Zhao to learn the team's incident protocols."
+            ],
+            "ninety_days": [
+              "Take ownership of a medium-complexity feature, coordinating with cross-functional teams for delivery.",
+              "Lead a platform reliability improvement meeting, drawing on insights from observability tools.",
+              "Develop a proposal for a new platform tooling initiative based on identified gaps."
+            ]
+          },
+          "manager_checklist": [
+            "Review Sarah Chen's resume and portfolio to understand her past work and skills.",
+            "Familiarize with the team's current projects and any upcoming deadlines.",
+            "Prepare initial talking points for the intro meeting discussing team culture and expectations.",
+            "Ensure all IT hardware and software provisioning is complete before her start date.",
+            "Plan the first project Sarah will tackle to align with her 30-60-90 day plan.",
+            "Set up relevant permissions in AWS Console once access is approved."
+          ]
+        },
+        "gate": null
+      },
+      {
+        "id": "welcome",
+        "agent": "coordinator",
+        "agent_class": "coord",
+        "title": "Welcome message",
+        "status": "complete",
+        "summary": "Personalized note ready. Starts within 2 weeks \u2192 sends on approval.",
+        "reasoning": [
+          "Start with a warm greeting using Sarah's first name.",
+          "Include her new role and team to make it personal.",
+          "Mention Tom Brennan as her onboarding buddy.",
+          "List specific things she can expect on her first day, such as equipment setup and tool access.",
+          "Keep the tone friendly and welcoming without being too formal or corporate.",
+          "Conclude with excitement about her joining the team."
+        ],
+        "details": {
+          "subject_line": "Welcome to the Platform Team, Sarah!",
+          "body": "Hi Sarah,\n\nWelcome to the Platform Team! We\u2019re thrilled to have you join us as a Senior Software Engineer. Your onboarding buddy, Tom Brennan, will reach out soon to help you settle in and ensure you have everything you need.\n\nOn your first day, your MacBook Pro will be set up and ready for you. You\u2019ll also get access to essential tools like GitHub Enterprise, Slack (including our engineering channels), and PagerDuty. Plus, there's an intro meeting with your manager on June 22nd to discuss your role and answer any questions.\n\nWe\u2019re excited to see the amazing work you\u2019ll do here. Looking forward to seeing you soon!\n\nBest,\nThe Platform Team",
+          "send_strategy": "send_now",
+          "scheduled_send_date": null
+        },
+        "gate": null
+      },
+      {
+        "id": "readiness",
+        "agent": "coordinator",
+        "agent_class": "coord",
+        "title": "Readiness check",
+        "status": "scheduled",
+        "summary": "Runs 3 days before start. Surfaces anything still outstanding \u2014 the 'no laptop on day one' safety net.",
+        "reasoning": [],
+        "details": {},
+        "gate": null
+      }
+    ],
+    "pending_gate": null,
+    "events": [
+      "Received profile h_001.",
+      "Validated Sarah Chen (Senior Software Engineer).",
+      "Built consolidated plan. engineering/fte in US: IT + Compliance run in parallel, Manager Prep follows IT.",
+      "Rendered plan summary for approval.",
+      "IT Provisioning complete: MacBook Pro 16-inch (M-series).",
+      "Compliance complete: 6 document(s).",
+      "Special-access gate surfaced for: AWS Console.",
+      "Manager Prep complete: draft 30-60-90 + cover note ready to send to James Reilly.",
+      "Welcome message ready (send_now).",
+      "Scheduled readiness check for 3 days before start date.",
+      "Onboarding plan fully assembled. All gates resolved."
+    ]
+  }
+}
