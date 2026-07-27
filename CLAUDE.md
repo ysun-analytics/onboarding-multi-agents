@@ -2,7 +2,7 @@
 
 ## What this project is
 
-A 1-week interview demo for a Senior AI Transformation Manager role at GitHub. The audience is a hiring manager who will watch a 45-minute walkthrough. Optimize for **demo legibility and narrative clarity**, not for production robustness, scale, or completeness. Integrations are mocked on purpose — the IP is in the agent design, not the plumbing.
+A demo for an internal built product. Optimize for **demo legibility and narrative clarity**, not for production robustness, scale, or completeness. Integrations are mocked on purpose — the IP is in the agent design, not the plumbing.
 
 If a request would expand scope beyond the one-week build plan in `1_interview_context_and_product_idea.md`, flag it and ask before implementing.
 
@@ -21,7 +21,7 @@ Implications for what we build:
 
 ### The developer: Yuyan (the person writing the code with you)
 
-A PM and AI strategist who is a **beginner at building agentic systems** and is using this project to learn the craft while preparing for the interview. She will be asked technical questions about *how she built this and why*.
+A PM and AI strategist.
 
 Implications for how you communicate:
 - **Explain every non-trivial technical decision.** Not just *what* you did, but *why it's better than the alternatives you considered*. "I used X because Y, instead of Z which would have caused problems with W." She needs to be able to defend the choice in an interview.
