@@ -1,14 +1,13 @@
 # Onboarding Multi-Agent Orchestration
 
-A demo of multi-agent orchestration for **HR onboarding** — built for a Senior AI
-Transformation Manager interview at GitHub. When someone is hired at a mid-market
+A demo of multi-agent orchestration for **HR onboarding**. When someone is hired at a mid-market
 company, onboarding touches 8–12 people and systems (IT, the hiring manager,
 compliance, payroll, facilities), coordinated by hand through Slack and email.
 Things get dropped; new hires show up with no laptop and no access. This system
 puts a specialized AI agent on each domain, coordinated by a deterministic
 orchestrator, with human approval at the high-judgment moments.
 
-> **Scope:** This is an interview demo optimized for *narrative clarity*, not
+> **Scope:** This is a demo optimized for *narrative clarity*, not
 > production scale. Integrations (HRIS, ITSM, calendar) are mocked as JSON on
 > purpose — the IP is in the agent design and handoff contracts, not the plumbing.
 
