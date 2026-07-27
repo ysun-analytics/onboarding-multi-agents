@@ -1,5 +1,7 @@
 # Onboarding Multi-Agent Orchestration
 
+**▶ Live demo — [ysun-analytics.github.io/onboarding-multi-agents](https://ysun-analytics.github.io/onboarding-multi-agents/)** · runs in your browser, no setup. It replays frozen agent runs (cached mode); the live GPT-4o toggle runs locally — see [Run it](#run-it).
+
 A demo of multi-agent orchestration for **HR onboarding**. When someone is hired at a mid-market
 company, onboarding touches 8–12 people and systems (IT, the hiring manager,
 compliance, payroll, facilities), coordinated by hand through Slack and email.
