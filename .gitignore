@@ -6,3 +6,6 @@
 __pycache__/
 *.pyc
 .pytest_cache/
+
+# Static Pages build artifact (assembled by scripts/build_pages.py, deployed to gh-pages)
+site/
