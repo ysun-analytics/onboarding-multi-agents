@@ -1,0 +1,51 @@
+{
+  "rules_by_combination": {
+    "US_fte": {
+      "required_documents": [
+        { "name": "Form I-9", "category": "employment_authorization", "deadline_offset_days": 3, "rationale": "Federal law requires identity and work authorization verification within 3 business days of start." },
+        { "name": "Form W-4", "category": "tax", "deadline_offset_days": 7, "rationale": "Federal tax withholding election." },
+        { "name": "IP Assignment Agreement", "category": "ip", "deadline_offset_days": 7, "rationale": "Assigns work-product IP to the company." },
+        { "name": "NDA", "category": "confidentiality", "deadline_offset_days": 7, "rationale": "Standard confidentiality protection." },
+        { "name": "Direct Deposit Form", "category": "payroll", "deadline_offset_days": 14, "rationale": "Payroll banking setup." },
+        { "name": "Benefits Enrollment", "category": "benefits", "deadline_offset_days": 30, "rationale": "Health insurance and 401(k) elections; 30-day enrollment window." }
+      ]
+    },
+    "US_contractor": {
+      "required_documents": [
+        { "name": "Form W-9", "category": "tax", "deadline_offset_days": 7, "rationale": "Taxpayer identification for 1099 reporting." },
+        { "name": "Contractor MSA", "category": "employment_agreement", "deadline_offset_days": 0, "rationale": "Master services agreement defines scope and terms." },
+        { "name": "IP Assignment Agreement", "category": "ip", "deadline_offset_days": 0, "rationale": "Contractors must explicitly assign IP — no default work-for-hire status." },
+        { "name": "NDA", "category": "confidentiality", "deadline_offset_days": 0, "rationale": "Confidentiality protection." }
+      ]
+    },
+    "UK_fte": {
+      "required_documents": [
+        { "name": "Right to Work check", "category": "employment_authorization", "deadline_offset_days": 0, "rationale": "UK law requires Right to Work verification before start date." },
+        { "name": "Employment Contract", "category": "employment_agreement", "deadline_offset_days": 0, "rationale": "Must be issued before or on the first day." },
+        { "name": "P45/P46", "category": "tax", "deadline_offset_days": 14, "rationale": "PAYE tax setup with HMRC." },
+        { "name": "NDA", "category": "confidentiality", "deadline_offset_days": 7, "rationale": "Confidentiality protection." },
+        { "name": "Pension Auto-enrollment", "category": "benefits", "deadline_offset_days": 30, "rationale": "UK statutory auto-enrollment for workplace pension." }
+      ]
+    },
+    "UK_contractor": {
+      "required_documents": [
+        { "name": "Right to Work check", "category": "employment_authorization", "deadline_offset_days": 0, "rationale": "Required even for contractors under UK law." },
+        { "name": "Contractor Agreement", "category": "employment_agreement", "deadline_offset_days": 0, "rationale": "Contracts for services agreement." },
+        { "name": "IR35 Status Determination", "category": "tax_status", "deadline_offset_days": 7, "rationale": "Determines whether the contractor is inside or outside IR35 for tax purposes." }
+      ]
+    }
+  },
+  "additions": {
+    "executive_addons": [
+      { "name": "Equity Grant Agreement", "category": "compensation", "deadline_offset_days": 14, "rationale": "Documents stock option or RSU grant; board-approved." },
+      { "name": "Board-Level Confidentiality Agreement", "category": "confidentiality", "deadline_offset_days": 7, "rationale": "Extends confidentiality to board-level information." },
+      { "name": "Post-Employment Restrictions", "category": "legal", "deadline_offset_days": 7, "rationale": "Non-compete and non-solicit covenants where legally enforceable." }
+    ],
+    "sensitive_data_role_addons": [
+      { "name": "Sensitive Data Access Agreement", "category": "confidentiality", "deadline_offset_days": 7, "rationale": "Additional controls for roles touching PII, financial, or legal data." }
+    ]
+  },
+  "sensitive_data_role_families": ["finance", "executive"],
+  "known_jurisdictions": ["US", "UK"],
+  "fallback_behavior": "If the hire's location.country is not in known_jurisdictions, the Compliance Agent MUST surface an `escalation` HITL gate with proposed_decision='unfamiliar_combination', a best-effort proposed document set based on closest known jurisdiction, and rationale explaining the uncertainty. Do not silently default."
+}

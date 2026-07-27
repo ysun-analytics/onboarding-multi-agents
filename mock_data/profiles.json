@@ -1,0 +1,73 @@
+{
+  "h_001": {
+    "hire_id": "h_001",
+    "full_name": "Sarah Chen",
+    "role_title": "Senior Software Engineer",
+    "role_family": "engineering",
+    "team": "platform",
+    "manager_id": "u_james_reilly",
+    "location": { "country": "US", "city": "Seattle" },
+    "employment_type": "fte",
+    "start_date": "2026-06-21",
+    "seniority": "senior"
+  },
+  "h_002": {
+    "hire_id": "h_002",
+    "full_name": "Marcus Webb",
+    "role_title": "Account Executive",
+    "role_family": "sales",
+    "team": "emea_sales",
+    "manager_id": "u_priya_nair",
+    "location": { "country": "UK", "city": "London" },
+    "employment_type": "contractor",
+    "start_date": "2026-06-28",
+    "seniority": "mid"
+  },
+  "h_003": {
+    "hire_id": "h_003",
+    "full_name": "Diana Okafor",
+    "role_title": "Senior Data Scientist",
+    "role_family": "engineering",
+    "team": "ml_platform",
+    "manager_id": "u_alex_morgan",
+    "location": { "country": "US", "city": "New York" },
+    "employment_type": "contractor",
+    "start_date": "2026-07-05",
+    "seniority": "senior"
+  },
+  "h_004": {
+    "hire_id": "h_004",
+    "full_name": "Rachel Steinberg",
+    "role_title": "VP Engineering",
+    "role_family": "executive",
+    "team": "engineering_leadership",
+    "manager_id": "u_michael_park",
+    "location": { "country": "US", "city": "San Francisco" },
+    "employment_type": "fte",
+    "start_date": "2026-06-28",
+    "seniority": "exec"
+  },
+  "h_005": {
+    "hire_id": "h_005",
+    "full_name": "Yuki Tanaka",
+    "role_title": "Account Executive",
+    "role_family": "sales",
+    "team": "apac_sales",
+    "manager_id": "u_kenji_watanabe",
+    "location": { "country": "SG", "city": "Singapore" },
+    "employment_type": "contractor",
+    "start_date": "2026-07-12",
+    "seniority": "mid"
+  },
+  "test_malformed": {
+    "hire_id": "test_malformed",
+    "full_name": "Test Hire Missing Start Date",
+    "role_title": "Software Engineer",
+    "role_family": "engineering",
+    "team": "platform",
+    "manager_id": "u_james_reilly",
+    "location": { "country": "US", "city": "Seattle" },
+    "employment_type": "fte",
+    "seniority": "mid"
+  }
+}

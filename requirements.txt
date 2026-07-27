@@ -1,0 +1,19 @@
+# Install into a virtualenv:  python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+#
+# Phase 1-2 (models, loaders, orchestrator state machine, tests):
+pydantic>=2.0
+pytest>=7.0
+
+# Phase 3 (real IT Provisioning agent):
+openai-agents>=0.8        # the OpenAI Agents SDK — the agent framework (locked in)
+openai>=2.0               # GPT-4o runtime client
+python-dotenv>=1.0        # load OPENAI_API_KEY from .env
+eval_type_backport        # lets the SDK's 3.10+ type syntax run on Python 3.9
+
+# Phase 5 (the dashboard — HTML/CSS/JS frontend + thin FastAPI backend).
+# Decision (2026-06-14): dropped Streamlit in favor of a hand-built HTML frontend so
+# the non-technical coordinator sees a clean, purpose-built UI (not a generic widget
+# wall), and the agent flow / handoffs / two HITL shapes render exactly as designed.
+fastapi>=0.110            # the thin backend: HTTP <-> orchestrator pause/resume
+uvicorn[standard]>=0.27   # ASGI server that runs FastAPI
+httpx>=0.27              # FastAPI TestClient (used by the API tests)

@@ -1,0 +1,64 @@
+{
+  "hardware_by_role_family": {
+    "engineering": { "default": "MacBook Pro 16-inch (M-series)", "alternative": "MacBook Pro 14-inch" },
+    "sales":       { "default": "Dell XPS 13", "alternative": "MacBook Air 13-inch" },
+    "operations":  { "default": "Dell XPS 13" },
+    "finance":     { "default": "Dell XPS 13" },
+    "executive":   { "default": "MacBook Pro 16-inch (M-series)" },
+    "other":       { "default": "Dell XPS 13" }
+  },
+  "software_by_role_family": {
+    "engineering": [
+      { "system": "GitHub Enterprise",        "access_level": "developer", "requires_approval": false },
+      { "system": "Slack (engineering channels)", "access_level": "member", "requires_approval": false },
+      { "system": "PagerDuty",                "access_level": "responder", "requires_approval": false },
+      { "system": "Datadog",                  "access_level": "read",      "requires_approval": false },
+      { "system": "AWS Console",              "access_level": "read",      "requires_approval": true,  "seniority_threshold": "senior", "approval_rationale": "Cloud console access touches production; requires manager sign-off." }
+    ],
+    "sales": [
+      { "system": "Salesforce",               "access_level": "user",   "requires_approval": false },
+      { "system": "Gong",                     "access_level": "user",   "requires_approval": false },
+      { "system": "Outreach.io",              "access_level": "user",   "requires_approval": false },
+      { "system": "Slack (sales channels)",   "access_level": "member", "requires_approval": false }
+    ],
+    "operations": [
+      { "system": "Workday",                  "access_level": "user",   "requires_approval": false },
+      { "system": "Slack (ops channels)",     "access_level": "member", "requires_approval": false }
+    ],
+    "finance": [
+      { "system": "NetSuite",                 "access_level": "user",   "requires_approval": false },
+      { "system": "Slack (finance channels)", "access_level": "member", "requires_approval": false }
+    ],
+    "executive": [
+      { "system": "Slack (#leadership)",      "access_level": "member", "requires_approval": true, "approval_rationale": "Leadership channel exposes board-level material." },
+      { "system": "Notion (board-docs space)","access_level": "viewer", "requires_approval": true, "approval_rationale": "Board documents require explicit access provisioning." },
+      { "system": "Carta",                    "access_level": "admin",  "requires_approval": true, "approval_rationale": "Equity admin access requires CFO sign-off." }
+    ]
+  },
+  "security_groups_by_role_family": {
+    "engineering": ["engineering-all", "production-readonly"],
+    "sales":       ["sales-all", "salesforce-users"],
+    "operations":  ["ops-all"],
+    "finance":     ["finance-all", "netsuite-users"],
+    "executive":   ["leadership"]
+  },
+  "team_slack_channels": {
+    "platform":               ["#platform-eng", "#platform-incidents"],
+    "ml_platform":            ["#ml-platform", "#ml-research"],
+    "emea_sales":             ["#sales-emea", "#deals-emea"],
+    "apac_sales":             ["#sales-apac", "#deals-apac"],
+    "engineering_leadership": ["#leadership"]
+  },
+  "contractor_restrictions": {
+    "disallow_systems":             ["AWS Console (write or admin)", "PagerDuty (responder)", "Secrets manager", "Carta"],
+    "disallow_access_levels":       ["admin", "write_production"],
+    "time_bound_credentials_days":  90,
+    "rationale": "Contractor access is intentionally limited to read-only operational tooling and revoked after 90 days unless renewed. Production write and security tooling require FTE status."
+  },
+  "international_shipping_lead_time_days": {
+    "US": 2,
+    "UK": 5,
+    "SG": 7,
+    "default_unknown": 10
+  }
+}

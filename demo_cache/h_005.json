@@ -1,0 +1,1598 @@
+{
+  "hire_id": "h_005",
+  "steps": [
+    {
+      "state": "received",
+      "ok": true,
+      "hire": {
+        "name": "Yuki Tanaka",
+        "role_title": "Account Executive",
+        "team": "Apac Sales",
+        "location": "Singapore, SG",
+        "employment": "Contractor",
+        "manager": "Kenji Watanabe",
+        "start_date": "Jul 12, 2026"
+      },
+      "orchestrator": {
+        "name": "Onboarding Assistant",
+        "agent_class": "coord",
+        "status": "Coordinating Yuki's onboarding \u00b7 1 approval waiting for you.",
+        "waiting": true
+      },
+      "stages": [
+        {
+          "id": "plan",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Consolidated plan",
+          "status": "awaiting_approval",
+          "summary": "One plan covering all four agents \u2014 approve in a single click, not four.",
+          "reasoning": [
+            "Mid-seniority role implies standard hardware and systems provisioning without executive-level customizations.",
+            "Singapore location requires compliance with SG-specific contractor documentation, not US or EU regulations.",
+            "As a sales role, specific CRM and communication tools will be provisioned.",
+            "Contractor status necessitates a detailed compliance review to ensure all legal requirements are met."
+          ],
+          "details": {
+            "sections": [
+              {
+                "agent": "it_provisioning",
+                "agent_class": "it",
+                "label": "IT Provisioning",
+                "text": "Provision hardware: Dell XPS 13 Create accounts for 4 role-standard systems Assign role security groups",
+                "gate": null
+              },
+              {
+                "agent": "compliance_docs",
+                "agent_class": "comp",
+                "label": "Compliance & Docs",
+                "text": "Determine required documents for SG / contractor Track completion and send reminders as start date approaches Surface unfamiliar-jurisdiction escalation with best-effort doc set",
+                "gate": "\u2691 Needs your review (unfamiliar location)"
+              },
+              {
+                "agent": "manager_prep",
+                "agent_class": "mgr",
+                "label": "Manager Prep",
+                "text": "Draft a role-tailored 30-60-90 day plan Schedule a manager intro meeting Recommend an onboarding buddy Send the manager a prep checklist",
+                "gate": "\u2691 You'll review & send it to the manager"
+              },
+              {
+                "agent": "coordinator",
+                "agent_class": "coord",
+                "label": "Assistant",
+                "text": "Render this consolidated plan for approval Draft a personalized welcome message Run a readiness check 3 days before start date",
+                "gate": "\u2691 Needs your review before sending"
+              }
+            ]
+          },
+          "gate": {
+            "gate_type": "plan_approval",
+            "agent": "coordinator",
+            "summary": "Approve the onboarding plan for Yuki Tanaka.",
+            "proposed_decision": "Proceed with the consolidated plan as shown.",
+            "rationale": "sales/contractor in SG: IT + Compliance run in parallel, Manager Prep follows IT.",
+            "alternatives": [],
+            "shape": "decision",
+            "actions": [
+              "approve",
+              "edit",
+              "request_changes"
+            ],
+            "payload": {
+              "plan": {
+                "hire_id": "h_005",
+                "profile": {
+                  "hire_id": "h_005",
+                  "full_name": "Yuki Tanaka",
+                  "role_title": "Account Executive",
+                  "role_family": "sales",
+                  "team": "apac_sales",
+                  "manager_id": "u_kenji_watanabe",
+                  "location": {
+                    "country": "SG",
+                    "city": "Singapore"
+                  },
+                  "employment_type": "contractor",
+                  "start_date": "2026-07-12",
+                  "seniority": "mid"
+                },
+                "work": [
+                  {
+                    "agent": "coordinator",
+                    "will_run": true,
+                    "run_wave": 0,
+                    "anticipated_actions": [
+                      "Render this consolidated plan for approval",
+                      "Draft a personalized welcome message",
+                      "Run a readiness check 3 days before start date"
+                    ],
+                    "anticipated_gates": [
+                      "plan_approval",
+                      "welcome_message_review",
+                      "readiness_at_risk"
+                    ]
+                  },
+                  {
+                    "agent": "it_provisioning",
+                    "will_run": true,
+                    "run_wave": 1,
+                    "anticipated_actions": [
+                      "Provision hardware: Dell XPS 13",
+                      "Create accounts for 4 role-standard system(s)",
+                      "Assign role security groups"
+                    ],
+                    "anticipated_gates": []
+                  },
+                  {
+                    "agent": "compliance_docs",
+                    "will_run": true,
+                    "run_wave": 1,
+                    "anticipated_actions": [
+                      "Determine required documents for SG / contractor",
+                      "Track completion and send reminders as start date approaches",
+                      "Surface unfamiliar-jurisdiction escalation with best-effort doc set"
+                    ],
+                    "anticipated_gates": [
+                      "escalation"
+                    ]
+                  },
+                  {
+                    "agent": "manager_prep",
+                    "will_run": true,
+                    "run_wave": 2,
+                    "anticipated_actions": [
+                      "Draft a role-tailored 30-60-90 day plan",
+                      "Schedule a manager intro meeting",
+                      "Recommend an onboarding buddy",
+                      "Send the manager a prep checklist"
+                    ],
+                    "anticipated_gates": [
+                      "30_60_90_signoff"
+                    ]
+                  }
+                ],
+                "note": "sales/contractor in SG: IT + Compliance run in parallel, Manager Prep follows IT."
+              },
+              "plan_summary": {
+                "reasoning": {
+                  "summary": "Yuki Tanaka is a mid-seniority contractor Account Executive in Singapore, requiring localization of compliance documents and a role-specific IT setup.",
+                  "steps": [
+                    "Mid-seniority role implies standard hardware and systems provisioning without executive-level customizations.",
+                    "Singapore location requires compliance with SG-specific contractor documentation, not US or EU regulations.",
+                    "As a sales role, specific CRM and communication tools will be provisioned.",
+                    "Contractor status necessitates a detailed compliance review to ensure all legal requirements are met."
+                  ]
+                },
+                "it_provisioning": {
+                  "actions": [
+                    "Provision hardware: Dell XPS 13",
+                    "Create accounts for 4 role-standard systems",
+                    "Assign role security groups"
+                  ],
+                  "gates": []
+                },
+                "manager_prep": {
+                  "actions": [
+                    "Draft a role-tailored 30-60-90 day plan",
+                    "Schedule a manager intro meeting",
+                    "Recommend an onboarding buddy",
+                    "Send the manager a prep checklist"
+                  ],
+                  "gates": [
+                    "30_60_90_signoff"
+                  ]
+                },
+                "compliance_docs": {
+                  "actions": [
+                    "Determine required documents for SG / contractor",
+                    "Track completion and send reminders as start date approaches",
+                    "Surface unfamiliar-jurisdiction escalation with best-effort doc set"
+                  ],
+                  "gates": [
+                    "escalation"
+                  ]
+                },
+                "coordinator": {
+                  "actions": [
+                    "Render this consolidated plan for approval",
+                    "Draft a personalized welcome message",
+                    "Run a readiness check 3 days before start date"
+                  ],
+                  "gates": [
+                    "plan_approval",
+                    "welcome_message_review",
+                    "readiness_at_risk"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "it",
+          "agent": "it_provisioning",
+          "agent_class": "it",
+          "title": "IT Provisioning",
+          "status": "pending",
+          "summary": "Waiting on plan approval\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "compliance",
+          "agent": "compliance_docs",
+          "agent_class": "comp",
+          "title": "Compliance & Docs",
+          "status": "pending",
+          "summary": "Waiting on plan approval\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "manager_prep",
+          "agent": "manager_prep",
+          "agent_class": "mgr",
+          "title": "Manager Prep",
+          "status": "pending",
+          "summary": "Waiting on IT's provisioning summary\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "welcome",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Welcome message",
+          "status": "pending",
+          "summary": "Drafted once the specialists report back\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "readiness",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Readiness check",
+          "status": "pending",
+          "summary": "Runs 3 days before start. Surfaces anything still outstanding \u2014 the 'no laptop on day one' safety net.",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        }
+      ],
+      "pending_gate": {
+        "gate_type": "plan_approval",
+        "agent": "coordinator",
+        "summary": "Approve the onboarding plan for Yuki Tanaka.",
+        "proposed_decision": "Proceed with the consolidated plan as shown.",
+        "rationale": "sales/contractor in SG: IT + Compliance run in parallel, Manager Prep follows IT.",
+        "alternatives": [],
+        "shape": "decision",
+        "actions": [
+          "approve",
+          "edit",
+          "request_changes"
+        ],
+        "payload": {
+          "plan": {
+            "hire_id": "h_005",
+            "profile": {
+              "hire_id": "h_005",
+              "full_name": "Yuki Tanaka",
+              "role_title": "Account Executive",
+              "role_family": "sales",
+              "team": "apac_sales",
+              "manager_id": "u_kenji_watanabe",
+              "location": {
+                "country": "SG",
+                "city": "Singapore"
+              },
+              "employment_type": "contractor",
+              "start_date": "2026-07-12",
+              "seniority": "mid"
+            },
+            "work": [
+              {
+                "agent": "coordinator",
+                "will_run": true,
+                "run_wave": 0,
+                "anticipated_actions": [
+                  "Render this consolidated plan for approval",
+                  "Draft a personalized welcome message",
+                  "Run a readiness check 3 days before start date"
+                ],
+                "anticipated_gates": [
+                  "plan_approval",
+                  "welcome_message_review",
+                  "readiness_at_risk"
+                ]
+              },
+              {
+                "agent": "it_provisioning",
+                "will_run": true,
+                "run_wave": 1,
+                "anticipated_actions": [
+                  "Provision hardware: Dell XPS 13",
+                  "Create accounts for 4 role-standard system(s)",
+                  "Assign role security groups"
+                ],
+                "anticipated_gates": []
+              },
+              {
+                "agent": "compliance_docs",
+                "will_run": true,
+                "run_wave": 1,
+                "anticipated_actions": [
+                  "Determine required documents for SG / contractor",
+                  "Track completion and send reminders as start date approaches",
+                  "Surface unfamiliar-jurisdiction escalation with best-effort doc set"
+                ],
+                "anticipated_gates": [
+                  "escalation"
+                ]
+              },
+              {
+                "agent": "manager_prep",
+                "will_run": true,
+                "run_wave": 2,
+                "anticipated_actions": [
+                  "Draft a role-tailored 30-60-90 day plan",
+                  "Schedule a manager intro meeting",
+                  "Recommend an onboarding buddy",
+                  "Send the manager a prep checklist"
+                ],
+                "anticipated_gates": [
+                  "30_60_90_signoff"
+                ]
+              }
+            ],
+            "note": "sales/contractor in SG: IT + Compliance run in parallel, Manager Prep follows IT."
+          },
+          "plan_summary": {
+            "reasoning": {
+              "summary": "Yuki Tanaka is a mid-seniority contractor Account Executive in Singapore, requiring localization of compliance documents and a role-specific IT setup.",
+              "steps": [
+                "Mid-seniority role implies standard hardware and systems provisioning without executive-level customizations.",
+                "Singapore location requires compliance with SG-specific contractor documentation, not US or EU regulations.",
+                "As a sales role, specific CRM and communication tools will be provisioned.",
+                "Contractor status necessitates a detailed compliance review to ensure all legal requirements are met."
+              ]
+            },
+            "it_provisioning": {
+              "actions": [
+                "Provision hardware: Dell XPS 13",
+                "Create accounts for 4 role-standard systems",
+                "Assign role security groups"
+              ],
+              "gates": []
+            },
+            "manager_prep": {
+              "actions": [
+                "Draft a role-tailored 30-60-90 day plan",
+                "Schedule a manager intro meeting",
+                "Recommend an onboarding buddy",
+                "Send the manager a prep checklist"
+              ],
+              "gates": [
+                "30_60_90_signoff"
+              ]
+            },
+            "compliance_docs": {
+              "actions": [
+                "Determine required documents for SG / contractor",
+                "Track completion and send reminders as start date approaches",
+                "Surface unfamiliar-jurisdiction escalation with best-effort doc set"
+              ],
+              "gates": [
+                "escalation"
+              ]
+            },
+            "coordinator": {
+              "actions": [
+                "Render this consolidated plan for approval",
+                "Draft a personalized welcome message",
+                "Run a readiness check 3 days before start date"
+              ],
+              "gates": [
+                "plan_approval",
+                "welcome_message_review",
+                "readiness_at_risk"
+              ]
+            }
+          }
+        }
+      },
+      "events": [
+        "Received profile h_005.",
+        "Validated Yuki Tanaka (Account Executive).",
+        "Built consolidated plan. sales/contractor in SG: IT + Compliance run in parallel, Manager Prep follows IT.",
+        "Rendered plan summary for approval."
+      ]
+    },
+    {
+      "state": "provisioning_and_compliance",
+      "ok": true,
+      "hire": {
+        "name": "Yuki Tanaka",
+        "role_title": "Account Executive",
+        "team": "Apac Sales",
+        "location": "Singapore, SG",
+        "employment": "Contractor",
+        "manager": "Kenji Watanabe",
+        "start_date": "Jul 12, 2026"
+      },
+      "orchestrator": {
+        "name": "Onboarding Assistant",
+        "agent_class": "coord",
+        "status": "Coordinating Yuki's onboarding \u00b7 1 approval waiting for you.",
+        "waiting": true
+      },
+      "stages": [
+        {
+          "id": "plan",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Consolidated plan",
+          "status": "complete",
+          "summary": "One plan covering all four agents \u2014 approved in a single click, not four.",
+          "reasoning": [
+            "Mid-seniority role implies standard hardware and systems provisioning without executive-level customizations.",
+            "Singapore location requires compliance with SG-specific contractor documentation, not US or EU regulations.",
+            "As a sales role, specific CRM and communication tools will be provisioned.",
+            "Contractor status necessitates a detailed compliance review to ensure all legal requirements are met."
+          ],
+          "details": {
+            "sections": [
+              {
+                "agent": "it_provisioning",
+                "agent_class": "it",
+                "label": "IT Provisioning",
+                "text": "Provision hardware: Dell XPS 13 Create accounts for 4 role-standard systems Assign role security groups",
+                "gate": null
+              },
+              {
+                "agent": "compliance_docs",
+                "agent_class": "comp",
+                "label": "Compliance & Docs",
+                "text": "Determine required documents for SG / contractor Track completion and send reminders as start date approaches Surface unfamiliar-jurisdiction escalation with best-effort doc set",
+                "gate": "\u2691 Needs your review (unfamiliar location)"
+              },
+              {
+                "agent": "manager_prep",
+                "agent_class": "mgr",
+                "label": "Manager Prep",
+                "text": "Draft a role-tailored 30-60-90 day plan Schedule a manager intro meeting Recommend an onboarding buddy Send the manager a prep checklist",
+                "gate": "\u2691 You'll review & send it to the manager"
+              },
+              {
+                "agent": "coordinator",
+                "agent_class": "coord",
+                "label": "Assistant",
+                "text": "Render this consolidated plan for approval Draft a personalized welcome message Run a readiness check 3 days before start date",
+                "gate": "\u2691 Needs your review before sending"
+              }
+            ]
+          },
+          "gate": null
+        },
+        {
+          "id": "it",
+          "agent": "it_provisioning",
+          "agent_class": "it",
+          "title": "IT Provisioning",
+          "status": "complete",
+          "summary": "Dell XPS 13 \u00b7 Salesforce, Gong, Outreach.io, Slack (sales channels)",
+          "reasoning": [
+            "Provisioned a Dell XPS 13 to be shipped to the Singapore location, allowing 7 business days for delivery, ensuring timely arrival by the start date.",
+            "Created user accounts on Salesforce, Gong, and Outreach.io with user access, as well as added the new hire to sales-related Slack channels, as these are required for the sales role.",
+            "Assigned the new hire to the 'sales-all' and 'salesforce-users' security groups for appropriate team access."
+          ],
+          "details": {
+            "hardware": {
+              "item": "Dell XPS 13",
+              "status": "in_progress",
+              "notes": "Shipping to Singapore with 7 business days lead time for the start date of 2026-07-12."
+            },
+            "software_access": [
+              {
+                "system": "Salesforce",
+                "access_level": "user",
+                "status": "complete"
+              },
+              {
+                "system": "Gong",
+                "access_level": "user",
+                "status": "complete"
+              },
+              {
+                "system": "Outreach.io",
+                "access_level": "user",
+                "status": "complete"
+              },
+              {
+                "system": "Slack (sales channels)",
+                "access_level": "member",
+                "status": "complete"
+              }
+            ],
+            "security_groups": [
+              {
+                "group": "sales-all",
+                "status": "complete"
+              },
+              {
+                "group": "salesforce-users",
+                "status": "complete"
+              }
+            ],
+            "special_access_requests": [],
+            "warnings": []
+          },
+          "gate": null
+        },
+        {
+          "id": "compliance",
+          "agent": "compliance_docs",
+          "agent_class": "comp",
+          "title": "Compliance & Docs",
+          "status": "awaiting_approval",
+          "summary": "0 documents \u00b7 ",
+          "reasoning": [
+            "Query the required documents for a sales contractor in Singapore.",
+            "Identify that Singapore is not part of the known jurisdictions.",
+            "The tool identifies US as the closest known jurisdiction.",
+            "Escalate for human review, proposing a US-based document set for reference."
+          ],
+          "details": {
+            "required_documents": [],
+            "escalations": [
+              {
+                "reason": "Jurisdiction 'SG' is not part of the known jurisdictions (US, UK). Closest known jurisdiction is 'US', used for the proposed document set. Escalation needed due to lack of specific guidance for Singapore.",
+                "proposed_document_set": [
+                  "W-9",
+                  "contractor MSA",
+                  "IP assignment",
+                  "NDA"
+                ]
+              }
+            ]
+          },
+          "gate": {
+            "gate_type": "escalation",
+            "agent": "compliance_docs",
+            "summary": "Unfamiliar jurisdiction \u2014 review proposed documents.",
+            "proposed_decision": "Use the best-effort document set shown.",
+            "rationale": "Jurisdiction 'SG' is not part of the known jurisdictions (US, UK). Closest known jurisdiction is 'US', used for the proposed document set. Escalation needed due to lack of specific guidance for Singapore.",
+            "alternatives": [
+              "W-9",
+              "contractor MSA",
+              "IP assignment",
+              "NDA"
+            ],
+            "shape": "decision",
+            "actions": [
+              "approve",
+              "edit",
+              "request_changes"
+            ],
+            "payload": {
+              "escalation": {
+                "reason": "Jurisdiction 'SG' is not part of the known jurisdictions (US, UK). Closest known jurisdiction is 'US', used for the proposed document set. Escalation needed due to lack of specific guidance for Singapore.",
+                "proposed_document_set": [
+                  "W-9",
+                  "contractor MSA",
+                  "IP assignment",
+                  "NDA"
+                ],
+                "requires_human_review": true
+              }
+            }
+          }
+        },
+        {
+          "id": "manager_prep",
+          "agent": "manager_prep",
+          "agent_class": "mgr",
+          "title": "Manager Prep",
+          "status": "pending",
+          "summary": "Waiting on IT's provisioning summary\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "welcome",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Welcome message",
+          "status": "pending",
+          "summary": "Drafted once the specialists report back\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "readiness",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Readiness check",
+          "status": "pending",
+          "summary": "Runs 3 days before start. Surfaces anything still outstanding \u2014 the 'no laptop on day one' safety net.",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        }
+      ],
+      "pending_gate": {
+        "gate_type": "escalation",
+        "agent": "compliance_docs",
+        "summary": "Unfamiliar jurisdiction \u2014 review proposed documents.",
+        "proposed_decision": "Use the best-effort document set shown.",
+        "rationale": "Jurisdiction 'SG' is not part of the known jurisdictions (US, UK). Closest known jurisdiction is 'US', used for the proposed document set. Escalation needed due to lack of specific guidance for Singapore.",
+        "alternatives": [
+          "W-9",
+          "contractor MSA",
+          "IP assignment",
+          "NDA"
+        ],
+        "shape": "decision",
+        "actions": [
+          "approve",
+          "edit",
+          "request_changes"
+        ],
+        "payload": {
+          "escalation": {
+            "reason": "Jurisdiction 'SG' is not part of the known jurisdictions (US, UK). Closest known jurisdiction is 'US', used for the proposed document set. Escalation needed due to lack of specific guidance for Singapore.",
+            "proposed_document_set": [
+              "W-9",
+              "contractor MSA",
+              "IP assignment",
+              "NDA"
+            ],
+            "requires_human_review": true
+          }
+        }
+      },
+      "events": [
+        "Received profile h_005.",
+        "Validated Yuki Tanaka (Account Executive).",
+        "Built consolidated plan. sales/contractor in SG: IT + Compliance run in parallel, Manager Prep follows IT.",
+        "Rendered plan summary for approval.",
+        "IT Provisioning complete: Dell XPS 13.",
+        "Compliance complete: 0 document(s)."
+      ]
+    },
+    {
+      "state": "manager_prep",
+      "ok": true,
+      "hire": {
+        "name": "Yuki Tanaka",
+        "role_title": "Account Executive",
+        "team": "Apac Sales",
+        "location": "Singapore, SG",
+        "employment": "Contractor",
+        "manager": "Kenji Watanabe",
+        "start_date": "Jul 12, 2026"
+      },
+      "orchestrator": {
+        "name": "Onboarding Assistant",
+        "agent_class": "coord",
+        "status": "Coordinating Yuki's onboarding \u00b7 1 approval waiting for you.",
+        "waiting": true
+      },
+      "stages": [
+        {
+          "id": "plan",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Consolidated plan",
+          "status": "complete",
+          "summary": "One plan covering all four agents \u2014 approved in a single click, not four.",
+          "reasoning": [
+            "Mid-seniority role implies standard hardware and systems provisioning without executive-level customizations.",
+            "Singapore location requires compliance with SG-specific contractor documentation, not US or EU regulations.",
+            "As a sales role, specific CRM and communication tools will be provisioned.",
+            "Contractor status necessitates a detailed compliance review to ensure all legal requirements are met."
+          ],
+          "details": {
+            "sections": [
+              {
+                "agent": "it_provisioning",
+                "agent_class": "it",
+                "label": "IT Provisioning",
+                "text": "Provision hardware: Dell XPS 13 Create accounts for 4 role-standard systems Assign role security groups",
+                "gate": null
+              },
+              {
+                "agent": "compliance_docs",
+                "agent_class": "comp",
+                "label": "Compliance & Docs",
+                "text": "Determine required documents for SG / contractor Track completion and send reminders as start date approaches Surface unfamiliar-jurisdiction escalation with best-effort doc set",
+                "gate": "\u2691 Needs your review (unfamiliar location)"
+              },
+              {
+                "agent": "manager_prep",
+                "agent_class": "mgr",
+                "label": "Manager Prep",
+                "text": "Draft a role-tailored 30-60-90 day plan Schedule a manager intro meeting Recommend an onboarding buddy Send the manager a prep checklist",
+                "gate": "\u2691 You'll review & send it to the manager"
+              },
+              {
+                "agent": "coordinator",
+                "agent_class": "coord",
+                "label": "Assistant",
+                "text": "Render this consolidated plan for approval Draft a personalized welcome message Run a readiness check 3 days before start date",
+                "gate": "\u2691 Needs your review before sending"
+              }
+            ]
+          },
+          "gate": null
+        },
+        {
+          "id": "it",
+          "agent": "it_provisioning",
+          "agent_class": "it",
+          "title": "IT Provisioning",
+          "status": "complete",
+          "summary": "Dell XPS 13 \u00b7 Salesforce, Gong, Outreach.io, Slack (sales channels)",
+          "reasoning": [
+            "Provisioned a Dell XPS 13 to be shipped to the Singapore location, allowing 7 business days for delivery, ensuring timely arrival by the start date.",
+            "Created user accounts on Salesforce, Gong, and Outreach.io with user access, as well as added the new hire to sales-related Slack channels, as these are required for the sales role.",
+            "Assigned the new hire to the 'sales-all' and 'salesforce-users' security groups for appropriate team access."
+          ],
+          "details": {
+            "hardware": {
+              "item": "Dell XPS 13",
+              "status": "in_progress",
+              "notes": "Shipping to Singapore with 7 business days lead time for the start date of 2026-07-12."
+            },
+            "software_access": [
+              {
+                "system": "Salesforce",
+                "access_level": "user",
+                "status": "complete"
+              },
+              {
+                "system": "Gong",
+                "access_level": "user",
+                "status": "complete"
+              },
+              {
+                "system": "Outreach.io",
+                "access_level": "user",
+                "status": "complete"
+              },
+              {
+                "system": "Slack (sales channels)",
+                "access_level": "member",
+                "status": "complete"
+              }
+            ],
+            "security_groups": [
+              {
+                "group": "sales-all",
+                "status": "complete"
+              },
+              {
+                "group": "salesforce-users",
+                "status": "complete"
+              }
+            ],
+            "special_access_requests": [],
+            "warnings": []
+          },
+          "gate": null
+        },
+        {
+          "id": "compliance",
+          "agent": "compliance_docs",
+          "agent_class": "comp",
+          "title": "Compliance & Docs",
+          "status": "complete",
+          "summary": "0 documents \u00b7 ",
+          "reasoning": [
+            "Query the required documents for a sales contractor in Singapore.",
+            "Identify that Singapore is not part of the known jurisdictions.",
+            "The tool identifies US as the closest known jurisdiction.",
+            "Escalate for human review, proposing a US-based document set for reference."
+          ],
+          "details": {
+            "required_documents": [],
+            "escalations": [
+              {
+                "reason": "Jurisdiction 'SG' is not part of the known jurisdictions (US, UK). Closest known jurisdiction is 'US', used for the proposed document set. Escalation needed due to lack of specific guidance for Singapore.",
+                "proposed_document_set": [
+                  "W-9",
+                  "contractor MSA",
+                  "IP assignment",
+                  "NDA"
+                ]
+              }
+            ]
+          },
+          "gate": null
+        },
+        {
+          "id": "manager_prep",
+          "agent": "manager_prep",
+          "agent_class": "mgr",
+          "title": "Manager Prep",
+          "status": "awaiting_approval",
+          "summary": "Ready to send to Kenji Watanabe \u00b7 draft 30-60-90 \u00b7 intro booked (Jul 13, 2026) \u00b7 suggested buddy Mei Lin",
+          "reasoning": [
+            "Created a 30-60-90 day plan focusing on Yuki's role as an Account Executive.",
+            "Checked the manager's schedule and booked the earliest available slot for an introductory meeting.",
+            "Selected an onboarding buddy from the team with relevant expertise and moderate availability.",
+            "Developed a manager checklist to aid in Yuki's seamless onboarding process."
+          ],
+          "details": {
+            "manager_name": "Kenji Watanabe",
+            "actions": [
+              {
+                "label": "Schedule intro meeting with the manager",
+                "status": "done",
+                "detail": "Jul 13, 2026 \u00b7 30 min"
+              },
+              {
+                "label": "Identify an onboarding buddy",
+                "status": "done",
+                "detail": "Mei Lin \u00b7 2.5 yrs (a suggestion)"
+              },
+              {
+                "label": "Generate the 30-60-90 onboarding plan",
+                "status": "done",
+                "detail": "Draft for the manager to own & customize"
+              }
+            ],
+            "note": {
+              "subject_line": "Onboarding Package for Yuki Tanaka",
+              "body": "Hi Kenji,\n\nWe're excited that Yuki Tanaka will be joining the APAC Sales team as an Account Executive. She starts in 28 days on 2026-07-12.\n\nWe've scheduled an intro meeting for July 13th at 09:00 AM to get things rolling.\n\nFor an onboarding buddy, I'd suggest Mei Lin. With 2.5 years of experience in Singapore's enterprise sales market, she could be a great fit to guide Yuki.\n\nYou'll find a draft 30-60-90 day plan below. This is a starting point for you to review and tailor as you see fit before sharing it with Yuki.\n\nAdditionally, a manager prep checklist is provided to assist you.\n\nBest regards,\n\nThe Onboarding team"
+            },
+            "thirty_sixty_ninety": {
+              "thirty_days": [
+                "Understand APAC sales strategies by attending briefing sessions with key team members and reviewing current sales data using Salesforce.",
+                "Complete training on Outreach.io and Gong to ensure effective use of tools.",
+                "Establish relationships with at least 5 key stakeholders through introductory meetings."
+              ],
+              "sixty_days": [
+                "Lead a small sales initiative targeting the Singaporean market and report results to the team.",
+                "Deliver at least 2 new client accounts through nurtured leads, using Gong insights and Outreach.io campaigns.",
+                "Collaborate with Mei Lin to understand enterprise sales processes specific to the region."
+              ],
+              "ninety_days": [
+                "Take full ownership of client accounts in Singapore, managing the sales pipeline independently in Salesforce.",
+                "Develop a strategic sales plan for the next quarter and present it to the team.",
+                "Establish a viewpoint on regional sales tactics and propose a strategy to increase market share."
+              ]
+            },
+            "manager_checklist": [
+              "Review the 30-60-90 day plan for Yuki Tanaka and adjust according to team strategy.",
+              "Ensure Yuki has access to all necessary systems: Salesforce, Gong, Outreach.io, and Slack.",
+              "Prepare to introduce Yuki to key team members and stakeholders in APAC region.",
+              "Set expectations for first week's goals and support Yuki in understanding role expectations.",
+              "Familiarize yourself with Yuki's previous experience and potential fit within the team."
+            ]
+          },
+          "gate": {
+            "gate_type": "30_60_90_signoff",
+            "agent": "manager_prep",
+            "summary": "Review and send the onboarding package to Kenji Watanabe.",
+            "proposed_decision": "Send the cover note + draft 30-60-90 to Kenji Watanabe.",
+            "rationale": "The 30-60-90 is a starting draft for the manager to own and customize. Review the package, then send it to them.",
+            "alternatives": [],
+            "shape": "decision",
+            "actions": [
+              "approve",
+              "edit",
+              "request_changes"
+            ],
+            "payload": {
+              "plan": {
+                "thirty_days": [
+                  "Understand APAC sales strategies by attending briefing sessions with key team members and reviewing current sales data using Salesforce.",
+                  "Complete training on Outreach.io and Gong to ensure effective use of tools.",
+                  "Establish relationships with at least 5 key stakeholders through introductory meetings."
+                ],
+                "sixty_days": [
+                  "Lead a small sales initiative targeting the Singaporean market and report results to the team.",
+                  "Deliver at least 2 new client accounts through nurtured leads, using Gong insights and Outreach.io campaigns.",
+                  "Collaborate with Mei Lin to understand enterprise sales processes specific to the region."
+                ],
+                "ninety_days": [
+                  "Take full ownership of client accounts in Singapore, managing the sales pipeline independently in Salesforce.",
+                  "Develop a strategic sales plan for the next quarter and present it to the team.",
+                  "Establish a viewpoint on regional sales tactics and propose a strategy to increase market share."
+                ],
+                "status": "draft_awaiting_signoff"
+              },
+              "note": {
+                "reasoning": {
+                  "summary": "I crafted the note to introduce Yuki Tanaka's onboarding package to Kenji Watanabe. The note highlights Yuki's start date, the scheduled intro meeting, suggests Mei Lin as the onboarding buddy, and presents the draft 30-60-90 day plan as a flexible tool for Kenji to adjust.",
+                  "steps": [
+                    "Introduce Yuki Tanaka, her role, team, and start date.",
+                    "Mention the scheduled intro meeting with date and time.",
+                    "Suggest Mei Lin as the onboarding buddy with a brief justification.",
+                    "Explain the draft 30-60-90 day plan for Kenji to review and adjust.",
+                    "Point to the manager prep checklist for further guidance."
+                  ]
+                },
+                "subject_line": "Onboarding Package for Yuki Tanaka",
+                "body": "Hi Kenji,\n\nWe're excited that Yuki Tanaka will be joining the APAC Sales team as an Account Executive. She starts in 28 days on 2026-07-12.\n\nWe've scheduled an intro meeting for July 13th at 09:00 AM to get things rolling.\n\nFor an onboarding buddy, I'd suggest Mei Lin. With 2.5 years of experience in Singapore's enterprise sales market, she could be a great fit to guide Yuki.\n\nYou'll find a draft 30-60-90 day plan below. This is a starting point for you to review and tailor as you see fit before sharing it with Yuki.\n\nAdditionally, a manager prep checklist is provided to assist you.\n\nBest regards,\n\nThe Onboarding team"
+              },
+              "manager_name": "Kenji Watanabe"
+            }
+          }
+        },
+        {
+          "id": "welcome",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Welcome message",
+          "status": "pending",
+          "summary": "Drafted once the specialists report back\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "readiness",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Readiness check",
+          "status": "pending",
+          "summary": "Runs 3 days before start. Surfaces anything still outstanding \u2014 the 'no laptop on day one' safety net.",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        }
+      ],
+      "pending_gate": {
+        "gate_type": "30_60_90_signoff",
+        "agent": "manager_prep",
+        "summary": "Review and send the onboarding package to Kenji Watanabe.",
+        "proposed_decision": "Send the cover note + draft 30-60-90 to Kenji Watanabe.",
+        "rationale": "The 30-60-90 is a starting draft for the manager to own and customize. Review the package, then send it to them.",
+        "alternatives": [],
+        "shape": "decision",
+        "actions": [
+          "approve",
+          "edit",
+          "request_changes"
+        ],
+        "payload": {
+          "plan": {
+            "thirty_days": [
+              "Understand APAC sales strategies by attending briefing sessions with key team members and reviewing current sales data using Salesforce.",
+              "Complete training on Outreach.io and Gong to ensure effective use of tools.",
+              "Establish relationships with at least 5 key stakeholders through introductory meetings."
+            ],
+            "sixty_days": [
+              "Lead a small sales initiative targeting the Singaporean market and report results to the team.",
+              "Deliver at least 2 new client accounts through nurtured leads, using Gong insights and Outreach.io campaigns.",
+              "Collaborate with Mei Lin to understand enterprise sales processes specific to the region."
+            ],
+            "ninety_days": [
+              "Take full ownership of client accounts in Singapore, managing the sales pipeline independently in Salesforce.",
+              "Develop a strategic sales plan for the next quarter and present it to the team.",
+              "Establish a viewpoint on regional sales tactics and propose a strategy to increase market share."
+            ],
+            "status": "draft_awaiting_signoff"
+          },
+          "note": {
+            "reasoning": {
+              "summary": "I crafted the note to introduce Yuki Tanaka's onboarding package to Kenji Watanabe. The note highlights Yuki's start date, the scheduled intro meeting, suggests Mei Lin as the onboarding buddy, and presents the draft 30-60-90 day plan as a flexible tool for Kenji to adjust.",
+              "steps": [
+                "Introduce Yuki Tanaka, her role, team, and start date.",
+                "Mention the scheduled intro meeting with date and time.",
+                "Suggest Mei Lin as the onboarding buddy with a brief justification.",
+                "Explain the draft 30-60-90 day plan for Kenji to review and adjust.",
+                "Point to the manager prep checklist for further guidance."
+              ]
+            },
+            "subject_line": "Onboarding Package for Yuki Tanaka",
+            "body": "Hi Kenji,\n\nWe're excited that Yuki Tanaka will be joining the APAC Sales team as an Account Executive. She starts in 28 days on 2026-07-12.\n\nWe've scheduled an intro meeting for July 13th at 09:00 AM to get things rolling.\n\nFor an onboarding buddy, I'd suggest Mei Lin. With 2.5 years of experience in Singapore's enterprise sales market, she could be a great fit to guide Yuki.\n\nYou'll find a draft 30-60-90 day plan below. This is a starting point for you to review and tailor as you see fit before sharing it with Yuki.\n\nAdditionally, a manager prep checklist is provided to assist you.\n\nBest regards,\n\nThe Onboarding team"
+          },
+          "manager_name": "Kenji Watanabe"
+        }
+      },
+      "events": [
+        "Received profile h_005.",
+        "Validated Yuki Tanaka (Account Executive).",
+        "Built consolidated plan. sales/contractor in SG: IT + Compliance run in parallel, Manager Prep follows IT.",
+        "Rendered plan summary for approval.",
+        "IT Provisioning complete: Dell XPS 13.",
+        "Compliance complete: 0 document(s).",
+        "Compliance escalation gate surfaced (unfamiliar jurisdiction).",
+        "Manager Prep complete: draft 30-60-90 + cover note ready to send to Kenji Watanabe."
+      ]
+    },
+    {
+      "state": "drafting_welcome",
+      "ok": true,
+      "hire": {
+        "name": "Yuki Tanaka",
+        "role_title": "Account Executive",
+        "team": "Apac Sales",
+        "location": "Singapore, SG",
+        "employment": "Contractor",
+        "manager": "Kenji Watanabe",
+        "start_date": "Jul 12, 2026"
+      },
+      "orchestrator": {
+        "name": "Onboarding Assistant",
+        "agent_class": "coord",
+        "status": "Coordinating Yuki's onboarding \u00b7 1 approval waiting for you.",
+        "waiting": true
+      },
+      "stages": [
+        {
+          "id": "plan",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Consolidated plan",
+          "status": "complete",
+          "summary": "One plan covering all four agents \u2014 approved in a single click, not four.",
+          "reasoning": [
+            "Mid-seniority role implies standard hardware and systems provisioning without executive-level customizations.",
+            "Singapore location requires compliance with SG-specific contractor documentation, not US or EU regulations.",
+            "As a sales role, specific CRM and communication tools will be provisioned.",
+            "Contractor status necessitates a detailed compliance review to ensure all legal requirements are met."
+          ],
+          "details": {
+            "sections": [
+              {
+                "agent": "it_provisioning",
+                "agent_class": "it",
+                "label": "IT Provisioning",
+                "text": "Provision hardware: Dell XPS 13 Create accounts for 4 role-standard systems Assign role security groups",
+                "gate": null
+              },
+              {
+                "agent": "compliance_docs",
+                "agent_class": "comp",
+                "label": "Compliance & Docs",
+                "text": "Determine required documents for SG / contractor Track completion and send reminders as start date approaches Surface unfamiliar-jurisdiction escalation with best-effort doc set",
+                "gate": "\u2691 Needs your review (unfamiliar location)"
+              },
+              {
+                "agent": "manager_prep",
+                "agent_class": "mgr",
+                "label": "Manager Prep",
+                "text": "Draft a role-tailored 30-60-90 day plan Schedule a manager intro meeting Recommend an onboarding buddy Send the manager a prep checklist",
+                "gate": "\u2691 You'll review & send it to the manager"
+              },
+              {
+                "agent": "coordinator",
+                "agent_class": "coord",
+                "label": "Assistant",
+                "text": "Render this consolidated plan for approval Draft a personalized welcome message Run a readiness check 3 days before start date",
+                "gate": "\u2691 Needs your review before sending"
+              }
+            ]
+          },
+          "gate": null
+        },
+        {
+          "id": "it",
+          "agent": "it_provisioning",
+          "agent_class": "it",
+          "title": "IT Provisioning",
+          "status": "complete",
+          "summary": "Dell XPS 13 \u00b7 Salesforce, Gong, Outreach.io, Slack (sales channels)",
+          "reasoning": [
+            "Provisioned a Dell XPS 13 to be shipped to the Singapore location, allowing 7 business days for delivery, ensuring timely arrival by the start date.",
+            "Created user accounts on Salesforce, Gong, and Outreach.io with user access, as well as added the new hire to sales-related Slack channels, as these are required for the sales role.",
+            "Assigned the new hire to the 'sales-all' and 'salesforce-users' security groups for appropriate team access."
+          ],
+          "details": {
+            "hardware": {
+              "item": "Dell XPS 13",
+              "status": "in_progress",
+              "notes": "Shipping to Singapore with 7 business days lead time for the start date of 2026-07-12."
+            },
+            "software_access": [
+              {
+                "system": "Salesforce",
+                "access_level": "user",
+                "status": "complete"
+              },
+              {
+                "system": "Gong",
+                "access_level": "user",
+                "status": "complete"
+              },
+              {
+                "system": "Outreach.io",
+                "access_level": "user",
+                "status": "complete"
+              },
+              {
+                "system": "Slack (sales channels)",
+                "access_level": "member",
+                "status": "complete"
+              }
+            ],
+            "security_groups": [
+              {
+                "group": "sales-all",
+                "status": "complete"
+              },
+              {
+                "group": "salesforce-users",
+                "status": "complete"
+              }
+            ],
+            "special_access_requests": [],
+            "warnings": []
+          },
+          "gate": null
+        },
+        {
+          "id": "compliance",
+          "agent": "compliance_docs",
+          "agent_class": "comp",
+          "title": "Compliance & Docs",
+          "status": "complete",
+          "summary": "0 documents \u00b7 ",
+          "reasoning": [
+            "Query the required documents for a sales contractor in Singapore.",
+            "Identify that Singapore is not part of the known jurisdictions.",
+            "The tool identifies US as the closest known jurisdiction.",
+            "Escalate for human review, proposing a US-based document set for reference."
+          ],
+          "details": {
+            "required_documents": [],
+            "escalations": [
+              {
+                "reason": "Jurisdiction 'SG' is not part of the known jurisdictions (US, UK). Closest known jurisdiction is 'US', used for the proposed document set. Escalation needed due to lack of specific guidance for Singapore.",
+                "proposed_document_set": [
+                  "W-9",
+                  "contractor MSA",
+                  "IP assignment",
+                  "NDA"
+                ]
+              }
+            ]
+          },
+          "gate": null
+        },
+        {
+          "id": "manager_prep",
+          "agent": "manager_prep",
+          "agent_class": "mgr",
+          "title": "Manager Prep",
+          "status": "complete",
+          "summary": "Ready to send to Kenji Watanabe \u00b7 draft 30-60-90 \u00b7 intro booked (Jul 13, 2026) \u00b7 suggested buddy Mei Lin",
+          "reasoning": [
+            "Created a 30-60-90 day plan focusing on Yuki's role as an Account Executive.",
+            "Checked the manager's schedule and booked the earliest available slot for an introductory meeting.",
+            "Selected an onboarding buddy from the team with relevant expertise and moderate availability.",
+            "Developed a manager checklist to aid in Yuki's seamless onboarding process."
+          ],
+          "details": {
+            "manager_name": "Kenji Watanabe",
+            "actions": [
+              {
+                "label": "Schedule intro meeting with the manager",
+                "status": "done",
+                "detail": "Jul 13, 2026 \u00b7 30 min"
+              },
+              {
+                "label": "Identify an onboarding buddy",
+                "status": "done",
+                "detail": "Mei Lin \u00b7 2.5 yrs (a suggestion)"
+              },
+              {
+                "label": "Generate the 30-60-90 onboarding plan",
+                "status": "done",
+                "detail": "Draft for the manager to own & customize"
+              }
+            ],
+            "note": {
+              "subject_line": "Onboarding Package for Yuki Tanaka",
+              "body": "Hi Kenji,\n\nWe're excited that Yuki Tanaka will be joining the APAC Sales team as an Account Executive. She starts in 28 days on 2026-07-12.\n\nWe've scheduled an intro meeting for July 13th at 09:00 AM to get things rolling.\n\nFor an onboarding buddy, I'd suggest Mei Lin. With 2.5 years of experience in Singapore's enterprise sales market, she could be a great fit to guide Yuki.\n\nYou'll find a draft 30-60-90 day plan below. This is a starting point for you to review and tailor as you see fit before sharing it with Yuki.\n\nAdditionally, a manager prep checklist is provided to assist you.\n\nBest regards,\n\nThe Onboarding team"
+            },
+            "thirty_sixty_ninety": {
+              "thirty_days": [
+                "Understand APAC sales strategies by attending briefing sessions with key team members and reviewing current sales data using Salesforce.",
+                "Complete training on Outreach.io and Gong to ensure effective use of tools.",
+                "Establish relationships with at least 5 key stakeholders through introductory meetings."
+              ],
+              "sixty_days": [
+                "Lead a small sales initiative targeting the Singaporean market and report results to the team.",
+                "Deliver at least 2 new client accounts through nurtured leads, using Gong insights and Outreach.io campaigns.",
+                "Collaborate with Mei Lin to understand enterprise sales processes specific to the region."
+              ],
+              "ninety_days": [
+                "Take full ownership of client accounts in Singapore, managing the sales pipeline independently in Salesforce.",
+                "Develop a strategic sales plan for the next quarter and present it to the team.",
+                "Establish a viewpoint on regional sales tactics and propose a strategy to increase market share."
+              ]
+            },
+            "manager_checklist": [
+              "Review the 30-60-90 day plan for Yuki Tanaka and adjust according to team strategy.",
+              "Ensure Yuki has access to all necessary systems: Salesforce, Gong, Outreach.io, and Slack.",
+              "Prepare to introduce Yuki to key team members and stakeholders in APAC region.",
+              "Set expectations for first week's goals and support Yuki in understanding role expectations.",
+              "Familiarize yourself with Yuki's previous experience and potential fit within the team."
+            ]
+          },
+          "gate": null
+        },
+        {
+          "id": "welcome",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Welcome message",
+          "status": "awaiting_approval",
+          "summary": "Personalized note ready. Scheduled to send Jun 28, 2026 (2 weeks before start).",
+          "reasoning": [
+            "Start with a warm welcome to Yuki.",
+            "Mention the team and role Yuki is joining.",
+            "Introduce Mei Lin as the onboarding buddy.",
+            "Highlight specific day-one logistics including the laptop setup, access to key tools, and the intro meeting with the manager.",
+            "Conclude with a friendly, approachable tone."
+          ],
+          "details": {
+            "subject_line": "Welcome to the Team, Yuki!",
+            "body": "Hi Yuki,\n\nWelcome to our APAC Sales team! We\u2019re thrilled to have you join us as an Account Executive here in sunny Singapore.\n\nOn your first day, your Dell XPS 13 will be all set up and ready to help you dive into your exciting role. You\u2019ll also have access to crucial tools like Salesforce, Gong, and Outreach.io. Plus, don\u2019t worry about navigating everything on your own\u2014Mei Lin, your onboarding buddy, will be reaching out to guide you through the ropes.\n\nWe\u2019ve scheduled an introductory meeting with your manager, Kenji Watanabe, for the morning of July 13th. It'll be a great opportunity to discuss your initial goals and get to know the team better.\n\nWe\u2019re all excited to work with you and look forward to seeing the great things you\u2019ll achieve!\n\nBest,  \nKenji Watanabe",
+            "send_strategy": "schedule",
+            "scheduled_send_date": "Jun 28, 2026"
+          },
+          "gate": {
+            "gate_type": "welcome_message_review",
+            "agent": "coordinator",
+            "summary": "Review the welcome message before it is sent.",
+            "proposed_decision": "schedule the message.",
+            "rationale": "Personalized messages are reviewed before reaching the new hire.",
+            "alternatives": [],
+            "shape": "decision",
+            "actions": [
+              "approve",
+              "edit",
+              "request_changes"
+            ],
+            "payload": {
+              "draft": {
+                "reasoning": {
+                  "summary": "By addressing Yuki personally and mentioning key day-one activities like the laptop setup and intro meetings, the message makes the onboarding process welcoming and informative. Introducing Mei Lin as their buddy adds a personal touch.",
+                  "steps": [
+                    "Start with a warm welcome to Yuki.",
+                    "Mention the team and role Yuki is joining.",
+                    "Introduce Mei Lin as the onboarding buddy.",
+                    "Highlight specific day-one logistics including the laptop setup, access to key tools, and the intro meeting with the manager.",
+                    "Conclude with a friendly, approachable tone."
+                  ]
+                },
+                "subject_line": "Welcome to the Team, Yuki!",
+                "body": "Hi Yuki,\n\nWelcome to our APAC Sales team! We\u2019re thrilled to have you join us as an Account Executive here in sunny Singapore.\n\nOn your first day, your Dell XPS 13 will be all set up and ready to help you dive into your exciting role. You\u2019ll also have access to crucial tools like Salesforce, Gong, and Outreach.io. Plus, don\u2019t worry about navigating everything on your own\u2014Mei Lin, your onboarding buddy, will be reaching out to guide you through the ropes.\n\nWe\u2019ve scheduled an introductory meeting with your manager, Kenji Watanabe, for the morning of July 13th. It'll be a great opportunity to discuss your initial goals and get to know the team better.\n\nWe\u2019re all excited to work with you and look forward to seeing the great things you\u2019ll achieve!\n\nBest,  \nKenji Watanabe",
+                "send_strategy": "schedule",
+                "scheduled_send_date": "2026-06-28"
+              }
+            }
+          }
+        },
+        {
+          "id": "readiness",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Readiness check",
+          "status": "pending",
+          "summary": "Runs 3 days before start. Surfaces anything still outstanding \u2014 the 'no laptop on day one' safety net.",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        }
+      ],
+      "pending_gate": {
+        "gate_type": "welcome_message_review",
+        "agent": "coordinator",
+        "summary": "Review the welcome message before it is sent.",
+        "proposed_decision": "schedule the message.",
+        "rationale": "Personalized messages are reviewed before reaching the new hire.",
+        "alternatives": [],
+        "shape": "decision",
+        "actions": [
+          "approve",
+          "edit",
+          "request_changes"
+        ],
+        "payload": {
+          "draft": {
+            "reasoning": {
+              "summary": "By addressing Yuki personally and mentioning key day-one activities like the laptop setup and intro meetings, the message makes the onboarding process welcoming and informative. Introducing Mei Lin as their buddy adds a personal touch.",
+              "steps": [
+                "Start with a warm welcome to Yuki.",
+                "Mention the team and role Yuki is joining.",
+                "Introduce Mei Lin as the onboarding buddy.",
+                "Highlight specific day-one logistics including the laptop setup, access to key tools, and the intro meeting with the manager.",
+                "Conclude with a friendly, approachable tone."
+              ]
+            },
+            "subject_line": "Welcome to the Team, Yuki!",
+            "body": "Hi Yuki,\n\nWelcome to our APAC Sales team! We\u2019re thrilled to have you join us as an Account Executive here in sunny Singapore.\n\nOn your first day, your Dell XPS 13 will be all set up and ready to help you dive into your exciting role. You\u2019ll also have access to crucial tools like Salesforce, Gong, and Outreach.io. Plus, don\u2019t worry about navigating everything on your own\u2014Mei Lin, your onboarding buddy, will be reaching out to guide you through the ropes.\n\nWe\u2019ve scheduled an introductory meeting with your manager, Kenji Watanabe, for the morning of July 13th. It'll be a great opportunity to discuss your initial goals and get to know the team better.\n\nWe\u2019re all excited to work with you and look forward to seeing the great things you\u2019ll achieve!\n\nBest,  \nKenji Watanabe",
+            "send_strategy": "schedule",
+            "scheduled_send_date": "2026-06-28"
+          }
+        }
+      },
+      "events": [
+        "Received profile h_005.",
+        "Validated Yuki Tanaka (Account Executive).",
+        "Built consolidated plan. sales/contractor in SG: IT + Compliance run in parallel, Manager Prep follows IT.",
+        "Rendered plan summary for approval.",
+        "IT Provisioning complete: Dell XPS 13.",
+        "Compliance complete: 0 document(s).",
+        "Compliance escalation gate surfaced (unfamiliar jurisdiction).",
+        "Manager Prep complete: draft 30-60-90 + cover note ready to send to Kenji Watanabe."
+      ]
+    }
+  ],
+  "final": {
+    "state": "complete",
+    "ok": true,
+    "hire": {
+      "name": "Yuki Tanaka",
+      "role_title": "Account Executive",
+      "team": "Apac Sales",
+      "location": "Singapore, SG",
+      "employment": "Contractor",
+      "manager": "Kenji Watanabe",
+      "start_date": "Jul 12, 2026"
+    },
+    "orchestrator": {
+      "name": "Onboarding Assistant",
+      "agent_class": "coord",
+      "status": "All agents complete \u00b7 every gate resolved \u00b7 onboarding assembled.",
+      "waiting": false
+    },
+    "stages": [
+      {
+        "id": "plan",
+        "agent": "coordinator",
+        "agent_class": "coord",
+        "title": "Consolidated plan",
+        "status": "complete",
+        "summary": "One plan covering all four agents \u2014 approved in a single click, not four.",
+        "reasoning": [
+          "Mid-seniority role implies standard hardware and systems provisioning without executive-level customizations.",
+          "Singapore location requires compliance with SG-specific contractor documentation, not US or EU regulations.",
+          "As a sales role, specific CRM and communication tools will be provisioned.",
+          "Contractor status necessitates a detailed compliance review to ensure all legal requirements are met."
+        ],
+        "details": {
+          "sections": [
+            {
+              "agent": "it_provisioning",
+              "agent_class": "it",
+              "label": "IT Provisioning",
+              "text": "Provision hardware: Dell XPS 13 Create accounts for 4 role-standard systems Assign role security groups",
+              "gate": null
+            },
+            {
+              "agent": "compliance_docs",
+              "agent_class": "comp",
+              "label": "Compliance & Docs",
+              "text": "Determine required documents for SG / contractor Track completion and send reminders as start date approaches Surface unfamiliar-jurisdiction escalation with best-effort doc set",
+              "gate": "\u2691 Needs your review (unfamiliar location)"
+            },
+            {
+              "agent": "manager_prep",
+              "agent_class": "mgr",
+              "label": "Manager Prep",
+              "text": "Draft a role-tailored 30-60-90 day plan Schedule a manager intro meeting Recommend an onboarding buddy Send the manager a prep checklist",
+              "gate": "\u2691 You'll review & send it to the manager"
+            },
+            {
+              "agent": "coordinator",
+              "agent_class": "coord",
+              "label": "Assistant",
+              "text": "Render this consolidated plan for approval Draft a personalized welcome message Run a readiness check 3 days before start date",
+              "gate": "\u2691 Needs your review before sending"
+            }
+          ]
+        },
+        "gate": null
+      },
+      {
+        "id": "it",
+        "agent": "it_provisioning",
+        "agent_class": "it",
+        "title": "IT Provisioning",
+        "status": "complete",
+        "summary": "Dell XPS 13 \u00b7 Salesforce, Gong, Outreach.io, Slack (sales channels)",
+        "reasoning": [
+          "Provisioned a Dell XPS 13 to be shipped to the Singapore location, allowing 7 business days for delivery, ensuring timely arrival by the start date.",
+          "Created user accounts on Salesforce, Gong, and Outreach.io with user access, as well as added the new hire to sales-related Slack channels, as these are required for the sales role.",
+          "Assigned the new hire to the 'sales-all' and 'salesforce-users' security groups for appropriate team access."
+        ],
+        "details": {
+          "hardware": {
+            "item": "Dell XPS 13",
+            "status": "in_progress",
+            "notes": "Shipping to Singapore with 7 business days lead time for the start date of 2026-07-12."
+          },
+          "software_access": [
+            {
+              "system": "Salesforce",
+              "access_level": "user",
+              "status": "complete"
+            },
+            {
+              "system": "Gong",
+              "access_level": "user",
+              "status": "complete"
+            },
+            {
+              "system": "Outreach.io",
+              "access_level": "user",
+              "status": "complete"
+            },
+            {
+              "system": "Slack (sales channels)",
+              "access_level": "member",
+              "status": "complete"
+            }
+          ],
+          "security_groups": [
+            {
+              "group": "sales-all",
+              "status": "complete"
+            },
+            {
+              "group": "salesforce-users",
+              "status": "complete"
+            }
+          ],
+          "special_access_requests": [],
+          "warnings": []
+        },
+        "gate": null
+      },
+      {
+        "id": "compliance",
+        "agent": "compliance_docs",
+        "agent_class": "comp",
+        "title": "Compliance & Docs",
+        "status": "complete",
+        "summary": "0 documents \u00b7 ",
+        "reasoning": [
+          "Query the required documents for a sales contractor in Singapore.",
+          "Identify that Singapore is not part of the known jurisdictions.",
+          "The tool identifies US as the closest known jurisdiction.",
+          "Escalate for human review, proposing a US-based document set for reference."
+        ],
+        "details": {
+          "required_documents": [],
+          "escalations": [
+            {
+              "reason": "Jurisdiction 'SG' is not part of the known jurisdictions (US, UK). Closest known jurisdiction is 'US', used for the proposed document set. Escalation needed due to lack of specific guidance for Singapore.",
+              "proposed_document_set": [
+                "W-9",
+                "contractor MSA",
+                "IP assignment",
+                "NDA"
+              ]
+            }
+          ]
+        },
+        "gate": null
+      },
+      {
+        "id": "manager_prep",
+        "agent": "manager_prep",
+        "agent_class": "mgr",
+        "title": "Manager Prep",
+        "status": "complete",
+        "summary": "Ready to send to Kenji Watanabe \u00b7 draft 30-60-90 \u00b7 intro booked (Jul 13, 2026) \u00b7 suggested buddy Mei Lin",
+        "reasoning": [
+          "Created a 30-60-90 day plan focusing on Yuki's role as an Account Executive.",
+          "Checked the manager's schedule and booked the earliest available slot for an introductory meeting.",
+          "Selected an onboarding buddy from the team with relevant expertise and moderate availability.",
+          "Developed a manager checklist to aid in Yuki's seamless onboarding process."
+        ],
+        "details": {
+          "manager_name": "Kenji Watanabe",
+          "actions": [
+            {
+              "label": "Schedule intro meeting with the manager",
+              "status": "done",
+              "detail": "Jul 13, 2026 \u00b7 30 min"
+            },
+            {
+              "label": "Identify an onboarding buddy",
+              "status": "done",
+              "detail": "Mei Lin \u00b7 2.5 yrs (a suggestion)"
+            },
+            {
+              "label": "Generate the 30-60-90 onboarding plan",
+              "status": "done",
+              "detail": "Draft for the manager to own & customize"
+            }
+          ],
+          "note": {
+            "subject_line": "Onboarding Package for Yuki Tanaka",
+            "body": "Hi Kenji,\n\nWe're excited that Yuki Tanaka will be joining the APAC Sales team as an Account Executive. She starts in 28 days on 2026-07-12.\n\nWe've scheduled an intro meeting for July 13th at 09:00 AM to get things rolling.\n\nFor an onboarding buddy, I'd suggest Mei Lin. With 2.5 years of experience in Singapore's enterprise sales market, she could be a great fit to guide Yuki.\n\nYou'll find a draft 30-60-90 day plan below. This is a starting point for you to review and tailor as you see fit before sharing it with Yuki.\n\nAdditionally, a manager prep checklist is provided to assist you.\n\nBest regards,\n\nThe Onboarding team"
+          },
+          "thirty_sixty_ninety": {
+            "thirty_days": [
+              "Understand APAC sales strategies by attending briefing sessions with key team members and reviewing current sales data using Salesforce.",
+              "Complete training on Outreach.io and Gong to ensure effective use of tools.",
+              "Establish relationships with at least 5 key stakeholders through introductory meetings."
+            ],
+            "sixty_days": [
+              "Lead a small sales initiative targeting the Singaporean market and report results to the team.",
+              "Deliver at least 2 new client accounts through nurtured leads, using Gong insights and Outreach.io campaigns.",
+              "Collaborate with Mei Lin to understand enterprise sales processes specific to the region."
+            ],
+            "ninety_days": [
+              "Take full ownership of client accounts in Singapore, managing the sales pipeline independently in Salesforce.",
+              "Develop a strategic sales plan for the next quarter and present it to the team.",
+              "Establish a viewpoint on regional sales tactics and propose a strategy to increase market share."
+            ]
+          },
+          "manager_checklist": [
+            "Review the 30-60-90 day plan for Yuki Tanaka and adjust according to team strategy.",
+            "Ensure Yuki has access to all necessary systems: Salesforce, Gong, Outreach.io, and Slack.",
+            "Prepare to introduce Yuki to key team members and stakeholders in APAC region.",
+            "Set expectations for first week's goals and support Yuki in understanding role expectations.",
+            "Familiarize yourself with Yuki's previous experience and potential fit within the team."
+          ]
+        },
+        "gate": null
+      },
+      {
+        "id": "welcome",
+        "agent": "coordinator",
+        "agent_class": "coord",
+        "title": "Welcome message",
+        "status": "complete",
+        "summary": "Personalized note ready. Scheduled to send Jun 28, 2026 (2 weeks before start).",
+        "reasoning": [
+          "Start with a warm welcome to Yuki.",
+          "Mention the team and role Yuki is joining.",
+          "Introduce Mei Lin as the onboarding buddy.",
+          "Highlight specific day-one logistics including the laptop setup, access to key tools, and the intro meeting with the manager.",
+          "Conclude with a friendly, approachable tone."
+        ],
+        "details": {
+          "subject_line": "Welcome to the Team, Yuki!",
+          "body": "Hi Yuki,\n\nWelcome to our APAC Sales team! We\u2019re thrilled to have you join us as an Account Executive here in sunny Singapore.\n\nOn your first day, your Dell XPS 13 will be all set up and ready to help you dive into your exciting role. You\u2019ll also have access to crucial tools like Salesforce, Gong, and Outreach.io. Plus, don\u2019t worry about navigating everything on your own\u2014Mei Lin, your onboarding buddy, will be reaching out to guide you through the ropes.\n\nWe\u2019ve scheduled an introductory meeting with your manager, Kenji Watanabe, for the morning of July 13th. It'll be a great opportunity to discuss your initial goals and get to know the team better.\n\nWe\u2019re all excited to work with you and look forward to seeing the great things you\u2019ll achieve!\n\nBest,  \nKenji Watanabe",
+          "send_strategy": "schedule",
+          "scheduled_send_date": "Jun 28, 2026"
+        },
+        "gate": null
+      },
+      {
+        "id": "readiness",
+        "agent": "coordinator",
+        "agent_class": "coord",
+        "title": "Readiness check",
+        "status": "scheduled",
+        "summary": "Runs 3 days before start. Surfaces anything still outstanding \u2014 the 'no laptop on day one' safety net.",
+        "reasoning": [],
+        "details": {},
+        "gate": null
+      }
+    ],
+    "pending_gate": null,
+    "events": [
+      "Received profile h_005.",
+      "Validated Yuki Tanaka (Account Executive).",
+      "Built consolidated plan. sales/contractor in SG: IT + Compliance run in parallel, Manager Prep follows IT.",
+      "Rendered plan summary for approval.",
+      "IT Provisioning complete: Dell XPS 13.",
+      "Compliance complete: 0 document(s).",
+      "Compliance escalation gate surfaced (unfamiliar jurisdiction).",
+      "Manager Prep complete: draft 30-60-90 + cover note ready to send to Kenji Watanabe.",
+      "Welcome message ready (schedule).",
+      "Scheduled readiness check for 3 days before start date.",
+      "Onboarding plan fully assembled. All gates resolved."
+    ]
+  }
+}

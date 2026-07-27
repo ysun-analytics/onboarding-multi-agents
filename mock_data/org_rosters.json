@@ -1,0 +1,190 @@
+{
+  "platform": {
+    "team_name": "Platform Engineering",
+    "description": "Owns shared infrastructure: auth, identity, deployment platform, observability.",
+    "members": [
+      {
+        "user_id": "u_james_reilly",
+        "full_name": "James Reilly",
+        "role_title": "Engineering Manager",
+        "tenure_years": 5.2,
+        "expertise": ["distributed systems", "platform architecture", "people management"],
+        "is_manager": true,
+        "calendar_load": "high"
+      },
+      {
+        "user_id": "u_tom_brennan",
+        "full_name": "Tom Brennan",
+        "role_title": "Senior Software Engineer",
+        "tenure_years": 2.8,
+        "expertise": ["auth", "identity migration", "platform infrastructure"],
+        "is_manager": false,
+        "calendar_load": "medium",
+        "buddy_notes": "Shipped the auth migration Sarah will own next; natural mentor for her ramp."
+      },
+      {
+        "user_id": "u_amy_zhao",
+        "full_name": "Amy Zhao",
+        "role_title": "Staff Software Engineer",
+        "tenure_years": 4.1,
+        "expertise": ["distributed systems", "performance", "incident response"],
+        "is_manager": false,
+        "calendar_load": "high"
+      },
+      {
+        "user_id": "u_raj_patel",
+        "full_name": "Raj Patel",
+        "role_title": "Software Engineer",
+        "tenure_years": 0.8,
+        "expertise": ["API design", "platform tooling"],
+        "is_manager": false,
+        "calendar_load": "low"
+      },
+      {
+        "user_id": "u_lara_dubois",
+        "full_name": "Lara Dubois",
+        "role_title": "Senior Software Engineer",
+        "tenure_years": 1.5,
+        "expertise": ["observability", "Kubernetes", "platform reliability"],
+        "is_manager": false,
+        "calendar_load": "medium"
+      }
+    ]
+  },
+  "emea_sales": {
+    "team_name": "EMEA Sales",
+    "description": "Mid-market and enterprise sales across UK and continental Europe.",
+    "members": [
+      {
+        "user_id": "u_priya_nair",
+        "full_name": "Priya Nair",
+        "role_title": "VP Sales, EMEA",
+        "tenure_years": 4.5,
+        "expertise": ["enterprise sales", "people management", "EMEA market"],
+        "is_manager": true,
+        "calendar_load": "high"
+      },
+      {
+        "user_id": "u_oliver_brennan",
+        "full_name": "Oliver Brennan",
+        "role_title": "Senior Account Executive",
+        "tenure_years": 2.2,
+        "expertise": ["enterprise UK accounts", "Salesforce power user", "MEDDPICC"],
+        "is_manager": false,
+        "calendar_load": "high",
+        "buddy_notes": "UK-based senior AE; ideal for Marcus's territory and process ramp."
+      },
+      {
+        "user_id": "u_elena_marchetti",
+        "full_name": "Elena Marchetti",
+        "role_title": "Account Executive",
+        "tenure_years": 1.3,
+        "expertise": ["mid-market sales", "DACH region"],
+        "is_manager": false,
+        "calendar_load": "medium"
+      },
+      {
+        "user_id": "u_thomas_clark",
+        "full_name": "Thomas Clark",
+        "role_title": "Sales Development Rep",
+        "tenure_years": 0.6,
+        "expertise": ["outbound", "Outreach.io"],
+        "is_manager": false,
+        "calendar_load": "low"
+      }
+    ]
+  },
+  "ml_platform": {
+    "team_name": "ML Platform",
+    "description": "Owns model training infrastructure, feature store, and inference serving.",
+    "members": [
+      {
+        "user_id": "u_alex_morgan",
+        "full_name": "Alex Morgan",
+        "role_title": "Engineering Manager",
+        "tenure_years": 3.6,
+        "expertise": ["ML infrastructure", "MLOps", "people management"],
+        "is_manager": true,
+        "calendar_load": "high"
+      },
+      {
+        "user_id": "u_priscilla_yu",
+        "full_name": "Priscilla Yu",
+        "role_title": "Staff Data Scientist",
+        "tenure_years": 3.1,
+        "expertise": ["recommender systems", "feature engineering", "experimentation"],
+        "is_manager": false,
+        "calendar_load": "medium",
+        "buddy_notes": "Strong overlap with Diana's expected work."
+      },
+      {
+        "user_id": "u_ben_silva",
+        "full_name": "Ben Silva",
+        "role_title": "ML Engineer",
+        "tenure_years": 1.8,
+        "expertise": ["model serving", "feature store"],
+        "is_manager": false,
+        "calendar_load": "low"
+      }
+    ]
+  },
+  "engineering_leadership": {
+    "team_name": "Engineering Leadership",
+    "description": "Senior engineering leaders reporting to the CEO.",
+    "members": [
+      {
+        "user_id": "u_michael_park",
+        "full_name": "Michael Park",
+        "role_title": "CEO",
+        "tenure_years": 7.0,
+        "expertise": ["company strategy", "fundraising"],
+        "is_manager": true,
+        "calendar_load": "high"
+      },
+      {
+        "user_id": "u_helena_friedman",
+        "full_name": "Helena Friedman",
+        "role_title": "VP Product",
+        "tenure_years": 3.4,
+        "expertise": ["product strategy", "cross-functional leadership"],
+        "is_manager": false,
+        "calendar_load": "high",
+        "buddy_notes": "Peer-level onboarding partner for incoming VP Engineering."
+      }
+    ]
+  },
+  "apac_sales": {
+    "team_name": "APAC Sales",
+    "description": "Sales coverage across Singapore, Japan, and Australia.",
+    "members": [
+      {
+        "user_id": "u_kenji_watanabe",
+        "full_name": "Kenji Watanabe",
+        "role_title": "VP Sales, APAC",
+        "tenure_years": 3.9,
+        "expertise": ["APAC enterprise sales", "people management"],
+        "is_manager": true,
+        "calendar_load": "high"
+      },
+      {
+        "user_id": "u_mei_lin",
+        "full_name": "Mei Lin",
+        "role_title": "Senior Account Executive",
+        "tenure_years": 2.5,
+        "expertise": ["Singapore market", "enterprise sales"],
+        "is_manager": false,
+        "calendar_load": "medium",
+        "buddy_notes": "Singapore-based senior AE; natural buddy for Yuki."
+      },
+      {
+        "user_id": "u_hiroshi_sato",
+        "full_name": "Hiroshi Sato",
+        "role_title": "Account Executive",
+        "tenure_years": 1.7,
+        "expertise": ["Japan market"],
+        "is_manager": false,
+        "calendar_load": "medium"
+      }
+    ]
+  }
+}

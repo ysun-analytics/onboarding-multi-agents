@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 632" font-family="'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L8,4.5 L0,9 Z" fill="#7c8a9c"/>
+    </marker>
+    <marker id="arrR" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L8,4.5 L0,9 Z" fill="#ef4444"/>
+    </marker>
+    <filter id="sh" x="-14%" y="-14%" width="128%" height="138%">
+      <feDropShadow dx="0" dy="1.3" stdDeviation="1.6" flood-color="#0f172a" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <text x="525" y="30" text-anchor="middle" font-size="20" font-weight="700" fill="#1f2937">Onboarding Multi-Agent Architecture</text>
+
+  <!-- column headers -->
+  <text x="729" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#0c6b47">Tools</text>
+  <text x="934" y="96" text-anchor="middle" font-size="11" font-weight="700" fill="#5b46a8">Systems</text>
+  <text x="934" y="110" text-anchor="middle" font-size="9" font-style="italic" fill="#7c5fc0">mock JSON now → real APIs in prod</text>
+
+  <!-- ===================== APP CONTAINER ===================== -->
+  <rect x="160" y="60" width="465" height="552" rx="16" fill="#eef3f8" stroke="#c3cedb" stroke-width="1.5"/>
+  <text x="176" y="83" font-size="12" font-weight="700" fill="#5b6b80">FastAPI app — orchestration &amp; agents</text>
+
+  <!-- ===================== USER ===================== -->
+  <circle cx="48" cy="288" r="15" fill="#475569"/>
+  <path d="M22,328 a26,26 0 0 1 52,0 z" fill="#475569"/>
+  <text x="48" y="354" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937">Onboarding</text>
+  <text x="48" y="368" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937">Coordinator</text>
+  <path d="M84,288 L222,302" fill="none" stroke="#7c8a9c" stroke-width="1.7" marker-end="url(#arr)"/>
+  <text x="152" y="284" text-anchor="middle" font-size="8.5" fill="#64748b">new hire from HRIS</text>
+  <path d="M226,338 L84,326" fill="none" stroke="#f59e0b" stroke-width="1.9" marker-end="url(#arr)"/>
+  <text x="152" y="352" text-anchor="middle" font-size="8.5" font-weight="600" fill="#b45309">plans &amp; messages → you approve</text>
+  <circle cx="106" cy="320" r="9" fill="#f59e0b" stroke="#ffffff" stroke-width="1.4"/>
+  <path d="M102,320 l2.5,2.5 l5,-5.4" fill="none" stroke="#ffffff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ===================== ORCHESTRATOR HUB ===================== -->
+  <g filter="url(#sh)"><circle cx="298" cy="312" r="78" fill="#cfe3f7" stroke="#4f86cf" stroke-width="2.5"/></g>
+  <text x="298" y="300" text-anchor="middle" font-size="14" font-weight="700" fill="#1e3a5f">Onboarding</text>
+  <text x="298" y="318" text-anchor="middle" font-size="14" font-weight="700" fill="#1e3a5f">Assistant</text>
+  <text x="298" y="337" text-anchor="middle" font-size="9.5" font-style="italic" fill="#2c4d70">the orchestrator</text>
+  <text x="298" y="408" text-anchor="middle" font-size="9" fill="#475569">deterministic state machine — not an agent</text>
+
+  <!-- GPT-4o -->
+  <g filter="url(#sh)"><rect x="234" y="448" width="128" height="38" rx="9" fill="#e5e7eb" stroke="#9aa3af"/></g>
+  <text x="298" y="472" text-anchor="middle" font-size="11.5" font-weight="700" fill="#374151">GPT-4o (OpenAI)</text>
+  <path d="M298,448 L298,394" fill="none" stroke="#7c8a9c" stroke-width="1.7" marker-end="url(#arr)"/>
+  <text x="306" y="432" font-size="8.3" fill="#6b7280">writes plan · note · welcome</text>
+
+  <!-- ===================== AGENTS (with gate badges) ===================== -->
+  <g filter="url(#sh)"><circle cx="552" cy="165" r="48" fill="#d6f3e4" stroke="#15a06d" stroke-width="2"/></g>
+  <text x="552" y="161" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0c4a34">IT</text>
+  <text x="552" y="176" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0c4a34">Provisioning</text>
+  <circle cx="588" cy="133" r="10" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5"/>
+  <path d="M583.5,133 l2.7,2.7 l5.3,-5.7" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g filter="url(#sh)"><circle cx="552" cy="312" r="48" fill="#d6f3e4" stroke="#15a06d" stroke-width="2"/></g>
+  <text x="552" y="308" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0c4a34">Manager</text>
+  <text x="552" y="323" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0c4a34">Prep</text>
+  <circle cx="588" cy="280" r="10" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5"/>
+  <path d="M583.5,280 l2.7,2.7 l5.3,-5.7" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g filter="url(#sh)"><circle cx="552" cy="459" r="48" fill="#d6f3e4" stroke="#15a06d" stroke-width="2"/></g>
+  <text x="552" y="455" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0c4a34">Compliance</text>
+  <text x="552" y="470" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0c4a34">&amp; Docs</text>
+  <circle cx="588" cy="427" r="10" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5"/>
+  <path d="M583.5,427 l2.7,2.7 l5.3,-5.7" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- delegate <-> result -->
+  <g fill="none" stroke="#7c8a9c" stroke-width="1.6">
+    <path d="M369,277 L513,193" marker-end="url(#arr)"/>
+    <path d="M507,185 L363,269" marker-end="url(#arr)"/>
+    <path d="M376,307 L504,307" marker-end="url(#arr)"/>
+    <path d="M504,317 L376,317" marker-end="url(#arr)"/>
+    <path d="M363,355 L507,439" marker-end="url(#arr)"/>
+    <path d="M513,431 L369,347" marker-end="url(#arr)"/>
+  </g>
+  <text x="440" y="301" text-anchor="middle" font-size="8.6" fill="#475569">Delegates task</text>
+  <text x="440" y="331" text-anchor="middle" font-size="8.6" fill="#475569">Typed-JSON result</text>
+
+  <!-- ===================== TOOL CARDS ===================== -->
+  <g filter="url(#sh)"><rect x="648" y="112" width="162" height="116" rx="9" fill="#ffffff" stroke="#bfe6d3"/></g>
+  <text x="657" y="130" font-size="9.3" font-weight="700" fill="#0c6b47">IT Provisioning</text>
+  <g font-family="ui-monospace, Menlo, monospace" font-size="8" fill="#334155">
+    <text x="661" y="146">provision_laptop</text>
+    <text x="661" y="160">create_account</text>
+    <text x="661" y="174">assign_security_group</text>
+    <text x="661" y="188">request_special_access</text>
+    <text x="661" y="202">check_provisioning_status</text>
+  </g>
+
+  <g filter="url(#sh)"><rect x="648" y="266" width="162" height="92" rx="9" fill="#ffffff" stroke="#bfe6d3"/></g>
+  <text x="657" y="284" font-size="9.3" font-weight="700" fill="#0c6b47">Manager Prep</text>
+  <g font-family="ui-monospace, Menlo, monospace" font-size="8" fill="#334155">
+    <text x="661" y="300">check_calendar</text>
+    <text x="661" y="314">schedule_meeting</text>
+    <text x="661" y="328">find_onboarding_buddy</text>
+    <text x="661" y="342">send_manager_checklist</text>
+  </g>
+
+  <g filter="url(#sh)"><rect x="648" y="412" width="162" height="92" rx="9" fill="#ffffff" stroke="#bfe6d3"/></g>
+  <text x="657" y="430" font-size="9.3" font-weight="700" fill="#0c6b47">Compliance &amp; Docs</text>
+  <g font-family="ui-monospace, Menlo, monospace" font-size="8" fill="#334155">
+    <text x="661" y="446">get_required_documents</text>
+    <text x="661" y="460">check_document_status</text>
+    <text x="661" y="474">send_reminder</text>
+    <text x="661" y="488">flag_overdue_documents</text>
+  </g>
+
+  <!-- ===================== SYSTEM CARDS ===================== -->
+  <g filter="url(#sh)"><rect x="850" y="128" width="170" height="84" rx="9" fill="#ede9fe" stroke="#b9a8e8"/></g>
+  <text x="861" y="148" font-size="9.5" font-weight="700" fill="#4c1d95">Okta · accounts &amp; access</text>
+  <text x="861" y="166" font-size="9.5" font-weight="700" fill="#4c1d95">Google Workspace</text>
+  <text x="861" y="184" font-size="9.5" font-weight="700" fill="#4c1d95">Jira Service Mgmt · hardware</text>
+  <text x="861" y="201" font-size="8.2" fill="#7c5fc0">accounts, security groups, laptop</text>
+
+  <g filter="url(#sh)"><rect x="850" y="276" width="170" height="76" rx="9" fill="#ede9fe" stroke="#b9a8e8"/></g>
+  <text x="861" y="296" font-size="9.5" font-weight="700" fill="#4c1d95">Google Calendar</text>
+  <text x="861" y="314" font-size="9.5" font-weight="700" fill="#4c1d95">Gmail</text>
+  <text x="861" y="332" font-size="9.5" font-weight="700" fill="#4c1d95">Slack</text>
+  <text x="861" y="347" font-size="8.2" fill="#7c5fc0">schedule intro · send note · nudge</text>
+
+  <g filter="url(#sh)"><rect x="850" y="420" width="170" height="72" rx="9" fill="#ede9fe" stroke="#b9a8e8"/></g>
+  <text x="861" y="440" font-size="9.5" font-weight="700" fill="#4c1d95">DocuSign</text>
+  <text x="861" y="458" font-size="9.5" font-weight="700" fill="#4c1d95">E-Verify / HRIS</text>
+  <text x="861" y="475" font-size="8.2" fill="#7c5fc0">scheduled compliance forms</text>
+
+  <!-- agent -> tool -> system -->
+  <g fill="none" stroke="#7c8a9c" stroke-width="1.6">
+    <path d="M600,165 L648,165" marker-end="url(#arr)"/>
+    <path d="M600,312 L648,310" marker-end="url(#arr)"/>
+    <path d="M600,459 L648,456" marker-end="url(#arr)"/>
+    <path d="M810,168 L850,168" marker-end="url(#arr)"/>
+    <path d="M810,312 L850,312" marker-end="url(#arr)"/>
+    <path d="M810,458 L850,456" marker-end="url(#arr)"/>
+  </g>
+
+  <!-- status webhooks flow back -> readiness -->
+  <path d="M1006,492 C840,600 470,560 356,376" fill="none" stroke="#ef4444" stroke-width="1.7"
+        stroke-dasharray="6 5" marker-end="url(#arrR)"/>
+  <text x="556" y="590" text-anchor="middle" font-size="9" font-weight="600" fill="#dc2626">systems report status back (webhooks) → the Assistant's T-3 readiness check</text>
+
+  <!-- ===================== HITL LEGEND ===================== -->
+  <circle cx="170" cy="620" r="9" fill="#f59e0b" stroke="#ffffff" stroke-width="1.4"/>
+  <path d="M166,620 l2.5,2.5 l5,-5.4" fill="none" stroke="#ffffff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="186" y="623" font-size="9.2" fill="#92400e"><tspan font-weight="700">Human-in-the-loop gate</tspan> — one on every agent and the Assistant (plan, special access, manager send, compliance review, welcome, T-3 readiness). Nothing commits until you approve.</text>
+</svg>

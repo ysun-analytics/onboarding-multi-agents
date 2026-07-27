@@ -1,0 +1,62 @@
+{
+  "u_james_reilly": {
+    "user_id": "u_james_reilly",
+    "user_name": "James Reilly",
+    "free_slots_first_week_of_hire": [
+      "2026-06-22T14:00",
+      "2026-06-23T10:00",
+      "2026-06-23T15:30",
+      "2026-06-24T11:00",
+      "2026-06-25T13:00"
+    ]
+  },
+  "u_james_reilly_busy_variant": {
+    "user_id": "u_james_reilly",
+    "user_name": "James Reilly",
+    "variant": "fully_booked",
+    "free_slots_first_week_of_hire": [],
+    "next_available_after_first_week": "2026-07-02T14:00",
+    "note": "Use this variant for the Scenario C stretch (manager calendar fully booked)."
+  },
+  "u_priya_nair": {
+    "user_id": "u_priya_nair",
+    "user_name": "Priya Nair",
+    "free_slots_first_week_of_hire": [
+      "2026-06-29T09:00",
+      "2026-06-30T11:00",
+      "2026-07-01T14:00",
+      "2026-07-02T10:30",
+      "2026-07-03T15:00"
+    ]
+  },
+  "u_alex_morgan": {
+    "user_id": "u_alex_morgan",
+    "user_name": "Alex Morgan",
+    "free_slots_first_week_of_hire": [
+      "2026-07-06T10:00",
+      "2026-07-07T14:00",
+      "2026-07-08T11:00",
+      "2026-07-09T16:00"
+    ]
+  },
+  "u_michael_park": {
+    "user_id": "u_michael_park",
+    "user_name": "Michael Park",
+    "free_slots_first_week_of_hire": [
+      "2026-06-29T08:30",
+      "2026-07-01T16:00",
+      "2026-07-03T15:30"
+    ],
+    "note": "CEO calendar is sparse; only three slots in the first week."
+  },
+  "u_kenji_watanabe": {
+    "user_id": "u_kenji_watanabe",
+    "user_name": "Kenji Watanabe",
+    "free_slots_first_week_of_hire": [
+      "2026-07-13T09:00",
+      "2026-07-14T10:30",
+      "2026-07-15T14:00",
+      "2026-07-16T11:00"
+    ]
+  }
+}

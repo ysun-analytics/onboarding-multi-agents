@@ -1,0 +1,12 @@
+# Minimal project config. The only thing we need right now is reliable test runs.
+#
+# Why this exists: without it, `python3 -m pytest` only finds the `onboarding`
+# package by luck — it works when you happen to run from the project root because
+# Python adds the current directory to the import path. `pythonpath = ["."]` makes
+# that explicit, so `import onboarding` resolves no matter where pytest is invoked.
+# testpaths tells pytest to only look in tests/, so it never accidentally collects
+# something from docs/ or mock_data/.
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

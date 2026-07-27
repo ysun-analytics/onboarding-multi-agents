@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Onboarding Coordinator — Design Mockup</title>
+<style>
+  :root{
+    --bg:#ffffff; --surface:#FAFAFB; --ink:#111827; --muted:#6B7280; --faint:#9CA3AF;
+    --line:#E7E9EE; --line2:#F1F2F5;
+    --accent:#2563EB; --accent-soft:#E7EEFD;
+    --green:#1A7F37; --amber:#9A6700; --gray:#9CA3AF;
+    --alert:#C2410C; --alert-soft:#FBEADF;
+    /* agent identity colors */
+    --coord:#2563EB; --coord-s:#E7EEFD;
+    --it:#0D9488;    --it-s:#D6F0ED;
+    --comp:#7C3AED;  --comp-s:#EEE8FD;
+    --mgr:#E11D48;   --mgr-s:#FCE4EA;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:15px; line-height:1.55; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:880px; margin:0 auto; padding:0 28px;}
+  h1,h2,h3,h4{font-weight:600; letter-spacing:-.01em;}
+
+  header.top{border-bottom:1px solid var(--line); position:sticky; top:0; background:rgba(255,255,255,.9); backdrop-filter:blur(8px); z-index:5;}
+  .top .wrap{display:flex; align-items:center; justify-content:space-between; height:58px;}
+  .logo{font-size:15px; font-weight:600; display:flex; align-items:center; gap:9px;}
+  .logo .mk{width:22px;height:22px;border-radius:6px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;}
+  nav{display:flex; gap:4px;}
+  nav button{font:inherit; font-size:14px; border:0; background:none; cursor:pointer; color:var(--muted); padding:7px 13px; border-radius:7px;}
+  nav button:hover{color:var(--ink); background:var(--surface);}
+  nav button.active{color:var(--ink); background:var(--accent-soft);}
+
+  .view{display:none; padding:26px 0 90px;} .view.active{display:block;}
+
+  .dhead{display:flex; justify-content:space-between; align-items:flex-start; gap:20px;}
+  .picker{display:flex; align-items:center; gap:8px; font-size:13.5px; color:var(--muted);}
+  select{font:inherit; font-size:14px; padding:7px 11px; border:1px solid var(--line); border-radius:8px; background:#fff; color:var(--ink);}
+  h2.name{font-size:23px; margin:13px 0 2px;}
+  .sub{color:var(--muted); font-size:13.5px;}
+  .sub2{color:var(--faint); font-size:12.5px; margin-top:2px;}
+  .sub2 b{color:var(--muted); font-weight:500;}
+  .section-label{font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--faint); margin:26px 0 11px; font-weight:600;}
+
+  /* agent avatar */
+  .avatar{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex:none;background:var(--cs,#eee);color:var(--c,#555);}
+  .avatar svg{width:18px;height:18px;}
+  .ag-coord{--c:var(--coord);--cs:var(--coord-s);}
+  .ag-it{--c:var(--it);--cs:var(--it-s);}
+  .ag-comp{--c:var(--comp);--cs:var(--comp-s);}
+  .ag-mgr{--c:var(--mgr);--cs:var(--mgr-s);}
+
+  /* orchestrator band */
+  .orch{display:flex; align-items:center; gap:13px; border:1px solid var(--line); border-left:3px solid var(--coord); border-radius:11px; padding:13px 16px; background:var(--surface);}
+  .orch .grow{flex:1;}
+  .orch .ttl{font-size:14.5px; font-weight:600; display:flex; align-items:center; gap:8px;}
+  .orch .badge{font-size:10px; font-weight:700; letter-spacing:.05em; color:var(--coord); background:var(--coord-s); padding:2px 7px; border-radius:5px; text-transform:uppercase;}
+  .orch .ostate{font-size:12.5px; color:var(--muted); margin-top:5px;} .orch .ostate b{color:var(--ink);}
+
+  /* flow */
+  .flow{margin-top:6px;}
+  .conn{display:flex; align-items:center; gap:9px; font-size:12.5px; color:var(--muted); padding:9px 0 9px 16px; position:relative;}
+  .conn::before{content:""; position:absolute; left:15px; top:0; bottom:0; width:2px; background:var(--line);}
+  .conn .chev{position:absolute; left:10px; top:50%; transform:translateY(-50%); color:var(--faint); background:#fff; font-size:12px; line-height:1;}
+  .conn b{color:#374151;}
+
+  .card{border:1px solid var(--line); border-radius:11px; background:#fff; border-left:3px solid var(--c,var(--line));}
+  .node{display:flex; align-items:flex-start; gap:12px; padding:13px 15px;}
+  .node .grow{flex:1;}
+  .node .t{font-size:14.5px; font-weight:600; display:flex; align-items:center; gap:7px;}
+  .node .t .by{color:var(--faint); font-weight:400; font-size:12px;}
+  .node .d{font-size:13px; color:var(--muted); margin-top:4px;}
+  .pill{font-size:11px; padding:3px 9px; border-radius:999px; white-space:nowrap; align-self:flex-start; font-weight:500;}
+  .p-done{background:#E7F4EC; color:var(--green);} .p-wait{background:#FBF1DD; color:var(--amber);} .p-pend{background:#F1F2F5; color:var(--muted);}
+
+  details.tr{border-top:1px solid var(--line2);}
+  details.tr summary{cursor:pointer; list-style:none; padding:10px 15px 10px 59px; font-size:12.5px; color:var(--accent);}
+  details.tr summary::-webkit-details-marker{display:none;}
+  details.tr summary::after{content:"  ›";} details.tr[open] summary::after{content:"  ⌄";}
+  details.tr .inner{padding:0 15px 14px 59px; font-size:13px; color:#374151;}
+  .plan-sec{padding:8px 0; border-top:1px solid var(--line2); font-size:13px; display:flex; gap:9px; align-items:flex-start;}
+  .plan-sec:first-child{border-top:0;}
+  .plan-sec .av{width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;background:var(--cs);color:var(--c);flex:none;}
+  .plan-sec .av svg{width:13px;height:13px;}
+  .plan-sec b{display:block;} .plan-sec .g{color:var(--amber); font-size:12px;}
+
+  /* gate sub-cards */
+  .gate{border-top:1px dashed var(--line); padding:13px 15px 14px 59px;}
+  .gate.active{background:#FCFCFE;}
+  .gate .gh{display:flex; align-items:center; gap:8px; font-size:13.5px; font-weight:600;}
+  .gate .tag{font-size:9.5px; font-weight:700; letter-spacing:.05em; padding:2px 7px; border-radius:5px; text-transform:uppercase;}
+  .tag-gate{color:var(--accent); background:var(--accent-soft);}
+  .tag-alert{color:var(--alert); background:var(--alert-soft);}
+  .gate .why{font-size:12.5px; color:var(--muted); margin:7px 0; border-left:2px solid var(--line); padding-left:11px;}
+  .btns{display:flex; gap:7px; margin-top:10px;}
+  .btn{font:inherit; font-size:13px; padding:7px 14px; border-radius:8px; cursor:pointer; border:1px solid var(--line); background:#fff; color:var(--ink);}
+  .btn.primary{background:var(--accent); border-color:var(--accent); color:#fff;}
+  .btn.alt{background:var(--alert); border-color:var(--alert); color:#fff;}
+  .btn.text{border-color:transparent; background:none; color:var(--muted);}
+  .gate .wait-note{font-size:12.5px; color:var(--muted); margin-top:3px;}
+  .actions-hint{font-size:11.5px; color:var(--faint); margin-top:8px;}
+
+  /* parallel group */
+  .pll-head{font-size:11px; letter-spacing:.05em; text-transform:uppercase; color:var(--faint); font-weight:600; display:flex; align-items:center; gap:7px; margin:2px 0 8px 16px;}
+  .parallel{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .parallel details.tr summary,.parallel details.tr .inner{padding-left:15px;}
+  .parallel .gate{padding-left:15px;}
+
+  .legend{display:flex; flex-wrap:wrap; gap:7px 18px; font-size:12px; color:var(--muted); margin-top:18px; padding-top:14px; border-top:1px solid var(--line2);}
+  .legend .grp{display:flex; gap:14px;}
+  .legend span.li{display:flex; align-items:center; gap:6px;}
+  .sw{width:10px;height:10px;border-radius:3px;}
+  .foot{font-size:12px; color:var(--faint); margin-top:18px;}
+
+  /* how it's built */
+  .lead{font-size:15px; color:#374151; max-width:680px;}
+  .diagram{border:1px solid var(--line); border-radius:11px; padding:16px; margin:16px 0; background:#fff;}
+  .diagram img{width:100%; height:auto; display:block;}
+  .diagram .cap{font-size:12.5px; color:var(--muted); margin-top:10px;}
+  ul.principles{list-style:none; padding:0; margin:6px 0;}
+  ul.principles li{padding:11px 0; border-bottom:1px solid var(--line2); font-size:14px; color:#374151;}
+  ul.principles li b{color:var(--ink);}
+  .stack{display:flex; flex-wrap:wrap; gap:7px; margin-top:8px;}
+  .stack span{font-size:12.5px; border:1px solid var(--line); border-radius:7px; padding:5px 10px; color:var(--muted); background:var(--surface);}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="logo"><span class="mk">◆</span> Onboarding Coordinator</div>
+  <nav>
+    <button data-v="dash" class="active">Dashboard</button>
+    <button data-v="built">How it's built</button>
+  </nav>
+</div></header>
+
+<!-- ===================== DASHBOARD ===================== -->
+<section id="dash" class="view active"><div class="wrap">
+  <div class="dhead">
+    <div>
+      <div class="picker">New hire:
+        <select>
+          <option>Sarah Chen — Sr Engineer · Seattle · FTE</option>
+          <option>Marcus Webb — Account Executive · London · Contractor</option>
+          <option>Diana Okafor — Sr Data Scientist · NYC · Contractor</option>
+          <option>Yuki Tanaka — Account Executive · Singapore · Contractor</option>
+        </select>
+      </div>
+      <h2 class="name">Sarah Chen</h2>
+      <div class="sub">Senior Software Engineer · Platform team · Seattle, US · Full-time</div>
+      <div class="sub2">Reports to <b>James Reilly</b> · Starts Jun 21, 2026</div>
+    </div>
+    <div style="text-align:right;color:var(--faint);font-size:12.5px;">Demo · mock data</div>
+  </div>
+
+  <!-- orchestrator -->
+  <div class="section-label">Onboarding flow</div>
+  <div class="orch">
+    <span class="avatar ag-coord"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M12 7v3.5M12 10.5L6.2 16M12 10.5L17.8 16"/></svg></span>
+    <div class="grow">
+      <div class="ttl"><span class="badge">Coordinator</span> orchestrating Sarah's onboarding</div>
+      <div class="ostate">Plan approved · IT &amp; Compliance complete · Manager Prep in progress · <b>2 approvals waiting for you</b></div>
+    </div>
+  </div>
+
+  <!-- the flow -->
+  <div class="flow">
+
+    <!-- stage 1: consolidated plan -->
+    <div class="conn"><span class="chev">●</span><span>The Coordinator built <b>one consolidated plan</b> and you approved it.</span></div>
+    <div class="card ag-coord">
+      <div class="node">
+        <span class="avatar ag-coord"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M12 7v3.5M12 10.5L6.2 16M12 10.5L17.8 16"/></svg></span>
+        <div class="grow"><div class="t">Consolidated plan <span class="by">· Coordinator</span></div>
+          <div class="d">One plan covering all three agents — approved in a single click, not four.</div></div>
+        <span class="pill p-done">Approved</span></div>
+      <details class="tr"><summary>See the plan you approved</summary><div class="inner" style="padding-left:15px;">
+        <div class="plan-sec"><span class="av ag-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 20h20"/></svg></span><div><b>IT Provisioning</b> MacBook Pro, GitHub, Slack, PagerDuty, Datadog. <span class="g">Gate: AWS access will need your approval.</span></div></div>
+        <div class="plan-sec"><span class="av ag-comp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 3H7a1 1 0 00-1 1v16a1 1 0 001 1h10a1 1 0 001-1V7z"/><path d="M14 3v4h4M9 12h6M9 16h5"/></svg></span><div><b>Compliance &amp; Docs</b> US full-time document set (I-9, W-4, IP, NDA, …).</div></div>
+        <div class="plan-sec"><span class="av ag-mgr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="3.2"/><path d="M5.5 20a6.5 6.5 0 0113 0"/></svg></span><div><b>Manager Prep</b> 30-60-90 plan, intro meeting, onboarding buddy. <span class="g">Gate: 30-60-90 sign-off.</span></div></div>
+        <div class="plan-sec"><span class="av ag-coord"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M12 7v3.5M12 10.5L6.2 16M12 10.5L17.8 16"/></svg></span><div><b>Coordinator</b> welcome message, then a readiness check 3 days before start. <span class="g">Gate: welcome review.</span></div></div>
+      </div></details>
+    </div>
+
+    <!-- parallel delegation -->
+    <div class="conn"><span class="chev">↓</span><span>Approved → delegated to two agents <b>in parallel</b></span></div>
+    <div class="pll-head">⫶ Running in parallel</div>
+    <div class="parallel">
+      <!-- IT -->
+      <div class="card ag-it">
+        <div class="node">
+          <span class="avatar ag-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 20h20"/></svg></span>
+          <div class="grow"><div class="t">IT Provisioning</div>
+            <div class="d">MacBook + GitHub, Slack, PagerDuty, Datadog. AWS held for approval.</div></div>
+          <span class="pill p-done">Complete</span></div>
+        <div class="gate active">
+          <div class="gh"><span class="tag tag-gate">Decision gate</span> Grant AWS Console access (read-only)?</div>
+          <div class="why">Senior Platform engineers need read access to AWS to debug production. This touches production, so it needs your sign-off.</div>
+          <div class="btns"><button class="btn primary">Approve</button><button class="btn">Edit scope</button><button class="btn text">Request changes</button></div>
+          <div class="actions-hint">Edit = narrow the scope · Request changes = ask IT to revise</div>
+        </div>
+      </div>
+      <!-- Compliance -->
+      <div class="card ag-comp">
+        <div class="node">
+          <span class="avatar ag-comp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 3H7a1 1 0 00-1 1v16a1 1 0 001 1h10a1 1 0 001-1V7z"/><path d="M14 3v4h4M9 12h6M9 16h5"/></svg></span>
+          <div class="grow"><div class="t">Compliance &amp; Docs</div>
+            <div class="d">6 documents for a US full-time employee. Deadlines set from her start date.</div></div>
+          <span class="pill p-done">Complete</span></div>
+        <details class="tr"><summary>Why these documents</summary><div class="inner">
+          US + full-time → standard federal set. I-9 due within 3 days of start (Jun 24); benefits has a 30-day window. Known jurisdiction → no escalation.
+          <div style="margin-top:6px;color:var(--muted);">I-9 · W-4 · IP Assignment · NDA · Direct Deposit · Benefits</div>
+        </div></details>
+      </div>
+    </div>
+
+    <!-- handoff IT -> Manager Prep -->
+    <div class="conn"><span class="chev">↓</span><span>IT hands its <b>provisioning summary</b> to Manager Prep — so the 30-60-90 references the real tools she'll have.</span></div>
+    <div class="card ag-mgr">
+      <div class="node">
+        <span class="avatar ag-mgr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="3.2"/><path d="M5.5 20a6.5 6.5 0 0113 0"/></svg></span>
+        <div class="grow"><div class="t">Manager Prep</div>
+          <div class="d">Platform 30-60-90 drafted · intro booked with <b>James Reilly</b> (Jun 22) · buddy Tom Brennan.</div></div>
+        <span class="pill p-wait">Awaiting sign-off</span></div>
+      <div class="gate">
+        <div class="gh"><span class="tag tag-gate">Decision gate</span> Sign off on the 30-60-90 day plan</div>
+        <div class="wait-note">Waiting for you · review the draft before it reaches Sarah.</div>
+        <div class="actions-hint">Approve · Edit milestones · Request changes</div>
+      </div>
+    </div>
+
+    <!-- back to coordinator -->
+    <div class="conn"><span class="chev">↓</span><span>Specialists report back to the <b>Coordinator</b></span></div>
+    <div class="card ag-coord">
+      <div class="node">
+        <span class="avatar ag-coord"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M12 7v3.5M12 10.5L6.2 16M12 10.5L17.8 16"/></svg></span>
+        <div class="grow"><div class="t">Welcome message <span class="by">· Coordinator</span></div>
+          <div class="d">Personalized note ready — names Tom, lists day-one logistics. Starts within 2 weeks → sends on approval.</div></div>
+        <span class="pill p-wait">Ready</span></div>
+      <div class="gate">
+        <div class="gh"><span class="tag tag-gate">Decision gate</span> Review the welcome message</div>
+        <div class="wait-note">Waiting for you.</div>
+        <div class="actions-hint">Approve · Edit text · Request changes</div>
+      </div>
+    </div>
+
+    <!-- readiness alert -->
+    <div class="conn"><span class="chev">↓</span><span>Coordinator schedules a final safety check</span></div>
+    <div class="card ag-coord">
+      <div class="node">
+        <span class="avatar ag-coord"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M12 7v3.5M12 10.5L6.2 16M12 10.5L17.8 16"/></svg></span>
+        <div class="grow"><div class="t">Readiness check <span class="by">· Coordinator</span></div>
+          <div class="d">Runs 3 days before start. Surfaces anything still outstanding — the "no laptop on day one" safety net.</div></div>
+        <span class="pill p-pend">Scheduled</span></div>
+      <div class="gate">
+        <div class="gh"><span class="tag tag-alert">Alert</span> Readiness-at-risk summary</div>
+        <div class="wait-note">Not a decision to approve — a status to act on. Different by design.</div>
+        <div class="btns"><button class="btn alt">Acknowledge</button><button class="btn">Take action</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="grp">
+      <span class="li"><span class="sw" style="background:var(--coord)"></span>Coordinator</span>
+      <span class="li"><span class="sw" style="background:var(--it)"></span>IT</span>
+      <span class="li"><span class="sw" style="background:var(--comp)"></span>Compliance</span>
+      <span class="li"><span class="sw" style="background:var(--mgr)"></span>Manager Prep</span>
+    </div>
+    <div class="grp">
+      <span class="li"><span class="sw" style="background:var(--accent)"></span>Decision gate · 3 actions</span>
+      <span class="li"><span class="sw" style="background:var(--alert)"></span>Alert · 2 actions</span>
+    </div>
+  </div>
+
+  <p class="foot">Mockup · static design for sign-off. Content is the real output of the agents for Sarah Chen.
+  Failure states (e.g. a missing start date) surface here as a plain-English message — never a crash.</p>
+</div></section>
+
+<!-- ===================== HOW IT'S BUILT ===================== -->
+<section id="built" class="view"><div class="wrap">
+  <div class="section-label" style="margin-top:6px;">For the technical walkthrough</div>
+  <h2 class="name" style="margin-top:4px;">How it's built</h2>
+  <p class="lead">Four specialized agents named after HR functions, coordinated by a deterministic orchestrator, with
+  human approval at the high-judgment moments. Integrations are mocked on purpose — the IP is the agent design and
+  the typed handoffs, not the plumbing.</p>
+
+  <div class="diagram"><img src="../docs/diagrams/01_architecture.svg" alt="Architecture" />
+    <div class="cap">System architecture — four agents, one orchestrator, mock integrations as JSON.</div></div>
+  <div class="diagram"><img src="../docs/diagrams/02_workflow.svg" alt="Workflow" />
+    <div class="cap">End-to-end workflow — every gate, conditional path, and parallel branch.</div></div>
+  <div class="diagram"><img src="../docs/diagrams/03_timeline.svg" alt="Timeline" />
+    <div class="cap">Coordinator touchpoints over time — a few decisions, not fifty emails.</div></div>
+
+  <div class="section-label">Design principles</div>
+  <ul class="principles">
+    <li><b>The orchestrator is a state machine, not an agent.</b> Routing is a rule, not a judgment — so it stays deterministic. That's the answer to "why agents at all?"</li>
+    <li><b>Agents reason, tools execute.</b> Deterministic facts and actions live in tools; genuine judgment lives in agents.</li>
+    <li><b>Handoffs are typed JSON contracts.</b> Pydantic catches hallucinations and schema mismatches at the boundary.</li>
+    <li><b>Human-in-the-loop at judgment moments.</b> Five decision gates + one alert — placed where judgment is needed, not at mechanical steps.</li>
+    <li><b>Grounding stops hallucination.</b> Each agent gets the real catalog for the hire, so it reasons over facts.</li>
+    <li><b>Tested without calling the LLM.</b> Agents are dependency-injected, so routing tests run against deterministic fakes.</li>
+  </ul>
+
+  <div class="section-label">Stack</div>
+  <div class="stack">
+    <span>OpenAI Agents SDK (Python)</span><span>GPT-4o</span><span>Pydantic — typed contracts</span>
+    <span>Python state machine</span><span>pytest · 28 tests</span><span>Mock data as JSON</span>
+  </div>
+
+  <p class="foot">Mockup · diagrams are the live project diagrams from docs/diagrams/.</p>
+</div></section>
+
+<script>
+  document.querySelectorAll('nav button').forEach(function(b){
+    b.addEventListener('click', function(){
+      document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));
+      document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+      b.classList.add('active'); document.getElementById(b.dataset.v).classList.add('active');
+      window.scrollTo(0,0);
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+graph TB
+    %% ---- People + product surface ----
+    Coord([Onboarding Coordinator<br/>non-technical HR operator]):::human
+    Dash[Dashboard<br/>FastAPI + browser<br/>HITL approval gates]:::app
+    HRIS[(HRIS system of record<br/>Workday / BambooHR / Deel<br/>new-hire confirmed - webhook)]:::trigger
+
+    %% ---- The brain ----
+    subgraph Brain["Onboarding Assistant — orchestrator"]
+        direction TB
+        ORCH[Python state machine<br/>deterministic routing<br/>+ 3 GPT-4o content calls]:::orch
+        Readiness[Readiness check at T-3 days<br/>deterministic, no LLM<br/>flags anything still outstanding]:::orch
+    end
+
+    %% ---- The specialists ----
+    subgraph Agents["Specialist agents — OpenAI Agents SDK"]
+        direction LR
+        IT[IT Provisioning]:::agent
+        MP[Manager Prep]:::agent
+        CD[Compliance and Docs]:::agent
+    end
+
+    %% ---- Production integrations, Google Workspace default ----
+    subgraph Prod["Production systems — Google Workspace default"]
+        direction TB
+        Okta[Okta - identity provider<br/>SCIM birthright to Workspace, Slack, GitHub<br/>+ Access Requests]:::idp
+        GWS[Google Workspace<br/>accounts, Groups, Drive, Directory]:::google
+        GCal[Google Calendar<br/>free/busy + schedule intro]:::google
+        Gmail[Gmail<br/>send cover note + welcome]:::google
+        Slack[Slack<br/>notify / nudge the manager]:::chat
+        Jira[Atlassian Jira Service Management<br/>IT help-desk tickets + hardware]:::itsm
+        DocuSign[DocuSign<br/>scheduled document sends]:::docs
+    end
+
+    %% ---- Trigger + human loop ----
+    HRIS -->|new hire confirmed| Dash
+    Coord <-->|approve / edit / escalate| Dash
+    Dash <-->|pause / resume at each gate| ORCH
+
+    %% ---- Routing to specialists ----
+    ORCH --> IT
+    ORCH --> MP
+    ORCH --> CD
+
+    %% ---- IT Provisioning rails ----
+    IT -->|assign role bundle| Okta
+    Okta -->|SCIM provisions accounts| GWS
+    IT -.->|special-access request<br/>the AWS gate| Okta
+    IT -->|order + zero-touch image laptop| Jira
+
+    %% ---- Manager Prep rail ----
+    MP -->|buddy roster lookup| GWS
+    MP -->|free/busy + book intro| GCal
+    MP -->|send draft 30-60-90 to manager| Gmail
+    MP -.->|or nudge| Slack
+
+    %% ---- Compliance rail ----
+    CD -->|schedule sends on computed dates| DocuSign
+
+    %% ---- Escalation routes (the two Escalate options) ----
+    Dash -.->|escalate: raise a ticket| Jira
+    Dash -.->|escalate: contact manager| Slack
+
+    %% ---- Status flows back; the readiness check watches it and raises the T-3 alert ----
+    Okta -.status webhook.-> Readiness
+    GCal -.status webhook.-> Readiness
+    DocuSign -.status webhook.-> Readiness
+    Jira -.delivery status.-> Readiness
+    Readiness -.->|T-3 alert if anything is outstanding| Dash
+
+    classDef human fill:#ede9fe,stroke:#7c3aed,color:#4c1d95
+    classDef app fill:#e0f2fe,stroke:#0284c7,color:#075985
+    classDef trigger fill:#fae8ff,stroke:#c026d3,color:#701a75
+    classDef orch fill:#e5e7eb,stroke:#6b7280,color:#1f2937
+    classDef agent fill:#d1fae5,stroke:#10b981,color:#064e3b
+    classDef idp fill:#dbeafe,stroke:#2563eb,color:#1e3a8a
+    classDef google fill:#fef9c3,stroke:#ca8a04,color:#713f12
+    classDef chat fill:#ede9fe,stroke:#6d28d9,color:#4c1d95
+    classDef itsm fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
+    classDef docs fill:#ffe4e6,stroke:#e11d48,color:#881337
+
+    class ORCH orch

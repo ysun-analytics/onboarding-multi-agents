@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Onboarding Assistant</title>
+<link rel="stylesheet" href="/static/app.css" />
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="logo"><span class="mk">◆</span> Onboarding Assistant</div>
+  <nav>
+    <button data-v="dash" class="active">Dashboard</button>
+    <button data-v="built">How it's built</button>
+  </nav>
+</div></header>
+
+<!-- ===================== DASHBOARD ===================== -->
+<section id="dash" class="view active"><div class="wrap">
+  <div class="dhead">
+    <div class="picker">New hire:
+      <select id="profile-select"></select>
+    </div>
+    <div class="modebar">
+      <label title="Cached replays a real, frozen run (instant). Live calls GPT-4o for real.">
+        <input type="checkbox" id="live-toggle" /> <span id="mode-label">Live run</span>
+      </label>
+      <div class="demo-tag">Demo · mock data</div>
+    </div>
+  </div>
+
+  <div id="dash-body">
+    <div class="loading"><span class="spin"></span> Loading…</div>
+  </div>
+</div></section>
+
+<!-- ===================== HOW IT'S BUILT ===================== -->
+<section id="built" class="view"><div class="wrap">
+  <div class="section-label" style="margin-top:6px;">For the technical walkthrough</div>
+  <h2 class="name" style="margin-top:4px;">How it's built</h2>
+  <div class="diagram"><img src="/diagrams/01_architecture.svg" alt="Architecture" />
+    <div class="cap">Reads left to right: the <b>Onboarding Assistant</b> (the orchestrator — a deterministic state machine) <b>delegates a task</b> to each specialist agent and gets a <b>typed-JSON result</b> back, and writes the human-facing messages itself with GPT-4o. Each agent calls its <b>own function tools</b> (the deterministic actions we built), which interact with the real <b>systems</b> on the right — Okta, Google Workspace, Calendar, Gmail, Slack, DocuSign, Jira (mock JSON now, real APIs in prod). Those systems <b>report status back</b> (dashed) to the T-3 readiness check. <b>Amber ✓ = a human-in-the-loop gate</b>, one on every agent and the Assistant.</div></div>
+  <div class="diagram"><img src="/diagrams/02_workflow.svg" alt="Workflow" />
+    <div class="cap">End to end, top to bottom. Center = the flow; <b>left = your decisions</b> (the five HITL gates); <b>right = the tools &amp; systems</b> each agent uses. IT and Compliance run in parallel; <b>amber = a gate</b> where the flow pauses for your approval; the T-3 readiness check is the day-one safety net.</div></div>
+  <div class="diagram"><img src="/diagrams/03_timeline.svg" alt="Timeline" />
+    <div class="cap">Your touchpoints over time — a few decisions, not fifty emails.</div></div>
+
+  <div class="section-label">In production</div>
+  <p class="lead">The demo mocks every integration as JSON so the walkthrough stays on the agent reasoning. This is what the same architecture connects to in a real <b>Google Workspace</b> environment — the agents, handoffs and gates don't change, only what sits behind each tool (build notes §18 has the full mapping).</p>
+  <div class="diagram"><img src="/diagrams/04_production_architecture.svg" alt="Production architecture" />
+    <div class="cap">Production system map — <b>Okta</b> (SCIM birthright + access requests), <b>Google Calendar</b> &amp; <b>Gmail</b>, <b>Slack</b>, and <b>Atlassian Jira Service Management</b> for the IT help desk, with DocuSign for documents. Solid lines are the provisioning flow; dashed lines are escalations and status webhooks.</div></div>
+
+  <div class="section-label">Design principles</div>
+  <ul class="principles">
+    <li><b>The orchestrator is a state machine, not an agent.</b> Routing is a rule, not a judgment — so it stays deterministic. That's the answer to "why agents at all?"</li>
+    <li><b>Agents reason, tools execute.</b> Deterministic facts and actions live in tools; genuine judgment lives in agents.</li>
+    <li><b>Handoffs are typed JSON contracts.</b> Pydantic catches hallucinations and schema mismatches at the boundary.</li>
+    <li><b>Human-in-the-loop at judgment moments.</b> Five decision gates + one alert — placed where judgment is needed, not at mechanical steps.</li>
+    <li><b>Grounding stops hallucination.</b> Each agent gets the real catalog for the hire, so it reasons over facts.</li>
+    <li><b>Tested without calling the LLM.</b> Agents are dependency-injected, so routing tests run against deterministic fakes.</li>
+    <li><b>Pause/resume over HTTP.</b> The orchestrator is a generator: it freezes at every gate and resumes when you click — which is how a human stays in the loop across a web request.</li>
+  </ul>
+
+  <div class="section-label">Stack</div>
+  <div class="stack">
+    <span>OpenAI Agents SDK (Python)</span><span>GPT-4o</span><span>Pydantic — typed contracts</span>
+    <span>Python state machine</span><span>FastAPI — thin backend</span><span>Vanilla JS — no build step</span><span>pytest</span>
+  </div>
+
+  <p class="foot">Diagrams are the live project diagrams from docs/diagrams/.</p>
+</div></section>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

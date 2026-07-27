@@ -1,0 +1,20 @@
+gantt
+    title Sarah Chen — Coordinator touchpoints (start date June 21)
+    dateFormat YYYY-MM-DD
+    axisFormat %b %d
+
+    section Coordinator gates
+    Plan approval                :milestone, p1, 2026-06-07, 0d
+    Special access - AWS         :milestone, p2, 2026-06-08, 0d
+    30-60-90 review and send     :milestone, p3, 2026-06-10, 0d
+    Welcome message review       :milestone, p4, 2026-06-10, 0d
+
+    section Agent execution
+    IT Provisioning              :a1, 2026-06-07, 2d
+    Compliance and Docs          :a2, 2026-06-07, 2d
+    Manager Prep                 :a3, after a1, 2d
+
+    section Pre-start window
+    Welcome message sends        :milestone, w1, 2026-06-14, 0d
+    Readiness check (T-3)        :milestone, r1, 2026-06-18, 0d
+    Sarah starts                 :milestone, sd, 2026-06-21, 0d

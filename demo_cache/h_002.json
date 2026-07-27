@@ -1,0 +1,1376 @@
+{
+  "hire_id": "h_002",
+  "steps": [
+    {
+      "state": "received",
+      "ok": true,
+      "hire": {
+        "name": "Marcus Webb",
+        "role_title": "Account Executive",
+        "team": "Emea Sales",
+        "location": "London, UK",
+        "employment": "Contractor",
+        "manager": "Priya Nair",
+        "start_date": "Jun 28, 2026"
+      },
+      "orchestrator": {
+        "name": "Onboarding Assistant",
+        "agent_class": "coord",
+        "status": "Coordinating Marcus's onboarding \u00b7 1 approval waiting for you.",
+        "waiting": true
+      },
+      "stages": [
+        {
+          "id": "plan",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Consolidated plan",
+          "status": "awaiting_approval",
+          "summary": "One plan covering all four agents \u2014 approve in a single click, not four.",
+          "reasoning": [
+            "Contractor in UK \u2192 Ensure UK-specific compliance documents are prepared.",
+            "Mid-level sales role \u2192 Sales system access setup required.",
+            "UK location \u2192 Emphasis on right-to-work documentation.",
+            "Start imminent \u2192 Rapid readiness check needed shortly before start."
+          ],
+          "details": {
+            "sections": [
+              {
+                "agent": "it_provisioning",
+                "agent_class": "it",
+                "label": "IT Provisioning",
+                "text": "Provision hardware: Dell XPS 13 Create accounts for 4 role-specific systems Assign role security groups",
+                "gate": null
+              },
+              {
+                "agent": "compliance_docs",
+                "agent_class": "comp",
+                "label": "Compliance & Docs",
+                "text": "Determine required documents for UK / contractor Track completion and send reminders as start date approaches",
+                "gate": null
+              },
+              {
+                "agent": "manager_prep",
+                "agent_class": "mgr",
+                "label": "Manager Prep",
+                "text": "Draft a role-tailored 30-60-90 day plan Schedule a manager intro meeting Recommend an onboarding buddy",
+                "gate": "\u2691 You'll review & send it to the manager"
+              },
+              {
+                "agent": "coordinator",
+                "agent_class": "coord",
+                "label": "Assistant",
+                "text": "Render this consolidated plan for approval Draft a personalized welcome message Run a readiness check 3 days before start date",
+                "gate": "\u2691 Needs your review before sending"
+              }
+            ]
+          },
+          "gate": {
+            "gate_type": "plan_approval",
+            "agent": "coordinator",
+            "summary": "Approve the onboarding plan for Marcus Webb.",
+            "proposed_decision": "Proceed with the consolidated plan as shown.",
+            "rationale": "sales/contractor in UK: IT + Compliance run in parallel, Manager Prep follows IT.",
+            "alternatives": [],
+            "shape": "decision",
+            "actions": [
+              "approve",
+              "edit",
+              "request_changes"
+            ],
+            "payload": {
+              "plan": {
+                "hire_id": "h_002",
+                "profile": {
+                  "hire_id": "h_002",
+                  "full_name": "Marcus Webb",
+                  "role_title": "Account Executive",
+                  "role_family": "sales",
+                  "team": "emea_sales",
+                  "manager_id": "u_priya_nair",
+                  "location": {
+                    "country": "UK",
+                    "city": "London"
+                  },
+                  "employment_type": "contractor",
+                  "start_date": "2026-06-28",
+                  "seniority": "mid"
+                },
+                "work": [
+                  {
+                    "agent": "coordinator",
+                    "will_run": true,
+                    "run_wave": 0,
+                    "anticipated_actions": [
+                      "Render this consolidated plan for approval",
+                      "Draft a personalized welcome message",
+                      "Run a readiness check 3 days before start date"
+                    ],
+                    "anticipated_gates": [
+                      "plan_approval",
+                      "welcome_message_review",
+                      "readiness_at_risk"
+                    ]
+                  },
+                  {
+                    "agent": "it_provisioning",
+                    "will_run": true,
+                    "run_wave": 1,
+                    "anticipated_actions": [
+                      "Provision hardware: Dell XPS 13",
+                      "Create accounts for 4 role-standard system(s)",
+                      "Assign role security groups"
+                    ],
+                    "anticipated_gates": []
+                  },
+                  {
+                    "agent": "compliance_docs",
+                    "will_run": true,
+                    "run_wave": 1,
+                    "anticipated_actions": [
+                      "Determine required documents for UK / contractor",
+                      "Track completion and send reminders as start date approaches"
+                    ],
+                    "anticipated_gates": []
+                  },
+                  {
+                    "agent": "manager_prep",
+                    "will_run": true,
+                    "run_wave": 2,
+                    "anticipated_actions": [
+                      "Draft a role-tailored 30-60-90 day plan",
+                      "Schedule a manager intro meeting",
+                      "Recommend an onboarding buddy",
+                      "Send the manager a prep checklist"
+                    ],
+                    "anticipated_gates": [
+                      "30_60_90_signoff"
+                    ]
+                  }
+                ],
+                "note": "sales/contractor in UK: IT + Compliance run in parallel, Manager Prep follows IT."
+              },
+              "plan_summary": {
+                "reasoning": {
+                  "summary": "Marcus Webb, a mid-level Account Executive contractor based in London, requires UK-specific compliance and speedy coordination due to his role in EMEA sales.",
+                  "steps": [
+                    "Contractor in UK \u2192 Ensure UK-specific compliance documents are prepared.",
+                    "Mid-level sales role \u2192 Sales system access setup required.",
+                    "UK location \u2192 Emphasis on right-to-work documentation.",
+                    "Start imminent \u2192 Rapid readiness check needed shortly before start."
+                  ]
+                },
+                "it_provisioning": {
+                  "actions": [
+                    "Provision hardware: Dell XPS 13",
+                    "Create accounts for 4 role-specific systems",
+                    "Assign role security groups"
+                  ],
+                  "gates": []
+                },
+                "manager_prep": {
+                  "actions": [
+                    "Draft a role-tailored 30-60-90 day plan",
+                    "Schedule a manager intro meeting",
+                    "Recommend an onboarding buddy"
+                  ],
+                  "gates": [
+                    "30_60_90_signoff"
+                  ]
+                },
+                "compliance_docs": {
+                  "actions": [
+                    "Determine required documents for UK / contractor",
+                    "Track completion and send reminders as start date approaches"
+                  ],
+                  "gates": []
+                },
+                "coordinator": {
+                  "actions": [
+                    "Render this consolidated plan for approval",
+                    "Draft a personalized welcome message",
+                    "Run a readiness check 3 days before start date"
+                  ],
+                  "gates": [
+                    "plan_approval",
+                    "welcome_message_review",
+                    "readiness_at_risk"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "it",
+          "agent": "it_provisioning",
+          "agent_class": "it",
+          "title": "IT Provisioning",
+          "status": "pending",
+          "summary": "Waiting on plan approval\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "compliance",
+          "agent": "compliance_docs",
+          "agent_class": "comp",
+          "title": "Compliance & Docs",
+          "status": "pending",
+          "summary": "Waiting on plan approval\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "manager_prep",
+          "agent": "manager_prep",
+          "agent_class": "mgr",
+          "title": "Manager Prep",
+          "status": "pending",
+          "summary": "Waiting on IT's provisioning summary\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "welcome",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Welcome message",
+          "status": "pending",
+          "summary": "Drafted once the specialists report back\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "readiness",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Readiness check",
+          "status": "pending",
+          "summary": "Runs 3 days before start. Surfaces anything still outstanding \u2014 the 'no laptop on day one' safety net.",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        }
+      ],
+      "pending_gate": {
+        "gate_type": "plan_approval",
+        "agent": "coordinator",
+        "summary": "Approve the onboarding plan for Marcus Webb.",
+        "proposed_decision": "Proceed with the consolidated plan as shown.",
+        "rationale": "sales/contractor in UK: IT + Compliance run in parallel, Manager Prep follows IT.",
+        "alternatives": [],
+        "shape": "decision",
+        "actions": [
+          "approve",
+          "edit",
+          "request_changes"
+        ],
+        "payload": {
+          "plan": {
+            "hire_id": "h_002",
+            "profile": {
+              "hire_id": "h_002",
+              "full_name": "Marcus Webb",
+              "role_title": "Account Executive",
+              "role_family": "sales",
+              "team": "emea_sales",
+              "manager_id": "u_priya_nair",
+              "location": {
+                "country": "UK",
+                "city": "London"
+              },
+              "employment_type": "contractor",
+              "start_date": "2026-06-28",
+              "seniority": "mid"
+            },
+            "work": [
+              {
+                "agent": "coordinator",
+                "will_run": true,
+                "run_wave": 0,
+                "anticipated_actions": [
+                  "Render this consolidated plan for approval",
+                  "Draft a personalized welcome message",
+                  "Run a readiness check 3 days before start date"
+                ],
+                "anticipated_gates": [
+                  "plan_approval",
+                  "welcome_message_review",
+                  "readiness_at_risk"
+                ]
+              },
+              {
+                "agent": "it_provisioning",
+                "will_run": true,
+                "run_wave": 1,
+                "anticipated_actions": [
+                  "Provision hardware: Dell XPS 13",
+                  "Create accounts for 4 role-standard system(s)",
+                  "Assign role security groups"
+                ],
+                "anticipated_gates": []
+              },
+              {
+                "agent": "compliance_docs",
+                "will_run": true,
+                "run_wave": 1,
+                "anticipated_actions": [
+                  "Determine required documents for UK / contractor",
+                  "Track completion and send reminders as start date approaches"
+                ],
+                "anticipated_gates": []
+              },
+              {
+                "agent": "manager_prep",
+                "will_run": true,
+                "run_wave": 2,
+                "anticipated_actions": [
+                  "Draft a role-tailored 30-60-90 day plan",
+                  "Schedule a manager intro meeting",
+                  "Recommend an onboarding buddy",
+                  "Send the manager a prep checklist"
+                ],
+                "anticipated_gates": [
+                  "30_60_90_signoff"
+                ]
+              }
+            ],
+            "note": "sales/contractor in UK: IT + Compliance run in parallel, Manager Prep follows IT."
+          },
+          "plan_summary": {
+            "reasoning": {
+              "summary": "Marcus Webb, a mid-level Account Executive contractor based in London, requires UK-specific compliance and speedy coordination due to his role in EMEA sales.",
+              "steps": [
+                "Contractor in UK \u2192 Ensure UK-specific compliance documents are prepared.",
+                "Mid-level sales role \u2192 Sales system access setup required.",
+                "UK location \u2192 Emphasis on right-to-work documentation.",
+                "Start imminent \u2192 Rapid readiness check needed shortly before start."
+              ]
+            },
+            "it_provisioning": {
+              "actions": [
+                "Provision hardware: Dell XPS 13",
+                "Create accounts for 4 role-specific systems",
+                "Assign role security groups"
+              ],
+              "gates": []
+            },
+            "manager_prep": {
+              "actions": [
+                "Draft a role-tailored 30-60-90 day plan",
+                "Schedule a manager intro meeting",
+                "Recommend an onboarding buddy"
+              ],
+              "gates": [
+                "30_60_90_signoff"
+              ]
+            },
+            "compliance_docs": {
+              "actions": [
+                "Determine required documents for UK / contractor",
+                "Track completion and send reminders as start date approaches"
+              ],
+              "gates": []
+            },
+            "coordinator": {
+              "actions": [
+                "Render this consolidated plan for approval",
+                "Draft a personalized welcome message",
+                "Run a readiness check 3 days before start date"
+              ],
+              "gates": [
+                "plan_approval",
+                "welcome_message_review",
+                "readiness_at_risk"
+              ]
+            }
+          }
+        }
+      },
+      "events": [
+        "Received profile h_002.",
+        "Validated Marcus Webb (Account Executive).",
+        "Built consolidated plan. sales/contractor in UK: IT + Compliance run in parallel, Manager Prep follows IT.",
+        "Rendered plan summary for approval."
+      ]
+    },
+    {
+      "state": "manager_prep",
+      "ok": true,
+      "hire": {
+        "name": "Marcus Webb",
+        "role_title": "Account Executive",
+        "team": "Emea Sales",
+        "location": "London, UK",
+        "employment": "Contractor",
+        "manager": "Priya Nair",
+        "start_date": "Jun 28, 2026"
+      },
+      "orchestrator": {
+        "name": "Onboarding Assistant",
+        "agent_class": "coord",
+        "status": "Coordinating Marcus's onboarding \u00b7 1 approval waiting for you.",
+        "waiting": true
+      },
+      "stages": [
+        {
+          "id": "plan",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Consolidated plan",
+          "status": "complete",
+          "summary": "One plan covering all four agents \u2014 approved in a single click, not four.",
+          "reasoning": [
+            "Contractor in UK \u2192 Ensure UK-specific compliance documents are prepared.",
+            "Mid-level sales role \u2192 Sales system access setup required.",
+            "UK location \u2192 Emphasis on right-to-work documentation.",
+            "Start imminent \u2192 Rapid readiness check needed shortly before start."
+          ],
+          "details": {
+            "sections": [
+              {
+                "agent": "it_provisioning",
+                "agent_class": "it",
+                "label": "IT Provisioning",
+                "text": "Provision hardware: Dell XPS 13 Create accounts for 4 role-specific systems Assign role security groups",
+                "gate": null
+              },
+              {
+                "agent": "compliance_docs",
+                "agent_class": "comp",
+                "label": "Compliance & Docs",
+                "text": "Determine required documents for UK / contractor Track completion and send reminders as start date approaches",
+                "gate": null
+              },
+              {
+                "agent": "manager_prep",
+                "agent_class": "mgr",
+                "label": "Manager Prep",
+                "text": "Draft a role-tailored 30-60-90 day plan Schedule a manager intro meeting Recommend an onboarding buddy",
+                "gate": "\u2691 You'll review & send it to the manager"
+              },
+              {
+                "agent": "coordinator",
+                "agent_class": "coord",
+                "label": "Assistant",
+                "text": "Render this consolidated plan for approval Draft a personalized welcome message Run a readiness check 3 days before start date",
+                "gate": "\u2691 Needs your review before sending"
+              }
+            ]
+          },
+          "gate": null
+        },
+        {
+          "id": "it",
+          "agent": "it_provisioning",
+          "agent_class": "it",
+          "title": "IT Provisioning",
+          "status": "complete",
+          "summary": "Dell XPS 13 \u00b7 Salesforce, Gong, Outreach.io, Slack (sales channels)",
+          "reasoning": [
+            "Order a Dell XPS 13 for Marcus Webb for his role as a Sales Account Executive. Since he is in the UK, a 5-business-day lead time is required.",
+            "Provision standard user accounts on Salesforce, Gong, and Outreach.io, as these tools are part of the role-appropriate software and do not require special approval.",
+            "Add Marcus Webb to 'sales-all' and 'salesforce-users' security groups, as these are relevant to his sales responsibilities.",
+            "Include Marcus Webb in EMEA team Slack channels '#sales-emea' and '#deals-emea' to facilitate regional collaboration.",
+            "Confirm all provisions comply with contractor restrictions, ensuring no disallowed systems or access levels are granted."
+          ],
+          "details": {
+            "hardware": {
+              "item": "Dell XPS 13",
+              "status": "in_progress",
+              "notes": "Shipping to the UK requires a 5-business-day lead time."
+            },
+            "software_access": [
+              {
+                "system": "Salesforce",
+                "access_level": "user",
+                "status": "complete"
+              },
+              {
+                "system": "Gong",
+                "access_level": "user",
+                "status": "complete"
+              },
+              {
+                "system": "Outreach.io",
+                "access_level": "user",
+                "status": "complete"
+              },
+              {
+                "system": "Slack (sales channels)",
+                "access_level": "member",
+                "status": "complete"
+              }
+            ],
+            "security_groups": [
+              {
+                "group": "sales-all",
+                "status": "complete"
+              },
+              {
+                "group": "salesforce-users",
+                "status": "complete"
+              }
+            ],
+            "special_access_requests": [],
+            "warnings": []
+          },
+          "gate": null
+        },
+        {
+          "id": "compliance",
+          "agent": "compliance_docs",
+          "agent_class": "comp",
+          "title": "Compliance & Docs",
+          "status": "complete",
+          "summary": "3 documents \u00b7 Right to Work check, Contractor Agreement, IR35 Status Determination",
+          "reasoning": [
+            "Retrieve the document requirements for a UK-based contractor from the system.",
+            "Confirm that the jurisdiction is known: UK contractors have a specific set of required documents.",
+            "List the documents: Right to Work check, Contractor Agreement, and IR35 Status Determination, each with rationale."
+          ],
+          "details": {
+            "required_documents": [
+              {
+                "name": "Right to Work check",
+                "deadline": "Jun 28, 2026",
+                "status": "not_started",
+                "rationale": "Required even for contractors under UK law."
+              },
+              {
+                "name": "Contractor Agreement",
+                "deadline": "Jun 28, 2026",
+                "status": "not_started",
+                "rationale": "Contracts for services agreement."
+              },
+              {
+                "name": "IR35 Status Determination",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Determines whether the contractor is inside or outside IR35 for tax purposes."
+              }
+            ],
+            "escalations": []
+          },
+          "gate": null
+        },
+        {
+          "id": "manager_prep",
+          "agent": "manager_prep",
+          "agent_class": "mgr",
+          "title": "Manager Prep",
+          "status": "awaiting_approval",
+          "summary": "Ready to send to Priya Nair \u00b7 draft 30-60-90 \u00b7 intro booked (Jun 29, 2026) \u00b7 suggested buddy Elena Marchetti",
+          "reasoning": [
+            "Scheduled an intro meeting with Priya Nair on Marcus Webb's second day.",
+            "Drafted a detailed 30-60-90 day plan tailored for the sales role.",
+            "Recommended Elena Marchetti as the onboarding buddy due to her relevant experience and manageable availability.",
+            "Sent Priya Nair a detailed checklist to prep for Marcus Webb's start."
+          ],
+          "details": {
+            "manager_name": "Priya Nair",
+            "actions": [
+              {
+                "label": "Schedule intro meeting with the manager",
+                "status": "done",
+                "detail": "Jun 29, 2026 \u00b7 30 min"
+              },
+              {
+                "label": "Identify an onboarding buddy",
+                "status": "done",
+                "detail": "Elena Marchetti \u00b7 1.3 yrs (a suggestion)"
+              },
+              {
+                "label": "Generate the 30-60-90 onboarding plan",
+                "status": "done",
+                "detail": "Draft for the manager to own & customize"
+              }
+            ],
+            "note": {
+              "subject_line": "Welcome to Marcus Webb: Onboarding Plan and Next Steps",
+              "body": "Hi Priya,\n\nWe're excited to welcome Marcus Webb to the team as an Account Executive, starting on 2026-06-28 (within 2 weeks). An intro meeting is scheduled for him on June 29th at 09:00 for 30 minutes.\n\nI'd suggest Elena Marchetti as Marcus's onboarding buddy. With 1.3 years here, she balances experience and recent familiarity with the onboarding process. Her schedule should allow her to provide solid support.\n\nPlease find a draft 30-60-90 day plan below. It's a starting point for you to review and make any necessary adjustments to align with your goals.\n\nLastly, there's a manager prep checklist to ensure a smooth onboarding process.\n\nThanks for your attention, and feel free to make any changes you see fit.\n\nBest,\n\nThe Onboarding Team"
+            },
+            "thirty_sixty_ninety": {
+              "thirty_days": [
+                "Attend team and stakeholder introduction meetings to understand EMEA team's strategies and goals.",
+                "Complete Salesforce and Gong training modules.",
+                "Review the existing client list and identify top 5 potential opportunities in the UK market.",
+                "Shadow 2-3 sales calls to learn about pitching and negotiation techniques."
+              ],
+              "sixty_days": [
+                "Develop a plan to increase client engagement within the UK region.",
+                "Conduct discovery calls and qualification meetings, aiming for 10 new qualified leads.",
+                "Collaborate with Marketing to initiate a targeted campaign for mid-market clients.",
+                "Prepare and present a mini-report on UK market insights during a team meeting."
+              ],
+              "ninety_days": [
+                "Close at least 2 new deals and contribute to the team's quarterly target.",
+                "Build a strategic plan for expanding presence in the UK territory.",
+                "Lead a training session sharing learnings from new deals closed with the team.",
+                "Draft a proposal for a new sales strategy initiative aimed at improving pipeline velocity."
+              ]
+            },
+            "manager_checklist": [
+              "Review client list and Marcus Webb's pipeline projection.",
+              "Prepare introductory presentation for Marcus on EMEA sales strategy.",
+              "Familiarize with Marcus Webb's sales tools (Salesforce, Gong, Outreach.io).",
+              "Schedule 1:1s with key stakeholders for Marcus Webb within the first month.",
+              "Review the 30-60-90 day plan and tailor it as needed."
+            ]
+          },
+          "gate": {
+            "gate_type": "30_60_90_signoff",
+            "agent": "manager_prep",
+            "summary": "Review and send the onboarding package to Priya Nair.",
+            "proposed_decision": "Send the cover note + draft 30-60-90 to Priya Nair.",
+            "rationale": "The 30-60-90 is a starting draft for the manager to own and customize. Review the package, then send it to them.",
+            "alternatives": [],
+            "shape": "decision",
+            "actions": [
+              "approve",
+              "edit",
+              "request_changes"
+            ],
+            "payload": {
+              "plan": {
+                "thirty_days": [
+                  "Attend team and stakeholder introduction meetings to understand EMEA team's strategies and goals.",
+                  "Complete Salesforce and Gong training modules.",
+                  "Review the existing client list and identify top 5 potential opportunities in the UK market.",
+                  "Shadow 2-3 sales calls to learn about pitching and negotiation techniques."
+                ],
+                "sixty_days": [
+                  "Develop a plan to increase client engagement within the UK region.",
+                  "Conduct discovery calls and qualification meetings, aiming for 10 new qualified leads.",
+                  "Collaborate with Marketing to initiate a targeted campaign for mid-market clients.",
+                  "Prepare and present a mini-report on UK market insights during a team meeting."
+                ],
+                "ninety_days": [
+                  "Close at least 2 new deals and contribute to the team's quarterly target.",
+                  "Build a strategic plan for expanding presence in the UK territory.",
+                  "Lead a training session sharing learnings from new deals closed with the team.",
+                  "Draft a proposal for a new sales strategy initiative aimed at improving pipeline velocity."
+                ],
+                "status": "draft_awaiting_signoff"
+              },
+              "note": {
+                "reasoning": {
+                  "summary": "The note introduces key onboarding elements for the hiring manager, facilitating a smooth integration of the new hire. It highlights the specifics that the manager can adjust as needed.",
+                  "steps": [
+                    "Open with a warm greeting, introducing Marcus Webb and his start date.",
+                    "Mention the scheduled intro meeting details.",
+                    "Recommend Elena Marchetti as the onboarding buddy and provide justification.",
+                    "Introduce the 30-60-90 day plan as a draft for Priya to modify.",
+                    "Direct to the manager prep checklist."
+                  ]
+                },
+                "subject_line": "Welcome to Marcus Webb: Onboarding Plan and Next Steps",
+                "body": "Hi Priya,\n\nWe're excited to welcome Marcus Webb to the team as an Account Executive, starting on 2026-06-28 (within 2 weeks). An intro meeting is scheduled for him on June 29th at 09:00 for 30 minutes.\n\nI'd suggest Elena Marchetti as Marcus's onboarding buddy. With 1.3 years here, she balances experience and recent familiarity with the onboarding process. Her schedule should allow her to provide solid support.\n\nPlease find a draft 30-60-90 day plan below. It's a starting point for you to review and make any necessary adjustments to align with your goals.\n\nLastly, there's a manager prep checklist to ensure a smooth onboarding process.\n\nThanks for your attention, and feel free to make any changes you see fit.\n\nBest,\n\nThe Onboarding Team"
+              },
+              "manager_name": "Priya Nair"
+            }
+          }
+        },
+        {
+          "id": "welcome",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Welcome message",
+          "status": "pending",
+          "summary": "Drafted once the specialists report back\u2026",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        },
+        {
+          "id": "readiness",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Readiness check",
+          "status": "pending",
+          "summary": "Runs 3 days before start. Surfaces anything still outstanding \u2014 the 'no laptop on day one' safety net.",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        }
+      ],
+      "pending_gate": {
+        "gate_type": "30_60_90_signoff",
+        "agent": "manager_prep",
+        "summary": "Review and send the onboarding package to Priya Nair.",
+        "proposed_decision": "Send the cover note + draft 30-60-90 to Priya Nair.",
+        "rationale": "The 30-60-90 is a starting draft for the manager to own and customize. Review the package, then send it to them.",
+        "alternatives": [],
+        "shape": "decision",
+        "actions": [
+          "approve",
+          "edit",
+          "request_changes"
+        ],
+        "payload": {
+          "plan": {
+            "thirty_days": [
+              "Attend team and stakeholder introduction meetings to understand EMEA team's strategies and goals.",
+              "Complete Salesforce and Gong training modules.",
+              "Review the existing client list and identify top 5 potential opportunities in the UK market.",
+              "Shadow 2-3 sales calls to learn about pitching and negotiation techniques."
+            ],
+            "sixty_days": [
+              "Develop a plan to increase client engagement within the UK region.",
+              "Conduct discovery calls and qualification meetings, aiming for 10 new qualified leads.",
+              "Collaborate with Marketing to initiate a targeted campaign for mid-market clients.",
+              "Prepare and present a mini-report on UK market insights during a team meeting."
+            ],
+            "ninety_days": [
+              "Close at least 2 new deals and contribute to the team's quarterly target.",
+              "Build a strategic plan for expanding presence in the UK territory.",
+              "Lead a training session sharing learnings from new deals closed with the team.",
+              "Draft a proposal for a new sales strategy initiative aimed at improving pipeline velocity."
+            ],
+            "status": "draft_awaiting_signoff"
+          },
+          "note": {
+            "reasoning": {
+              "summary": "The note introduces key onboarding elements for the hiring manager, facilitating a smooth integration of the new hire. It highlights the specifics that the manager can adjust as needed.",
+              "steps": [
+                "Open with a warm greeting, introducing Marcus Webb and his start date.",
+                "Mention the scheduled intro meeting details.",
+                "Recommend Elena Marchetti as the onboarding buddy and provide justification.",
+                "Introduce the 30-60-90 day plan as a draft for Priya to modify.",
+                "Direct to the manager prep checklist."
+              ]
+            },
+            "subject_line": "Welcome to Marcus Webb: Onboarding Plan and Next Steps",
+            "body": "Hi Priya,\n\nWe're excited to welcome Marcus Webb to the team as an Account Executive, starting on 2026-06-28 (within 2 weeks). An intro meeting is scheduled for him on June 29th at 09:00 for 30 minutes.\n\nI'd suggest Elena Marchetti as Marcus's onboarding buddy. With 1.3 years here, she balances experience and recent familiarity with the onboarding process. Her schedule should allow her to provide solid support.\n\nPlease find a draft 30-60-90 day plan below. It's a starting point for you to review and make any necessary adjustments to align with your goals.\n\nLastly, there's a manager prep checklist to ensure a smooth onboarding process.\n\nThanks for your attention, and feel free to make any changes you see fit.\n\nBest,\n\nThe Onboarding Team"
+          },
+          "manager_name": "Priya Nair"
+        }
+      },
+      "events": [
+        "Received profile h_002.",
+        "Validated Marcus Webb (Account Executive).",
+        "Built consolidated plan. sales/contractor in UK: IT + Compliance run in parallel, Manager Prep follows IT.",
+        "Rendered plan summary for approval.",
+        "IT Provisioning complete: Dell XPS 13.",
+        "Compliance complete: 3 document(s).",
+        "Manager Prep complete: draft 30-60-90 + cover note ready to send to Priya Nair."
+      ]
+    },
+    {
+      "state": "drafting_welcome",
+      "ok": true,
+      "hire": {
+        "name": "Marcus Webb",
+        "role_title": "Account Executive",
+        "team": "Emea Sales",
+        "location": "London, UK",
+        "employment": "Contractor",
+        "manager": "Priya Nair",
+        "start_date": "Jun 28, 2026"
+      },
+      "orchestrator": {
+        "name": "Onboarding Assistant",
+        "agent_class": "coord",
+        "status": "Coordinating Marcus's onboarding \u00b7 1 approval waiting for you.",
+        "waiting": true
+      },
+      "stages": [
+        {
+          "id": "plan",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Consolidated plan",
+          "status": "complete",
+          "summary": "One plan covering all four agents \u2014 approved in a single click, not four.",
+          "reasoning": [
+            "Contractor in UK \u2192 Ensure UK-specific compliance documents are prepared.",
+            "Mid-level sales role \u2192 Sales system access setup required.",
+            "UK location \u2192 Emphasis on right-to-work documentation.",
+            "Start imminent \u2192 Rapid readiness check needed shortly before start."
+          ],
+          "details": {
+            "sections": [
+              {
+                "agent": "it_provisioning",
+                "agent_class": "it",
+                "label": "IT Provisioning",
+                "text": "Provision hardware: Dell XPS 13 Create accounts for 4 role-specific systems Assign role security groups",
+                "gate": null
+              },
+              {
+                "agent": "compliance_docs",
+                "agent_class": "comp",
+                "label": "Compliance & Docs",
+                "text": "Determine required documents for UK / contractor Track completion and send reminders as start date approaches",
+                "gate": null
+              },
+              {
+                "agent": "manager_prep",
+                "agent_class": "mgr",
+                "label": "Manager Prep",
+                "text": "Draft a role-tailored 30-60-90 day plan Schedule a manager intro meeting Recommend an onboarding buddy",
+                "gate": "\u2691 You'll review & send it to the manager"
+              },
+              {
+                "agent": "coordinator",
+                "agent_class": "coord",
+                "label": "Assistant",
+                "text": "Render this consolidated plan for approval Draft a personalized welcome message Run a readiness check 3 days before start date",
+                "gate": "\u2691 Needs your review before sending"
+              }
+            ]
+          },
+          "gate": null
+        },
+        {
+          "id": "it",
+          "agent": "it_provisioning",
+          "agent_class": "it",
+          "title": "IT Provisioning",
+          "status": "complete",
+          "summary": "Dell XPS 13 \u00b7 Salesforce, Gong, Outreach.io, Slack (sales channels)",
+          "reasoning": [
+            "Order a Dell XPS 13 for Marcus Webb for his role as a Sales Account Executive. Since he is in the UK, a 5-business-day lead time is required.",
+            "Provision standard user accounts on Salesforce, Gong, and Outreach.io, as these tools are part of the role-appropriate software and do not require special approval.",
+            "Add Marcus Webb to 'sales-all' and 'salesforce-users' security groups, as these are relevant to his sales responsibilities.",
+            "Include Marcus Webb in EMEA team Slack channels '#sales-emea' and '#deals-emea' to facilitate regional collaboration.",
+            "Confirm all provisions comply with contractor restrictions, ensuring no disallowed systems or access levels are granted."
+          ],
+          "details": {
+            "hardware": {
+              "item": "Dell XPS 13",
+              "status": "in_progress",
+              "notes": "Shipping to the UK requires a 5-business-day lead time."
+            },
+            "software_access": [
+              {
+                "system": "Salesforce",
+                "access_level": "user",
+                "status": "complete"
+              },
+              {
+                "system": "Gong",
+                "access_level": "user",
+                "status": "complete"
+              },
+              {
+                "system": "Outreach.io",
+                "access_level": "user",
+                "status": "complete"
+              },
+              {
+                "system": "Slack (sales channels)",
+                "access_level": "member",
+                "status": "complete"
+              }
+            ],
+            "security_groups": [
+              {
+                "group": "sales-all",
+                "status": "complete"
+              },
+              {
+                "group": "salesforce-users",
+                "status": "complete"
+              }
+            ],
+            "special_access_requests": [],
+            "warnings": []
+          },
+          "gate": null
+        },
+        {
+          "id": "compliance",
+          "agent": "compliance_docs",
+          "agent_class": "comp",
+          "title": "Compliance & Docs",
+          "status": "complete",
+          "summary": "3 documents \u00b7 Right to Work check, Contractor Agreement, IR35 Status Determination",
+          "reasoning": [
+            "Retrieve the document requirements for a UK-based contractor from the system.",
+            "Confirm that the jurisdiction is known: UK contractors have a specific set of required documents.",
+            "List the documents: Right to Work check, Contractor Agreement, and IR35 Status Determination, each with rationale."
+          ],
+          "details": {
+            "required_documents": [
+              {
+                "name": "Right to Work check",
+                "deadline": "Jun 28, 2026",
+                "status": "not_started",
+                "rationale": "Required even for contractors under UK law."
+              },
+              {
+                "name": "Contractor Agreement",
+                "deadline": "Jun 28, 2026",
+                "status": "not_started",
+                "rationale": "Contracts for services agreement."
+              },
+              {
+                "name": "IR35 Status Determination",
+                "deadline": "Jul 5, 2026",
+                "status": "not_started",
+                "rationale": "Determines whether the contractor is inside or outside IR35 for tax purposes."
+              }
+            ],
+            "escalations": []
+          },
+          "gate": null
+        },
+        {
+          "id": "manager_prep",
+          "agent": "manager_prep",
+          "agent_class": "mgr",
+          "title": "Manager Prep",
+          "status": "complete",
+          "summary": "Ready to send to Priya Nair \u00b7 draft 30-60-90 \u00b7 intro booked (Jun 29, 2026) \u00b7 suggested buddy Elena Marchetti",
+          "reasoning": [
+            "Scheduled an intro meeting with Priya Nair on Marcus Webb's second day.",
+            "Drafted a detailed 30-60-90 day plan tailored for the sales role.",
+            "Recommended Elena Marchetti as the onboarding buddy due to her relevant experience and manageable availability.",
+            "Sent Priya Nair a detailed checklist to prep for Marcus Webb's start."
+          ],
+          "details": {
+            "manager_name": "Priya Nair",
+            "actions": [
+              {
+                "label": "Schedule intro meeting with the manager",
+                "status": "done",
+                "detail": "Jun 29, 2026 \u00b7 30 min"
+              },
+              {
+                "label": "Identify an onboarding buddy",
+                "status": "done",
+                "detail": "Elena Marchetti \u00b7 1.3 yrs (a suggestion)"
+              },
+              {
+                "label": "Generate the 30-60-90 onboarding plan",
+                "status": "done",
+                "detail": "Draft for the manager to own & customize"
+              }
+            ],
+            "note": {
+              "subject_line": "Welcome to Marcus Webb: Onboarding Plan and Next Steps",
+              "body": "Hi Priya,\n\nWe're excited to welcome Marcus Webb to the team as an Account Executive, starting on 2026-06-28 (within 2 weeks). An intro meeting is scheduled for him on June 29th at 09:00 for 30 minutes.\n\nI'd suggest Elena Marchetti as Marcus's onboarding buddy. With 1.3 years here, she balances experience and recent familiarity with the onboarding process. Her schedule should allow her to provide solid support.\n\nPlease find a draft 30-60-90 day plan below. It's a starting point for you to review and make any necessary adjustments to align with your goals.\n\nLastly, there's a manager prep checklist to ensure a smooth onboarding process.\n\nThanks for your attention, and feel free to make any changes you see fit.\n\nBest,\n\nThe Onboarding Team"
+            },
+            "thirty_sixty_ninety": {
+              "thirty_days": [
+                "Attend team and stakeholder introduction meetings to understand EMEA team's strategies and goals.",
+                "Complete Salesforce and Gong training modules.",
+                "Review the existing client list and identify top 5 potential opportunities in the UK market.",
+                "Shadow 2-3 sales calls to learn about pitching and negotiation techniques."
+              ],
+              "sixty_days": [
+                "Develop a plan to increase client engagement within the UK region.",
+                "Conduct discovery calls and qualification meetings, aiming for 10 new qualified leads.",
+                "Collaborate with Marketing to initiate a targeted campaign for mid-market clients.",
+                "Prepare and present a mini-report on UK market insights during a team meeting."
+              ],
+              "ninety_days": [
+                "Close at least 2 new deals and contribute to the team's quarterly target.",
+                "Build a strategic plan for expanding presence in the UK territory.",
+                "Lead a training session sharing learnings from new deals closed with the team.",
+                "Draft a proposal for a new sales strategy initiative aimed at improving pipeline velocity."
+              ]
+            },
+            "manager_checklist": [
+              "Review client list and Marcus Webb's pipeline projection.",
+              "Prepare introductory presentation for Marcus on EMEA sales strategy.",
+              "Familiarize with Marcus Webb's sales tools (Salesforce, Gong, Outreach.io).",
+              "Schedule 1:1s with key stakeholders for Marcus Webb within the first month.",
+              "Review the 30-60-90 day plan and tailor it as needed."
+            ]
+          },
+          "gate": null
+        },
+        {
+          "id": "welcome",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Welcome message",
+          "status": "awaiting_approval",
+          "summary": "Personalized note ready. Starts within 2 weeks \u2192 sends on approval.",
+          "reasoning": [
+            "Address Marcus by first name to set a warm tone.",
+            "Include his role and team to personalize the message.",
+            "Introduce his onboarding buddy, Elena Marchetti.",
+            "Mention two specific first-day logistics: Laptop setup and tool access.",
+            "Maintain an inviting and non-corporate tone throughout.",
+            "Limit the length to target word count constraints."
+          ],
+          "details": {
+            "subject_line": "Welcome to the Team, Marcus!",
+            "body": "Hi Marcus,\n\nWe\u2019re thrilled to welcome you to the EMEA Sales team as our new Account Executive! Joining from London, you'll be integral to helping us drive sales and build strong client relationships across the region.\n\nOn your first day, your Dell XPS 13 will be ready and waiting for you, and you'll have immediate access to Salesforce, Gong, and Outreach.io. We've lined up an introduction meeting for you with your manager, Priya Nair, and you'll receive a warm welcome email from your onboarding buddy, Elena Marchetti. She\u2019ll help guide you as you settle in.\n\nWe\u2019re here to support your journey and can\u2019t wait for you to bring your expertise to our team.\n\nCheers,\n\nYour EMEA Sales Team",
+            "send_strategy": "send_now",
+            "scheduled_send_date": null
+          },
+          "gate": {
+            "gate_type": "welcome_message_review",
+            "agent": "coordinator",
+            "summary": "Review the welcome message before it is sent.",
+            "proposed_decision": "send_now the message.",
+            "rationale": "Personalized messages are reviewed before reaching the new hire.",
+            "alternatives": [],
+            "shape": "decision",
+            "actions": [
+              "approve",
+              "edit",
+              "request_changes"
+            ],
+            "payload": {
+              "draft": {
+                "reasoning": {
+                  "summary": "I crafted a welcome message for Marcus Webb, ensuring it included a warm and personalized greeting, details about his role and team, an introduction to his onboarding buddy, and an overview of what to expect on his first day. Specific day-one logistics such as having his laptop ready and access to key tools were mentioned to set clear expectations. The tone is friendly and inviting, aligning with the goal of making Marcus feel welcomed and supported.",
+                  "steps": [
+                    "Address Marcus by first name to set a warm tone.",
+                    "Include his role and team to personalize the message.",
+                    "Introduce his onboarding buddy, Elena Marchetti.",
+                    "Mention two specific first-day logistics: Laptop setup and tool access.",
+                    "Maintain an inviting and non-corporate tone throughout.",
+                    "Limit the length to target word count constraints."
+                  ]
+                },
+                "subject_line": "Welcome to the Team, Marcus!",
+                "body": "Hi Marcus,\n\nWe\u2019re thrilled to welcome you to the EMEA Sales team as our new Account Executive! Joining from London, you'll be integral to helping us drive sales and build strong client relationships across the region.\n\nOn your first day, your Dell XPS 13 will be ready and waiting for you, and you'll have immediate access to Salesforce, Gong, and Outreach.io. We've lined up an introduction meeting for you with your manager, Priya Nair, and you'll receive a warm welcome email from your onboarding buddy, Elena Marchetti. She\u2019ll help guide you as you settle in.\n\nWe\u2019re here to support your journey and can\u2019t wait for you to bring your expertise to our team.\n\nCheers,\n\nYour EMEA Sales Team",
+                "send_strategy": "send_now",
+                "scheduled_send_date": null
+              }
+            }
+          }
+        },
+        {
+          "id": "readiness",
+          "agent": "coordinator",
+          "agent_class": "coord",
+          "title": "Readiness check",
+          "status": "pending",
+          "summary": "Runs 3 days before start. Surfaces anything still outstanding \u2014 the 'no laptop on day one' safety net.",
+          "reasoning": [],
+          "details": {},
+          "gate": null
+        }
+      ],
+      "pending_gate": {
+        "gate_type": "welcome_message_review",
+        "agent": "coordinator",
+        "summary": "Review the welcome message before it is sent.",
+        "proposed_decision": "send_now the message.",
+        "rationale": "Personalized messages are reviewed before reaching the new hire.",
+        "alternatives": [],
+        "shape": "decision",
+        "actions": [
+          "approve",
+          "edit",
+          "request_changes"
+        ],
+        "payload": {
+          "draft": {
+            "reasoning": {
+              "summary": "I crafted a welcome message for Marcus Webb, ensuring it included a warm and personalized greeting, details about his role and team, an introduction to his onboarding buddy, and an overview of what to expect on his first day. Specific day-one logistics such as having his laptop ready and access to key tools were mentioned to set clear expectations. The tone is friendly and inviting, aligning with the goal of making Marcus feel welcomed and supported.",
+              "steps": [
+                "Address Marcus by first name to set a warm tone.",
+                "Include his role and team to personalize the message.",
+                "Introduce his onboarding buddy, Elena Marchetti.",
+                "Mention two specific first-day logistics: Laptop setup and tool access.",
+                "Maintain an inviting and non-corporate tone throughout.",
+                "Limit the length to target word count constraints."
+              ]
+            },
+            "subject_line": "Welcome to the Team, Marcus!",
+            "body": "Hi Marcus,\n\nWe\u2019re thrilled to welcome you to the EMEA Sales team as our new Account Executive! Joining from London, you'll be integral to helping us drive sales and build strong client relationships across the region.\n\nOn your first day, your Dell XPS 13 will be ready and waiting for you, and you'll have immediate access to Salesforce, Gong, and Outreach.io. We've lined up an introduction meeting for you with your manager, Priya Nair, and you'll receive a warm welcome email from your onboarding buddy, Elena Marchetti. She\u2019ll help guide you as you settle in.\n\nWe\u2019re here to support your journey and can\u2019t wait for you to bring your expertise to our team.\n\nCheers,\n\nYour EMEA Sales Team",
+            "send_strategy": "send_now",
+            "scheduled_send_date": null
+          }
+        }
+      },
+      "events": [
+        "Received profile h_002.",
+        "Validated Marcus Webb (Account Executive).",
+        "Built consolidated plan. sales/contractor in UK: IT + Compliance run in parallel, Manager Prep follows IT.",
+        "Rendered plan summary for approval.",
+        "IT Provisioning complete: Dell XPS 13.",
+        "Compliance complete: 3 document(s).",
+        "Manager Prep complete: draft 30-60-90 + cover note ready to send to Priya Nair."
+      ]
+    }
+  ],
+  "final": {
+    "state": "complete",
+    "ok": true,
+    "hire": {
+      "name": "Marcus Webb",
+      "role_title": "Account Executive",
+      "team": "Emea Sales",
+      "location": "London, UK",
+      "employment": "Contractor",
+      "manager": "Priya Nair",
+      "start_date": "Jun 28, 2026"
+    },
+    "orchestrator": {
+      "name": "Onboarding Assistant",
+      "agent_class": "coord",
+      "status": "All agents complete \u00b7 every gate resolved \u00b7 onboarding assembled.",
+      "waiting": false
+    },
+    "stages": [
+      {
+        "id": "plan",
+        "agent": "coordinator",
+        "agent_class": "coord",
+        "title": "Consolidated plan",
+        "status": "complete",
+        "summary": "One plan covering all four agents \u2014 approved in a single click, not four.",
+        "reasoning": [
+          "Contractor in UK \u2192 Ensure UK-specific compliance documents are prepared.",
+          "Mid-level sales role \u2192 Sales system access setup required.",
+          "UK location \u2192 Emphasis on right-to-work documentation.",
+          "Start imminent \u2192 Rapid readiness check needed shortly before start."
+        ],
+        "details": {
+          "sections": [
+            {
+              "agent": "it_provisioning",
+              "agent_class": "it",
+              "label": "IT Provisioning",
+              "text": "Provision hardware: Dell XPS 13 Create accounts for 4 role-specific systems Assign role security groups",
+              "gate": null
+            },
+            {
+              "agent": "compliance_docs",
+              "agent_class": "comp",
+              "label": "Compliance & Docs",
+              "text": "Determine required documents for UK / contractor Track completion and send reminders as start date approaches",
+              "gate": null
+            },
+            {
+              "agent": "manager_prep",
+              "agent_class": "mgr",
+              "label": "Manager Prep",
+              "text": "Draft a role-tailored 30-60-90 day plan Schedule a manager intro meeting Recommend an onboarding buddy",
+              "gate": "\u2691 You'll review & send it to the manager"
+            },
+            {
+              "agent": "coordinator",
+              "agent_class": "coord",
+              "label": "Assistant",
+              "text": "Render this consolidated plan for approval Draft a personalized welcome message Run a readiness check 3 days before start date",
+              "gate": "\u2691 Needs your review before sending"
+            }
+          ]
+        },
+        "gate": null
+      },
+      {
+        "id": "it",
+        "agent": "it_provisioning",
+        "agent_class": "it",
+        "title": "IT Provisioning",
+        "status": "complete",
+        "summary": "Dell XPS 13 \u00b7 Salesforce, Gong, Outreach.io, Slack (sales channels)",
+        "reasoning": [
+          "Order a Dell XPS 13 for Marcus Webb for his role as a Sales Account Executive. Since he is in the UK, a 5-business-day lead time is required.",
+          "Provision standard user accounts on Salesforce, Gong, and Outreach.io, as these tools are part of the role-appropriate software and do not require special approval.",
+          "Add Marcus Webb to 'sales-all' and 'salesforce-users' security groups, as these are relevant to his sales responsibilities.",
+          "Include Marcus Webb in EMEA team Slack channels '#sales-emea' and '#deals-emea' to facilitate regional collaboration.",
+          "Confirm all provisions comply with contractor restrictions, ensuring no disallowed systems or access levels are granted."
+        ],
+        "details": {
+          "hardware": {
+            "item": "Dell XPS 13",
+            "status": "in_progress",
+            "notes": "Shipping to the UK requires a 5-business-day lead time."
+          },
+          "software_access": [
+            {
+              "system": "Salesforce",
+              "access_level": "user",
+              "status": "complete"
+            },
+            {
+              "system": "Gong",
+              "access_level": "user",
+              "status": "complete"
+            },
+            {
+              "system": "Outreach.io",
+              "access_level": "user",
+              "status": "complete"
+            },
+            {
+              "system": "Slack (sales channels)",
+              "access_level": "member",
+              "status": "complete"
+            }
+          ],
+          "security_groups": [
+            {
+              "group": "sales-all",
+              "status": "complete"
+            },
+            {
+              "group": "salesforce-users",
+              "status": "complete"
+            }
+          ],
+          "special_access_requests": [],
+          "warnings": []
+        },
+        "gate": null
+      },
+      {
+        "id": "compliance",
+        "agent": "compliance_docs",
+        "agent_class": "comp",
+        "title": "Compliance & Docs",
+        "status": "complete",
+        "summary": "3 documents \u00b7 Right to Work check, Contractor Agreement, IR35 Status Determination",
+        "reasoning": [
+          "Retrieve the document requirements for a UK-based contractor from the system.",
+          "Confirm that the jurisdiction is known: UK contractors have a specific set of required documents.",
+          "List the documents: Right to Work check, Contractor Agreement, and IR35 Status Determination, each with rationale."
+        ],
+        "details": {
+          "required_documents": [
+            {
+              "name": "Right to Work check",
+              "deadline": "Jun 28, 2026",
+              "status": "not_started",
+              "rationale": "Required even for contractors under UK law."
+            },
+            {
+              "name": "Contractor Agreement",
+              "deadline": "Jun 28, 2026",
+              "status": "not_started",
+              "rationale": "Contracts for services agreement."
+            },
+            {
+              "name": "IR35 Status Determination",
+              "deadline": "Jul 5, 2026",
+              "status": "not_started",
+              "rationale": "Determines whether the contractor is inside or outside IR35 for tax purposes."
+            }
+          ],
+          "escalations": []
+        },
+        "gate": null
+      },
+      {
+        "id": "manager_prep",
+        "agent": "manager_prep",
+        "agent_class": "mgr",
+        "title": "Manager Prep",
+        "status": "complete",
+        "summary": "Ready to send to Priya Nair \u00b7 draft 30-60-90 \u00b7 intro booked (Jun 29, 2026) \u00b7 suggested buddy Elena Marchetti",
+        "reasoning": [
+          "Scheduled an intro meeting with Priya Nair on Marcus Webb's second day.",
+          "Drafted a detailed 30-60-90 day plan tailored for the sales role.",
+          "Recommended Elena Marchetti as the onboarding buddy due to her relevant experience and manageable availability.",
+          "Sent Priya Nair a detailed checklist to prep for Marcus Webb's start."
+        ],
+        "details": {
+          "manager_name": "Priya Nair",
+          "actions": [
+            {
+              "label": "Schedule intro meeting with the manager",
+              "status": "done",
+              "detail": "Jun 29, 2026 \u00b7 30 min"
+            },
+            {
+              "label": "Identify an onboarding buddy",
+              "status": "done",
+              "detail": "Elena Marchetti \u00b7 1.3 yrs (a suggestion)"
+            },
+            {
+              "label": "Generate the 30-60-90 onboarding plan",
+              "status": "done",
+              "detail": "Draft for the manager to own & customize"
+            }
+          ],
+          "note": {
+            "subject_line": "Welcome to Marcus Webb: Onboarding Plan and Next Steps",
+            "body": "Hi Priya,\n\nWe're excited to welcome Marcus Webb to the team as an Account Executive, starting on 2026-06-28 (within 2 weeks). An intro meeting is scheduled for him on June 29th at 09:00 for 30 minutes.\n\nI'd suggest Elena Marchetti as Marcus's onboarding buddy. With 1.3 years here, she balances experience and recent familiarity with the onboarding process. Her schedule should allow her to provide solid support.\n\nPlease find a draft 30-60-90 day plan below. It's a starting point for you to review and make any necessary adjustments to align with your goals.\n\nLastly, there's a manager prep checklist to ensure a smooth onboarding process.\n\nThanks for your attention, and feel free to make any changes you see fit.\n\nBest,\n\nThe Onboarding Team"
+          },
+          "thirty_sixty_ninety": {
+            "thirty_days": [
+              "Attend team and stakeholder introduction meetings to understand EMEA team's strategies and goals.",
+              "Complete Salesforce and Gong training modules.",
+              "Review the existing client list and identify top 5 potential opportunities in the UK market.",
+              "Shadow 2-3 sales calls to learn about pitching and negotiation techniques."
+            ],
+            "sixty_days": [
+              "Develop a plan to increase client engagement within the UK region.",
+              "Conduct discovery calls and qualification meetings, aiming for 10 new qualified leads.",
+              "Collaborate with Marketing to initiate a targeted campaign for mid-market clients.",
+              "Prepare and present a mini-report on UK market insights during a team meeting."
+            ],
+            "ninety_days": [
+              "Close at least 2 new deals and contribute to the team's quarterly target.",
+              "Build a strategic plan for expanding presence in the UK territory.",
+              "Lead a training session sharing learnings from new deals closed with the team.",
+              "Draft a proposal for a new sales strategy initiative aimed at improving pipeline velocity."
+            ]
+          },
+          "manager_checklist": [
+            "Review client list and Marcus Webb's pipeline projection.",
+            "Prepare introductory presentation for Marcus on EMEA sales strategy.",
+            "Familiarize with Marcus Webb's sales tools (Salesforce, Gong, Outreach.io).",
+            "Schedule 1:1s with key stakeholders for Marcus Webb within the first month.",
+            "Review the 30-60-90 day plan and tailor it as needed."
+          ]
+        },
+        "gate": null
+      },
+      {
+        "id": "welcome",
+        "agent": "coordinator",
+        "agent_class": "coord",
+        "title": "Welcome message",
+        "status": "complete",
+        "summary": "Personalized note ready. Starts within 2 weeks \u2192 sends on approval.",
+        "reasoning": [
+          "Address Marcus by first name to set a warm tone.",
+          "Include his role and team to personalize the message.",
+          "Introduce his onboarding buddy, Elena Marchetti.",
+          "Mention two specific first-day logistics: Laptop setup and tool access.",
+          "Maintain an inviting and non-corporate tone throughout.",
+          "Limit the length to target word count constraints."
+        ],
+        "details": {
+          "subject_line": "Welcome to the Team, Marcus!",
+          "body": "Hi Marcus,\n\nWe\u2019re thrilled to welcome you to the EMEA Sales team as our new Account Executive! Joining from London, you'll be integral to helping us drive sales and build strong client relationships across the region.\n\nOn your first day, your Dell XPS 13 will be ready and waiting for you, and you'll have immediate access to Salesforce, Gong, and Outreach.io. We've lined up an introduction meeting for you with your manager, Priya Nair, and you'll receive a warm welcome email from your onboarding buddy, Elena Marchetti. She\u2019ll help guide you as you settle in.\n\nWe\u2019re here to support your journey and can\u2019t wait for you to bring your expertise to our team.\n\nCheers,\n\nYour EMEA Sales Team",
+          "send_strategy": "send_now",
+          "scheduled_send_date": null
+        },
+        "gate": null
+      },
+      {
+        "id": "readiness",
+        "agent": "coordinator",
+        "agent_class": "coord",
+        "title": "Readiness check",
+        "status": "scheduled",
+        "summary": "Runs 3 days before start. Surfaces anything still outstanding \u2014 the 'no laptop on day one' safety net.",
+        "reasoning": [],
+        "details": {},
+        "gate": null
+      }
+    ],
+    "pending_gate": null,
+    "events": [
+      "Received profile h_002.",
+      "Validated Marcus Webb (Account Executive).",
+      "Built consolidated plan. sales/contractor in UK: IT + Compliance run in parallel, Manager Prep follows IT.",
+      "Rendered plan summary for approval.",
+      "IT Provisioning complete: Dell XPS 13.",
+      "Compliance complete: 3 document(s).",
+      "Manager Prep complete: draft 30-60-90 + cover note ready to send to Priya Nair.",
+      "Welcome message ready (send_now).",
+      "Scheduled readiness check for 3 days before start date.",
+      "Onboarding plan fully assembled. All gates resolved."
+    ]
+  }
+}
